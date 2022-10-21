@@ -8,7 +8,7 @@
     <TransactionalDeployment>false</TransactionalDeployment>
     <PartitionDeployment>DeployPartitions</PartitionDeployment>
     <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
-    <ProcessingOption>Default</ProcessingOption>
+    <ProcessingOption>DoNotProcess</ProcessingOption>
     <OutputScript></OutputScript>
     <ImpactAnalysisFile></ImpactAnalysisFile>
     <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
@@ -19,14 +19,14 @@
     <ObjectSnapshots>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
-        <TimeStamp>H6ZbMhfvZVuHiQV3T4KQp9iC0eI=7/26/2022 1:13:39 PM10/21/2022 11:33:27 AM</TimeStamp>
+        <TimeStamp>eYAtWdtwB1Nc48FnR0UpPfqev+s=10/21/2022 10:40:43 PM10/21/2022 11:33:27 AM</TimeStamp>
         <ID>
           <String>DWH_VC_AVT</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>KwlkY9iMAynOKBsaS0YALdzSTlU=9/14/2022 5:45:56 PM10/21/2022 11:33:27 AM</TimeStamp>
+        <TimeStamp>iHa4skgfIiSn7l6iRe4lIAiZe5M=10/21/2022 10:34:41 PM10/21/2022 11:33:27 AM</TimeStamp>
         <ID>
           <String>DWH_VC_AVT</String>
         </ID>
@@ -148,5 +148,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2022-10-21T09:31:13.143333Z</LastDeployed>
+  <LastDeployed>2022-10-21T19:47:28.056667Z</LastDeployed>
 </DeploymentSnapshot>

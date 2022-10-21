@@ -9349,7 +9349,7 @@ DIVIDE(
       <ConnectionStringSecurity>Unchanged</ConnectionStringSecurity>
       <ImpersonationInfo>
         <ImpersonationMode>ImpersonateAccount</ImpersonationMode>
-        <Account>FLYUIA\srv_cognostm1</Account>
+        <Account>WIN-2016_SQL\cognos</Account>
         <ImpersonationInfoSecurity>PasswordRemoved</ImpersonationInfoSecurity>
       </ImpersonationInfo>
       <Timeout>PT0S</Timeout>
@@ -11728,9 +11728,9 @@ DIVIDE(
                 <Name>ALLOCATION</Name>
                 <DiagramLayout>
                   <dds>
-                    <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="22" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-410" scrolltop="13184" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="20929" y="14764" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                    <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="22" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-410" scrolltop="13470" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="28416" y="16589" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
                       <font>
-                        <ddsxmlobjectstreamwrapper binary="01cc0000900144420100065461686f6d61" />
+                        <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
                       </font>
                       <mouseicon>
                         <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
@@ -11739,9 +11739,9 @@ DIVIDE(
                     <layoutmanager>
                       <ddsxmlobj />
                     </layoutmanager>
-                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="FCT_DRIVER_SHARE" left="9486" top="20498" logicalid="11" controlid="1" masterid="0" hint1="0" hint2="0" width="4392" height="4419" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="FCT_DRIVER_SHARE" left="9486" top="20498" logicalid="11" controlid="1" masterid="0" hint1="0" hint2="0" width="4392" height="4419" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                       <control>
-                        <ddsxmlobjectstreaminitwrapper binary="000c00002811000043110000" />
+                        <ddsxmlobjectstreaminitwrapper binary="000e00002811000043110000" />
                       </control>
                       <layoutobject>
                         <ddsxmlobj>
@@ -11750,9 +11750,9 @@ DIVIDE(
                       </layoutobject>
                       <shape groupshapeid="0" groupnode="0" />
                     </ddscontrol>
-                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="DIM_FLIGHT" left="2686" top="19320" logicalid="12" controlid="2" masterid="0" hint1="0" hint2="0" width="4075" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DIM_FLIGHT" left="2686" top="19320" logicalid="12" controlid="2" masterid="0" hint1="0" hint2="0" width="4075" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                       <control>
-                        <ddsxmlobjectstreaminitwrapper binary="000c0000eb0f000088130000" />
+                        <ddsxmlobjectstreaminitwrapper binary="000e0000eb0f000088130000" />
                       </control>
                       <layoutobject>
                         <ddsxmlobj>
@@ -11761,7 +11761,7 @@ DIVIDE(
                       </layoutobject>
                       <shape groupshapeid="0" groupnode="0" />
                     </ddscontrol>
-                    <ddscontrol controlprogid="MSDDS.Polyline" left="6461" top="20757" logicalid="13" controlid="3" masterid="0" hint1="0" hint2="0" width="3325" height="3113" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                    <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="6461" top="20757" logicalid="13" controlid="3" masterid="0" hint1="0" hint2="0" width="3325" height="3113" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                       <control>
                         <ddsxmlobj>
                           <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -11781,9 +11781,9 @@ DIVIDE(
                         <point x="9486" y="21057" />
                       </connector>
                     </ddscontrol>
-                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="DIM_VERSION" left="17793" top="21066" logicalid="14" controlid="4" masterid="0" hint1="0" hint2="0" width="3175" height="2302" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DIM_VERSION" left="17793" top="21066" logicalid="14" controlid="4" masterid="0" hint1="0" hint2="0" width="3175" height="2302" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                       <control>
-                        <ddsxmlobjectstreaminitwrapper binary="000c0000670c0000fe080000" />
+                        <ddsxmlobjectstreaminitwrapper binary="000e0000670c0000fe080000" />
                       </control>
                       <layoutobject>
                         <ddsxmlobj>
@@ -11792,7 +11792,7 @@ DIVIDE(
                       </layoutobject>
                       <shape groupshapeid="0" groupnode="0" />
                     </ddscontrol>
-                    <ddscontrol controlprogid="MSDDS.Polyline" left="13578" top="20757" logicalid="15" controlid="5" masterid="0" hint1="0" hint2="0" width="4515" height="1310" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                    <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="13578" top="20757" logicalid="15" controlid="5" masterid="0" hint1="0" hint2="0" width="4515" height="1310" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                       <control>
                         <ddsxmlobj>
                           <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -11812,9 +11812,9 @@ DIVIDE(
                         <point x="13878" y="21057" />
                       </connector>
                     </ddscontrol>
-                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="DIM_MONTH" left="10597" top="27416" logicalid="16" controlid="6" masterid="0" hint1="0" hint2="0" width="3334" height="3149" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DIM_MONTH" left="10597" top="27416" logicalid="16" controlid="6" masterid="0" hint1="0" hint2="0" width="3334" height="3149" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                       <control>
-                        <ddsxmlobjectstreaminitwrapper binary="000c0000060d00004d0c0000" />
+                        <ddsxmlobjectstreaminitwrapper binary="000e0000060d00004d0c0000" />
                       </control>
                       <layoutobject>
                         <ddsxmlobj>
@@ -11823,7 +11823,7 @@ DIVIDE(
                       </layoutobject>
                       <shape groupshapeid="0" groupnode="0" />
                     </ddscontrol>
-                    <ddscontrol controlprogid="MSDDS.Polyline" left="10765" top="24617" logicalid="17" controlid="7" masterid="0" hint1="0" hint2="0" width="799" height="3299" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                    <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="10765" top="24617" logicalid="17" controlid="7" masterid="0" hint1="0" hint2="0" width="799" height="3299" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                       <control>
                         <ddsxmlobj>
                           <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -11843,9 +11843,9 @@ DIVIDE(
                         <point x="11132" y="24917" />
                       </connector>
                     </ddscontrol>
-                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="DIM_PROFIT_LOSS" left="9989" top="14531" logicalid="18" controlid="8" masterid="0" hint1="0" hint2="0" width="4445" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DIM_PROFIT_LOSS" left="9989" top="14531" logicalid="18" controlid="8" masterid="0" hint1="0" hint2="0" width="4445" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                       <control>
-                        <ddsxmlobjectstreaminitwrapper binary="000c00005d11000088130000" />
+                        <ddsxmlobjectstreaminitwrapper binary="000e00005d11000088130000" />
                       </control>
                       <layoutobject>
                         <ddsxmlobj>
@@ -11854,7 +11854,7 @@ DIVIDE(
                       </layoutobject>
                       <shape groupshapeid="0" groupnode="0" />
                     </ddscontrol>
-                    <ddscontrol controlprogid="MSDDS.Polyline" left="8689" top="13231" logicalid="19" controlid="9" masterid="0" hint1="0" hint2="0" width="2722" height="2550" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                    <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="8689" top="13231" logicalid="19" controlid="9" masterid="0" hint1="0" hint2="0" width="2722" height="2550" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                       <control>
                         <ddsxmlobj>
                           <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -11875,7 +11875,7 @@ DIVIDE(
                         <point x="11111" y="14531" />
                       </connector>
                     </ddscontrol>
-                    <ddscontrol controlprogid="MSDDS.Polyline" left="10162" top="19032" logicalid="20" controlid="10" masterid="0" hint1="0" hint2="0" width="799" height="1766" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                    <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="10162" top="19032" logicalid="20" controlid="10" masterid="0" hint1="0" hint2="0" width="799" height="1766" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                       <control>
                         <ddsxmlobj>
                           <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="2" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -11896,11 +11896,11 @@ DIVIDE(
                       </connector>
                     </ddscontrol>
                   </dds>
-                </DiagramLayout>
+</DiagramLayout>
                 <ShowRelationshipNames>False</ShowRelationshipNames>
                 <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
                 <DiagramViewPortLeft>-410</DiagramViewPortLeft>
-                <DiagramViewPortTop>13184</DiagramViewPortTop>
+                <DiagramViewPortTop>13470</DiagramViewPortTop>
                 <DiagramBoundingLeft>2686</DiagramBoundingLeft>
                 <DiagramBoundingTop>14531</DiagramBoundingTop>
                 <DiagramZoom>100</DiagramZoom>
@@ -11938,10 +11938,10 @@ DIVIDE(
                     </xs:sequence>
                   </xs:complexType>
                 </xs:element>
-                <xs:element name="dbo_DIM_PROFIT_LOSS" msprop:QueryBuilder="SpecificQueryBuilder" msprop:IsLogical="True" msprop:design-time-name="3dcf16bf-775d-43fe-a6e5-9504d9a8b502" msprop:QueryDefinition="SELECT        ITEM_ID, ITEM, PARENT_ITEM, ITEM_TYPE, HIERARCHY_TYPE, UNARY_OPERATOR, REPLACE(FORMULA, '[', '[PROFIT_LOSS].[PARENT_ITEM].&amp;[') AS FORMULA, LOAD_TIME, LOAD_DATE, &#xD;&#xA;                         PROPORTIONAL_DRIVER&#xD;&#xA;FROM            DIM_PROFIT_LOSS" msprop:FriendlyName="DIM_PROFIT_LOSS" msprop:TableType="View" msprop:DbTableName="DIM_PROFIT_LOSS">
+                <xs:element name="dbo_DIM_PROFIT_LOSS" msprop:QueryBuilder="SpecificQueryBuilder" msprop:IsLogical="True" msprop:design-time-name="3dcf16bf-775d-43fe-a6e5-9504d9a8b502" msprop:QueryDefinition="SELECT        ITEM_ID, ITEM, PARENT_ITEM, ITEM_TYPE, HIERARCHY_TYPE, UNARY_OPERATOR, REPLACE(FORMULA, '[', '[PROFIT_LOSS].[PARENT_ITEM].&amp;[') AS FORMULA, PROPORTIONAL_DRIVER&#xD;&#xA;FROM            DIM_PROFIT_LOSS" msprop:FriendlyName="DIM_PROFIT_LOSS" msprop:TableType="View" msprop:DbTableName="DIM_PROFIT_LOSS">
                   <xs:complexType>
                     <xs:sequence>
-                      <xs:element name="ITEM" msprop:FriendlyName="ITEM" msprop:DbColumnName="ITEM" msprop:design-time-name="2bafbac8-0cef-48ea-ad0a-1eb101f0bde7">
+                      <xs:element name="ITEM" msprop:FriendlyName="ITEM" msprop:DbColumnName="ITEM" msprop:design-time-name="2bafbac8-0cef-48ea-ad0a-1eb101f0bde7" minOccurs="0">
                         <xs:simpleType>
                           <xs:restriction base="xs:string">
                             <xs:maxLength value="255" />
@@ -11977,8 +11977,6 @@ DIVIDE(
                           </xs:restriction>
                         </xs:simpleType>
                       </xs:element>
-                      <xs:element name="LOAD_TIME" msprop:FriendlyName="LOAD_TIME" msprop:DbColumnName="LOAD_TIME" msprop:design-time-name="afb1d0ae-e14d-4521-be2f-5f249b940339" type="xs:dateTime" minOccurs="0" />
-                      <xs:element name="LOAD_DATE" msdata:ReadOnly="true" msprop:FriendlyName="LOAD_DATE" msprop:DbColumnName="LOAD_DATE" msprop:design-time-name="e7f90031-f053-4dea-b85e-9ec6d76d60bb" type="xs:dateTime" minOccurs="0" />
                       <xs:element name="ITEM_ID" msprop:DbColumnName="ITEM_ID" msprop:design-time-name="f248ccdb-517d-4209-b62f-94bd9308cff0" type="xs:int" minOccurs="0" />
                       <xs:element name="PROPORTIONAL_DRIVER" msprop:DbColumnName="PROPORTIONAL_DRIVER" msprop:design-time-name="065b8c86-cbdd-4280-8d55-05cc75168746" minOccurs="0">
                         <xs:simpleType>
