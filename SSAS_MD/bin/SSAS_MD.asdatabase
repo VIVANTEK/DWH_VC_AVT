@@ -11896,7 +11896,7 @@ DIVIDE(
                       </connector>
                     </ddscontrol>
                   </dds>
-</DiagramLayout>
+                </DiagramLayout>
                 <ShowRelationshipNames>False</ShowRelationshipNames>
                 <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
                 <DiagramViewPortLeft>-410</DiagramViewPortLeft>
@@ -11941,7 +11941,7 @@ DIVIDE(
                 <xs:element name="dbo_DIM_PROFIT_LOSS" msprop:QueryBuilder="SpecificQueryBuilder" msprop:IsLogical="True" msprop:design-time-name="3dcf16bf-775d-43fe-a6e5-9504d9a8b502" msprop:QueryDefinition="SELECT        ITEM_ID, ITEM, PARENT_ITEM, ITEM_TYPE, HIERARCHY_TYPE, UNARY_OPERATOR, REPLACE(FORMULA, '[', '[PROFIT_LOSS].[PARENT_ITEM].&amp;[') AS FORMULA, PROPORTIONAL_DRIVER&#xD;&#xA;FROM            DIM_PROFIT_LOSS" msprop:FriendlyName="DIM_PROFIT_LOSS" msprop:TableType="View" msprop:DbTableName="DIM_PROFIT_LOSS">
                   <xs:complexType>
                     <xs:sequence>
-                      <xs:element name="ITEM" msprop:FriendlyName="ITEM" msprop:DbColumnName="ITEM" msprop:design-time-name="2bafbac8-0cef-48ea-ad0a-1eb101f0bde7" minOccurs="0">
+                      <xs:element name="ITEM" msprop:FriendlyName="ITEM" msprop:DbColumnName="ITEM" msprop:design-time-name="2bafbac8-0cef-48ea-ad0a-1eb101f0bde7">
                         <xs:simpleType>
                           <xs:restriction base="xs:string">
                             <xs:maxLength value="255" />
@@ -11988,7 +11988,7 @@ DIVIDE(
                     </xs:sequence>
                   </xs:complexType>
                 </xs:element>
-                <xs:element name="FACT" msprop:QueryBuilder="SpecificQueryBuilder" msprop:IsLogical="True" msprop:design-time-name="820096f7-d3e8-4545-b263-8ac786a8dcab" msprop:Description="" msprop:QueryDefinition="SELECT        PNL_ITEM, FLIGHT, MONTH_ID, VERSION, PNL_AMOUNT, 0 AS LAYER&#xD;&#xA;FROM            FCT_PROFIT_LOSS" msprop:FriendlyName="FCT_PROFIT_LOSS" msprop:TableType="View" msprop:DbTableName="FCT_PROFIT_LOSS">
+                <xs:element name="FACT" msprop:IsLogical="True" msprop:QueryBuilder="SpecificQueryBuilder" msprop:Description="" msprop:design-time-name="820096f7-d3e8-4545-b263-8ac786a8dcab" msprop:QueryDefinition="SELECT        PNL_ITEM, FLIGHT, MONTH_ID, VERSION, PNL_AMOUNT, 0 AS LAYER&#xD;&#xA;FROM            FCT_PROFIT_LOSS" msprop:FriendlyName="FCT_PROFIT_LOSS" msprop:TableType="View" msprop:DbTableName="FCT_PROFIT_LOSS">
                   <xs:complexType>
                     <xs:sequence>
                       <xs:element name="MONTH_ID" msprop:DbColumnName="MONTH_ID" msprop:design-time-name="2f12098d-3a67-485f-957f-9ee08578f580" type="xs:int" minOccurs="0" />
@@ -12018,7 +12018,7 @@ DIVIDE(
                     </xs:sequence>
                   </xs:complexType>
                 </xs:element>
-                <xs:element name="DIM_VERSION" msprop:QueryBuilder="SpecificQueryBuilder" msprop:IsLogical="True" msprop:design-time-name="89bbf9a4-97e9-4fad-832b-4162bbd1cc9e" msprop:Description="" msprop:QueryDefinition="SELECT        VERSION, VERSION_TYPE, FORMULA&#xD;&#xA;FROM            V_DIM_VERSION" msprop:FriendlyName="DIM_VERSION" msprop:TableType="View" msprop:DbTableName="DIM_VERSION">
+                <xs:element name="DIM_VERSION" msprop:IsLogical="True" msprop:QueryBuilder="SpecificQueryBuilder" msprop:Description="" msprop:design-time-name="89bbf9a4-97e9-4fad-832b-4162bbd1cc9e" msprop:QueryDefinition="SELECT        VERSION, VERSION_TYPE, FORMULA&#xD;&#xA;FROM            V_DIM_VERSION" msprop:FriendlyName="DIM_VERSION" msprop:TableType="View" msprop:DbTableName="DIM_VERSION">
                   <xs:complexType>
                     <xs:sequence>
                       <xs:element name="VERSION" msprop:FriendlyName="VERSION" msprop:DbColumnName="VERSION" msprop:design-time-name="8bbad258-665c-4892-ae71-a0c2706739b8">
@@ -12045,7 +12045,7 @@ DIVIDE(
                     </xs:sequence>
                   </xs:complexType>
                 </xs:element>
-                <xs:element name="DIM_FLIGHT" msprop:QueryBuilder="SpecificQueryBuilder" msprop:IsLogical="True" msprop:design-time-name="3ca2c535-6e3c-4036-a7b5-19302840b97a" msprop:Description="" msprop:QueryDefinition="SELECT        V_DIM_PATH.PATH_KEY, DIM_FLIGHT.AIRLINE, DIM_FLIGHT.FLT_NUM, DIM_FLIGHT.ORIG, DIM_FLIGHT.DSTN, DIM_FLIGHT.FLT_DESC, DIM_FLIGHT.HAUL, DIM_FLIGHT.FLT_TYPE_INT_DOM, &#xD;&#xA;                         DIM_FLIGHT.FLT_TYPE_SCH_CHR, DIM_FLIGHT.FLT_TYPE_PSN_CAR, DIM_FLIGHT.FLT_TYPE_OWH_OAL, DIM_FLIGHT.COUNTRY_TURNOVER, DIM_FLIGHT.DEST_GROUP&#xD;&#xA;FROM            V_DIM_PATH LEFT OUTER JOIN&#xD;&#xA;                         DIM_FLIGHT ON V_DIM_PATH.PATH_KEY = DIM_FLIGHT.FLT_DESC" msprop:FriendlyName="DIM_FLIGHT_PTP_ATTRIBUTES" msprop:TableType="View" msprop:DbTableName="DIM_FLIGHT_PTP_ATTRIBUTES">
+                <xs:element name="DIM_FLIGHT" msprop:IsLogical="True" msprop:QueryBuilder="SpecificQueryBuilder" msprop:Description="" msprop:design-time-name="3ca2c535-6e3c-4036-a7b5-19302840b97a" msprop:QueryDefinition="SELECT        V_DIM_PATH.PATH_KEY, DIM_FLIGHT.AIRLINE, DIM_FLIGHT.FLT_NUM, DIM_FLIGHT.ORIG, DIM_FLIGHT.DSTN, DIM_FLIGHT.FLT_DESC, DIM_FLIGHT.HAUL, DIM_FLIGHT.FLT_TYPE_INT_DOM, &#xD;&#xA;                         DIM_FLIGHT.FLT_TYPE_SCH_CHR, DIM_FLIGHT.FLT_TYPE_PSN_CAR, DIM_FLIGHT.FLT_TYPE_OWH_OAL, DIM_FLIGHT.COUNTRY_TURNOVER, DIM_FLIGHT.DEST_GROUP&#xD;&#xA;FROM            V_DIM_PATH LEFT OUTER JOIN&#xD;&#xA;                         DIM_FLIGHT ON V_DIM_PATH.PATH_KEY = DIM_FLIGHT.FLT_DESC" msprop:FriendlyName="DIM_FLIGHT_PTP_ATTRIBUTES" msprop:TableType="View" msprop:DbTableName="DIM_FLIGHT_PTP_ATTRIBUTES">
                   <xs:complexType>
                     <xs:sequence>
                       <xs:element name="AIRLINE" msprop:FriendlyName="AIRLINE" msprop:DbColumnName="AIRLINE" msprop:design-time-name="d7b8cd9b-ca63-4ccb-835a-cad933407773" minOccurs="0">
@@ -12142,7 +12142,7 @@ DIVIDE(
                     </xs:sequence>
                   </xs:complexType>
                 </xs:element>
-                <xs:element name="DIM_CURRENCY" msprop:QueryBuilder="SpecificQueryBuilder" msprop:IsLogical="True" msprop:design-time-name="006f0fa0-6ee0-4588-8772-827d42b86759" msprop:Description="" msprop:QueryDefinition="SELECT        CURRENCY_ID, DIGITAL_CODE, CURRENCY_CODE, CURRENCY_NAME&#xD;&#xA;FROM            DIM_CURRENCY" msprop:FriendlyName="DIM_CURRENCY" msprop:TableType="View" msprop:DbTableName="DIM_CURRENCY">
+                <xs:element name="DIM_CURRENCY" msprop:IsLogical="True" msprop:QueryBuilder="SpecificQueryBuilder" msprop:Description="" msprop:design-time-name="006f0fa0-6ee0-4588-8772-827d42b86759" msprop:QueryDefinition="SELECT        CURRENCY_ID, DIGITAL_CODE, CURRENCY_CODE, CURRENCY_NAME&#xD;&#xA;FROM            DIM_CURRENCY" msprop:FriendlyName="DIM_CURRENCY" msprop:TableType="View" msprop:DbTableName="DIM_CURRENCY">
                   <xs:complexType>
                     <xs:sequence>
                       <xs:element name="CURRENCY_ID" msdata:ReadOnly="true" msprop:FriendlyName="CURRENCY_ID" msprop:DbColumnName="CURRENCY_ID" msprop:design-time-name="cf14b694-8fc8-4716-93af-51737f731342" type="xs:int" />
@@ -12164,7 +12164,7 @@ DIVIDE(
                     </xs:sequence>
                   </xs:complexType>
                 </xs:element>
-                <xs:element name="FCT_CURRENCY" msprop:QueryBuilder="SpecificQueryBuilder" msprop:IsLogical="True" msprop:design-time-name="8cfd3097-90e0-46a3-98c9-710fe2b773bd" msprop:Description="" msprop:QueryDefinition="SELECT        DIGITAL_CODE, MONTH_ID, VERSION, CURRENCY_RATE&#xD;&#xA;FROM            FCT_CURRENCY" msprop:FriendlyName="FCT_CURRENCY" msprop:TableType="View" msprop:DbTableName="FCT_CURRENCY">
+                <xs:element name="FCT_CURRENCY" msprop:IsLogical="True" msprop:QueryBuilder="SpecificQueryBuilder" msprop:Description="" msprop:design-time-name="8cfd3097-90e0-46a3-98c9-710fe2b773bd" msprop:QueryDefinition="SELECT        DIGITAL_CODE, MONTH_ID, VERSION, CURRENCY_RATE&#xD;&#xA;FROM            FCT_CURRENCY" msprop:FriendlyName="FCT_CURRENCY" msprop:TableType="View" msprop:DbTableName="FCT_CURRENCY">
                   <xs:complexType>
                     <xs:sequence>
                       <xs:element name="DIGITAL_CODE" msprop:FriendlyName="DIGITAL_CODE" msprop:DbColumnName="DIGITAL_CODE" msprop:design-time-name="3408b3b0-03fe-46cd-89e1-434a27a4107a" type="xs:int" minOccurs="0" />
@@ -12180,7 +12180,7 @@ DIVIDE(
                     </xs:sequence>
                   </xs:complexType>
                 </xs:element>
-                <xs:element name="PATH" msprop:QueryBuilder="SpecificQueryBuilder" msprop:IsLogical="True" msprop:design-time-name="3447e2a1-5d37-404d-ba74-c77eef1941b1" msprop:Description="" msprop:QueryDefinition="SELECT        PATH_KEY, FLT_PATH_ORG, FLT_PATH_DST, ORG_DST, ORG_DST_TYPE, COEF_LOGIC, ORG_AIRPORT, VIA_AIRPORT, DST_AIRPORT&#xD;&#xA;FROM            V_DIM_PATH" msprop:FriendlyName="DIM_PATH" msprop:TableType="View" msprop:DbTableName="DIM_PATH">
+                <xs:element name="PATH" msprop:IsLogical="True" msprop:QueryBuilder="SpecificQueryBuilder" msprop:Description="" msprop:design-time-name="3447e2a1-5d37-404d-ba74-c77eef1941b1" msprop:QueryDefinition="SELECT        PATH_KEY, FLT_PATH_ORG, FLT_PATH_DST, ORG_DST, ORG_DST_TYPE, COEF_LOGIC, ORG_AIRPORT, VIA_AIRPORT, DST_AIRPORT&#xD;&#xA;FROM            V_DIM_PATH" msprop:FriendlyName="DIM_PATH" msprop:TableType="View" msprop:DbTableName="DIM_PATH">
                   <xs:complexType>
                     <xs:sequence>
                       <xs:element name="PATH_KEY" msprop:FriendlyName="PATH_KEY" msprop:DbColumnName="PATH_KEY" msprop:design-time-name="297b194a-eae5-49f5-8e25-99773ad8ced5">
@@ -12243,7 +12243,7 @@ DIVIDE(
                     </xs:sequence>
                   </xs:complexType>
                 </xs:element>
-                <xs:element name="DIM_AIRPORT_PATH_ORG" msprop:QueryBuilder="SpecificQueryBuilder" msprop:IsLogical="True" msprop:design-time-name="bdcfea88-3a72-445e-aa25-645444ad4d23" msprop:Description="" msprop:QueryDefinition="SELECT        AIRPORT_CODE, AIRPORT_DESC, CITY_CODE, CITY_DESC, COUNTRY_CODE, COUNTRY_DESC, COUNTRYGROUP_CODE, COUNTRYGROUP_DESC, SUBREGION_CODE, SUBREGION_DESC, REGION_CODE, &#xD;&#xA;                         REGION_DESC, AREA_CODE, AREA_DESC&#xD;&#xA;FROM            DIM_AIRPORT" msprop:FriendlyName="DIM_AIRPORT_PATH_ORG" msprop:TableType="View" msprop:DbTableName="DIM_AIRPORT_PATH_ORG">
+                <xs:element name="DIM_AIRPORT_PATH_ORG" msprop:IsLogical="True" msprop:QueryBuilder="SpecificQueryBuilder" msprop:Description="" msprop:design-time-name="bdcfea88-3a72-445e-aa25-645444ad4d23" msprop:QueryDefinition="SELECT        AIRPORT_CODE, AIRPORT_DESC, CITY_CODE, CITY_DESC, COUNTRY_CODE, COUNTRY_DESC, COUNTRYGROUP_CODE, COUNTRYGROUP_DESC, SUBREGION_CODE, SUBREGION_DESC, REGION_CODE, &#xD;&#xA;                         REGION_DESC, AREA_CODE, AREA_DESC&#xD;&#xA;FROM            DIM_AIRPORT" msprop:FriendlyName="DIM_AIRPORT_PATH_ORG" msprop:TableType="View" msprop:DbTableName="DIM_AIRPORT_PATH_ORG">
                   <xs:complexType>
                     <xs:sequence>
                       <xs:element name="AIRPORT_CODE" msprop:FriendlyName="AIRPORT_CODE" msprop:DbColumnName="AIRPORT_CODE" msprop:design-time-name="78d74ae0-46b3-45b4-82d9-97ceb0dca8e5" minOccurs="0">
@@ -12347,7 +12347,7 @@ DIVIDE(
                     </xs:sequence>
                   </xs:complexType>
                 </xs:element>
-                <xs:element name="DIM_AIRPORT_PATH_DST" msprop:QueryBuilder="SpecificQueryBuilder" msprop:IsLogical="True" msprop:design-time-name="99edcaae-0350-4f12-a8a7-e32539ba66dd" msprop:Description="" msprop:QueryDefinition="SELECT        AIRPORT_CODE, AIRPORT_DESC, LATITUDE, LONGITUDE, CITY_CODE, CITY_DESC, COUNTRY_CODE, COUNTRY_DESC, COUNTRYGROUP_CODE, COUNTRYGROUP_DESC, SUBREGION_CODE, &#xD;&#xA;                         SUBREGION_DESC, REGION_CODE, REGION_DESC, AREA_CODE, AREA_DESC, LOAD_TIME, LOAD_DATE&#xD;&#xA;FROM            DIM_AIRPORT" msprop:FriendlyName="DIM_AIRPORT_PATH_DST" msprop:TableType="View" msprop:DbTableName="DIM_AIRPORT_PATH_DST">
+                <xs:element name="DIM_AIRPORT_PATH_DST" msprop:IsLogical="True" msprop:QueryBuilder="SpecificQueryBuilder" msprop:Description="" msprop:design-time-name="99edcaae-0350-4f12-a8a7-e32539ba66dd" msprop:QueryDefinition="SELECT        AIRPORT_CODE, AIRPORT_DESC, LATITUDE, LONGITUDE, CITY_CODE, CITY_DESC, COUNTRY_CODE, COUNTRY_DESC, COUNTRYGROUP_CODE, COUNTRYGROUP_DESC, SUBREGION_CODE, &#xD;&#xA;                         SUBREGION_DESC, REGION_CODE, REGION_DESC, AREA_CODE, AREA_DESC, LOAD_TIME, LOAD_DATE&#xD;&#xA;FROM            DIM_AIRPORT" msprop:FriendlyName="DIM_AIRPORT_PATH_DST" msprop:TableType="View" msprop:DbTableName="DIM_AIRPORT_PATH_DST">
                   <xs:complexType>
                     <xs:sequence>
                       <xs:element name="AIRPORT_CODE" msprop:FriendlyName="AIRPORT_CODE" msprop:DbColumnName="AIRPORT_CODE" msprop:design-time-name="9ee9649f-5c55-4d7d-be58-7a724951b6d8">
@@ -12467,7 +12467,7 @@ DIVIDE(
                     </xs:sequence>
                   </xs:complexType>
                 </xs:element>
-                <xs:element name="FCT_SCHEDULE_PTP" msprop:QueryBuilder="SpecificQueryBuilder" msprop:IsLogical="True" msprop:design-time-name="05966537-e09a-4997-ace5-678081ba7e02" msprop:Description="" msprop:QueryDefinition="SELECT        FLT_DESC, FLT_DESC_OP, FLIGHT_DATE, DEP_TIME, ARR_TIME, AIRCRAFT_TYPE, VERSION, DEPARTURES, BH, SEATS, SEATS_C, SEATS_W, SEATS_S, 0 AS LAYER_ID, DISTANCE&#xD;&#xA;FROM            V_FCT_SCHEDULE_FLIGHT_PTP" msprop:FriendlyName="FCT_SCHEDULE_PTP" msprop:TableType="View" msprop:DbTableName="FCT_SCHEDULE_PTP">
+                <xs:element name="FCT_SCHEDULE_PTP" msprop:IsLogical="True" msprop:QueryBuilder="SpecificQueryBuilder" msprop:Description="" msprop:design-time-name="05966537-e09a-4997-ace5-678081ba7e02" msprop:QueryDefinition="SELECT        FLT_DESC, FLT_DESC_OP, FLIGHT_DATE, DEP_TIME, ARR_TIME, AIRCRAFT_TYPE, VERSION, DEPARTURES, BH, SEATS, SEATS_C, SEATS_W, SEATS_S, 0 AS LAYER_ID, DISTANCE&#xD;&#xA;FROM            V_FCT_SCHEDULE_FLIGHT_PTP" msprop:FriendlyName="FCT_SCHEDULE_PTP" msprop:TableType="View" msprop:DbTableName="FCT_SCHEDULE_PTP">
                   <xs:complexType>
                     <xs:sequence>
                       <xs:element name="FLT_DESC" msprop:FriendlyName="FLT_DESC" msprop:DbColumnName="FLT_DESC" msprop:design-time-name="ed1f0284-86c0-413c-8251-d40bf3619643">
@@ -12512,7 +12512,7 @@ DIVIDE(
                     </xs:sequence>
                   </xs:complexType>
                 </xs:element>
-                <xs:element name="DIM_CALENDAR" msprop:QueryBuilder="SpecificQueryBuilder" msprop:IsLogical="True" msprop:design-time-name="26cd1619-4c1f-403e-a70b-fa5470ff49ee" msprop:Description="" msprop:QueryDefinition="SELECT        DATE_ID, D_DATE, DATE_DESC, DOW_ID, DOW_NAME, DOW_DESC, WEEK_ID, WEEK_NUM, WEEK_NAME, WEEK_DESC, MONTH_ID, MONTH_NUM, MONTH_NAME_SHORT, MONTH_NAME_FULL, &#xD;&#xA;                         MONTH_DESC, QUARTER_ID, QUARTER_NUM, QUARTER_NAME, QUARTER_DESC, YEAR_ID, MOHTH_DAY_ID, MOHTH_DAY_NAME, YEAR_DAY_ID, YEAR_DAY_NAME&#xD;&#xA;FROM            V_DIM_CALENDAR" msprop:FriendlyName="DIM_CALENDAR" msprop:TableType="View" msprop:DbTableName="DIM_CALENDAR">
+                <xs:element name="DIM_CALENDAR" msprop:IsLogical="True" msprop:QueryBuilder="SpecificQueryBuilder" msprop:Description="" msprop:design-time-name="26cd1619-4c1f-403e-a70b-fa5470ff49ee" msprop:QueryDefinition="SELECT        DATE_ID, D_DATE, DATE_DESC, DOW_ID, DOW_NAME, DOW_DESC, WEEK_ID, WEEK_NUM, WEEK_NAME, WEEK_DESC, MONTH_ID, MONTH_NUM, MONTH_NAME_SHORT, MONTH_NAME_FULL, &#xD;&#xA;                         MONTH_DESC, QUARTER_ID, QUARTER_NUM, QUARTER_NAME, QUARTER_DESC, YEAR_ID, MOHTH_DAY_ID, MOHTH_DAY_NAME, YEAR_DAY_ID, YEAR_DAY_NAME&#xD;&#xA;FROM            V_DIM_CALENDAR" msprop:FriendlyName="DIM_CALENDAR" msprop:TableType="View" msprop:DbTableName="DIM_CALENDAR">
                   <xs:complexType>
                     <xs:sequence>
                       <xs:element name="DATE_ID" msprop:FriendlyName="DATE_ID" msprop:DbColumnName="DATE_ID" msprop:design-time-name="b2ebf28f-5381-40ba-938f-709368a3cabd" type="xs:int" minOccurs="0" />
@@ -12614,7 +12614,7 @@ DIVIDE(
                     </xs:sequence>
                   </xs:complexType>
                 </xs:element>
-                <xs:element name="FCT_SCHEDULE_FLIGHT_TRANSIT" msprop:QueryBuilder="SpecificQueryBuilder" msprop:IsLogical="True" msprop:design-time-name="9c72ef9f-f4f4-4ecd-9524-e0bbe5b98622" msprop:Description="" msprop:QueryDefinition="SELECT        PATH_KEY, FLIGHT_DATE, RNG_ID, COUNT_CONNECTION, VERSION, 0 AS LAYER_ID&#xD;&#xA;FROM            V_FCT_SCHEDULE_FLIGHT_TRANSIT" msprop:FriendlyName="FCT_SCHEDULE_TRANSIT" msprop:TableType="View" msprop:DbTableName="FCT_SCHEDULE_TRANSIT">
+                <xs:element name="FCT_SCHEDULE_FLIGHT_TRANSIT" msprop:IsLogical="True" msprop:QueryBuilder="SpecificQueryBuilder" msprop:Description="" msprop:design-time-name="9c72ef9f-f4f4-4ecd-9524-e0bbe5b98622" msprop:QueryDefinition="SELECT        PATH_KEY, FLIGHT_DATE, RNG_ID, COUNT_CONNECTION, VERSION, 0 AS LAYER_ID&#xD;&#xA;FROM            V_FCT_SCHEDULE_FLIGHT_TRANSIT" msprop:FriendlyName="FCT_SCHEDULE_TRANSIT" msprop:TableType="View" msprop:DbTableName="FCT_SCHEDULE_TRANSIT">
                   <xs:complexType>
                     <xs:sequence>
                       <xs:element name="PATH_KEY" msprop:FriendlyName="PATH_KEY" msprop:DbColumnName="PATH_KEY" msprop:design-time-name="f456c455-7c1c-4f8b-8d2c-52cdd9acfcd4" minOccurs="0">
@@ -12638,7 +12638,7 @@ DIVIDE(
                     </xs:sequence>
                   </xs:complexType>
                 </xs:element>
-                <xs:element name="DIM_TIME_CONNECTION" msprop:QueryBuilder="SpecificQueryBuilder" msprop:IsLogical="True" msprop:design-time-name="b4bf9ed7-792b-4f3b-a6e6-1375114b41e4" msprop:Description="" msprop:QueryDefinition="SELECT        RNG_ID, PERIOD_B, PERIOD_E, PERIOD_HH, PERIOD_B_MIN, PERIOD_E_MIN, TIME_RANGE, QUALITY_CONNECTION&#xD;&#xA;FROM            V_DIM_TIME_RANGE" msprop:FriendlyName="DIM_TIME_CONNECTION" msprop:TableType="View" msprop:DbTableName="DIM_TIME_CONNECTION">
+                <xs:element name="DIM_TIME_CONNECTION" msprop:IsLogical="True" msprop:QueryBuilder="SpecificQueryBuilder" msprop:Description="" msprop:design-time-name="b4bf9ed7-792b-4f3b-a6e6-1375114b41e4" msprop:QueryDefinition="SELECT        RNG_ID, PERIOD_B, PERIOD_E, PERIOD_HH, PERIOD_B_MIN, PERIOD_E_MIN, TIME_RANGE, QUALITY_CONNECTION&#xD;&#xA;FROM            V_DIM_TIME_RANGE" msprop:FriendlyName="DIM_TIME_CONNECTION" msprop:TableType="View" msprop:DbTableName="DIM_TIME_CONNECTION">
                   <xs:complexType>
                     <xs:sequence>
                       <xs:element name="RNG_ID" msprop:FriendlyName="RNG_ID" msprop:DbColumnName="RNG_ID" msprop:design-time-name="2cad7785-3ff8-4246-8372-803549efaed4" type="xs:int" />
@@ -12756,7 +12756,7 @@ DIVIDE(
                     </xs:sequence>
                   </xs:complexType>
                 </xs:element>
-                <xs:element name="DIM_PROFIT_LOSS_LAYER" msprop:QueryBuilder="SpecificQueryBuilder" msprop:IsLogical="True" msprop:design-time-name="34b5466d-11fc-4842-8920-98749dcdfe91" msprop:Description="" msprop:QueryDefinition="SELECT        0 AS LAYER_ID, 'IS_DATA_LAYER' AS LAYER_NAME, '+' AS UNARY_OPERATOR&#xD;&#xA;UNION ALL&#xD;&#xA;SELECT        1 AS LAYER_ID, 'IS_CONSOLIDATE_CELL' AS LAYER_NAME, '~' AS UNARY_OPERATOR&#xD;&#xA;UNION ALL&#xD;&#xA;SELECT        2 AS LAYER_ID, 'IS_FEED_SCHEDULE_CUBE' AS LAYER_NAME, '~' AS UNARY_OPERATOR" msprop:FriendlyName="DIM_LAYER" msprop:TableType="View" msprop:DbTableName="DIM_LAYER">
+                <xs:element name="DIM_PROFIT_LOSS_LAYER" msprop:IsLogical="True" msprop:QueryBuilder="SpecificQueryBuilder" msprop:Description="" msprop:design-time-name="34b5466d-11fc-4842-8920-98749dcdfe91" msprop:QueryDefinition="SELECT        0 AS LAYER_ID, 'IS_DATA_LAYER' AS LAYER_NAME, '+' AS UNARY_OPERATOR&#xD;&#xA;UNION ALL&#xD;&#xA;SELECT        1 AS LAYER_ID, 'IS_CONSOLIDATE_CELL' AS LAYER_NAME, '~' AS UNARY_OPERATOR&#xD;&#xA;UNION ALL&#xD;&#xA;SELECT        2 AS LAYER_ID, 'IS_FEED_SCHEDULE_CUBE' AS LAYER_NAME, '~' AS UNARY_OPERATOR" msprop:FriendlyName="DIM_LAYER" msprop:TableType="View" msprop:DbTableName="DIM_LAYER">
                   <xs:complexType>
                     <xs:sequence>
                       <xs:element name="LAYER_ID" msdata:ReadOnly="true" msprop:FriendlyName="LAYER_ID" msprop:DbColumnName="LAYER_ID" msprop:design-time-name="ade2a3c4-35f3-4100-9787-8250ff1c3f2f" type="xs:int" />
@@ -12777,7 +12777,7 @@ DIVIDE(
                     </xs:sequence>
                   </xs:complexType>
                 </xs:element>
-                <xs:element name="DIM_FLEET" msprop:QueryBuilder="SpecificQueryBuilder" msprop:IsLogical="True" msprop:design-time-name="f07b5185-b3cb-4385-8938-f2dedfc86745" msprop:Description="" msprop:QueryDefinition="SELECT        TRANSPORT_CODE, TRANSPORTATION_TYPE, MANUFACTURER, PASSENGER_OR_CARGO, LEASING_TYPE, SEATS_REGULAR, SEATS_CHARTER, LOAD_TIME, LOAD_DATE&#xD;&#xA;FROM            DIM_FLEET" msprop:FriendlyName="DIM_FLEET" msprop:TableType="View" msprop:DbTableName="DIM_FLEET">
+                <xs:element name="DIM_FLEET" msprop:IsLogical="True" msprop:QueryBuilder="SpecificQueryBuilder" msprop:Description="" msprop:design-time-name="f07b5185-b3cb-4385-8938-f2dedfc86745" msprop:QueryDefinition="SELECT        TRANSPORT_CODE, TRANSPORTATION_TYPE, MANUFACTURER, PASSENGER_OR_CARGO, LEASING_TYPE, SEATS_REGULAR, SEATS_CHARTER, LOAD_TIME, LOAD_DATE&#xD;&#xA;FROM            DIM_FLEET" msprop:FriendlyName="DIM_FLEET" msprop:TableType="View" msprop:DbTableName="DIM_FLEET">
                   <xs:complexType>
                     <xs:sequence>
                       <xs:element name="TRANSPORT_CODE" msprop:FriendlyName="TRANSPORT_CODE" msprop:DbColumnName="TRANSPORT_CODE" msprop:design-time-name="6b2d5c0d-8d9b-4cc8-b8df-5e94891fdb9f">
@@ -12822,7 +12822,7 @@ DIVIDE(
                     </xs:sequence>
                   </xs:complexType>
                 </xs:element>
-                <xs:element name="FCT_SET_FLEET" msprop:QueryBuilder="SpecificQueryBuilder" msprop:IsLogical="True" msprop:design-time-name="fb1f126f-1fa6-46bd-a743-81355cab25a4" msprop:Description="" msprop:QueryDefinition="SELECT        TRANSPORT_CODE, MONTH_ID, CONSUMPTION_CHARTER, CONSUMPTION_DOMESTIC, CONSUMPTION_INTERNATIONAL, WEIGHT_CAPACITY, MTOW&#xD;&#xA;FROM            FCT_SET_FLEET" msprop:FriendlyName="FCT_SET_FLEET" msprop:TableType="View" msprop:DbTableName="FCT_SET_FLEET">
+                <xs:element name="FCT_SET_FLEET" msprop:IsLogical="True" msprop:QueryBuilder="SpecificQueryBuilder" msprop:Description="" msprop:design-time-name="fb1f126f-1fa6-46bd-a743-81355cab25a4" msprop:QueryDefinition="SELECT        TRANSPORT_CODE, MONTH_ID, CONSUMPTION_CHARTER, CONSUMPTION_DOMESTIC, CONSUMPTION_INTERNATIONAL, WEIGHT_CAPACITY, MTOW&#xD;&#xA;FROM            FCT_SET_FLEET" msprop:FriendlyName="FCT_SET_FLEET" msprop:TableType="View" msprop:DbTableName="FCT_SET_FLEET">
                   <xs:complexType>
                     <xs:sequence>
                       <xs:element name="TRANSPORT_CODE" msprop:FriendlyName="TRANSPORT_CODE" msprop:DbColumnName="TRANSPORT_CODE" msprop:design-time-name="dabb5cdc-12bf-48f5-a71f-85c15b93f769" minOccurs="0">
@@ -12841,7 +12841,7 @@ DIVIDE(
                     </xs:sequence>
                   </xs:complexType>
                 </xs:element>
-                <xs:element name="FCT_SCHEDULE_FLIGHT_TIME" msprop:QueryBuilder="SpecificQueryBuilder" msprop:IsLogical="True" msprop:design-time-name="73710d5e-278e-4239-9a42-9a5eaec28546" msprop:Description="" msprop:QueryDefinition="SELECT        FLT_DESC, FLIGHT_DATE, VERSION, RNG_ID, FLIGHT_TIME_DEP, FLIGHT_TIME_ARR, 0 AS LAYER_ID, HUB_TIME_ARR, HUB_TIME_DEP&#xD;&#xA;FROM            V_FCT_SCHEDULE_FLIGHT_TIME" msprop:FriendlyName="FCT_SCHEDULE_FLIGHT_TIME" msprop:TableType="View" msprop:DbTableName="FCT_SCHEDULE_FLIGHT_TIME">
+                <xs:element name="FCT_SCHEDULE_FLIGHT_TIME" msprop:IsLogical="True" msprop:QueryBuilder="SpecificQueryBuilder" msprop:Description="" msprop:design-time-name="73710d5e-278e-4239-9a42-9a5eaec28546" msprop:QueryDefinition="SELECT        FLT_DESC, FLIGHT_DATE, VERSION, RNG_ID, FLIGHT_TIME_DEP, FLIGHT_TIME_ARR, 0 AS LAYER_ID, HUB_TIME_ARR, HUB_TIME_DEP&#xD;&#xA;FROM            V_FCT_SCHEDULE_FLIGHT_TIME" msprop:FriendlyName="FCT_SCHEDULE_FLIGHT_TIME" msprop:TableType="View" msprop:DbTableName="FCT_SCHEDULE_FLIGHT_TIME">
                   <xs:complexType>
                     <xs:sequence>
                       <xs:element name="FLT_DESC" msprop:FriendlyName="FLT_DESC" msprop:DbColumnName="FLT_DESC" msprop:design-time-name="76c044a8-0001-445b-9390-9fb3d939e627" minOccurs="0">
@@ -12868,7 +12868,7 @@ DIVIDE(
                     </xs:sequence>
                   </xs:complexType>
                 </xs:element>
-                <xs:element name="FCT_CFO" msprop:QueryBuilder="SpecificQueryBuilder" msprop:IsLogical="True" msprop:design-time-name="7c1de4b5-0ce6-4819-a7e8-a2844fba77dc" msprop:Description="" msprop:QueryDefinition="SELECT        PNL_ITEM, CFO_NAME, MONTH_ID, VERSION, PNL_AMOUNT AS CFO_AMOUNT, LAYER_ID&#xD;&#xA;FROM            FCT_CFO" msprop:FriendlyName="FCT_CFO" msprop:TableType="View" msprop:DbTableName="FCT_CFO">
+                <xs:element name="FCT_CFO" msprop:IsLogical="True" msprop:QueryBuilder="SpecificQueryBuilder" msprop:Description="" msprop:design-time-name="7c1de4b5-0ce6-4819-a7e8-a2844fba77dc" msprop:QueryDefinition="SELECT        PNL_ITEM, CFO_NAME, MONTH_ID, VERSION, PNL_AMOUNT AS CFO_AMOUNT, LAYER_ID&#xD;&#xA;FROM            FCT_CFO" msprop:FriendlyName="FCT_CFO" msprop:TableType="View" msprop:DbTableName="FCT_CFO">
                   <xs:complexType>
                     <xs:sequence>
                       <xs:element name="PNL_ITEM" msprop:FriendlyName="PNL_ITEM" msprop:DbColumnName="PNL_ITEM" msprop:design-time-name="55223b9a-93f3-4444-86aa-f0d5188063f3" minOccurs="0">
@@ -12898,7 +12898,7 @@ DIVIDE(
                     </xs:sequence>
                   </xs:complexType>
                 </xs:element>
-                <xs:element name="DIM_CFO" msprop:QueryBuilder="SpecificQueryBuilder" msprop:IsLogical="True" msprop:design-time-name="a96a89c0-6022-410a-be07-201eab3c4575" msprop:Description="" msprop:QueryDefinition="SELECT        CFO_ID, CFO_NAME, CFO_PARENT_NAME, CFO_TYPE&#xD;&#xA;FROM            DIM_CFO" msprop:FriendlyName="DIM_CFO" msprop:TableType="View" msprop:DbTableName="DIM_CFO">
+                <xs:element name="DIM_CFO" msprop:IsLogical="True" msprop:QueryBuilder="SpecificQueryBuilder" msprop:Description="" msprop:design-time-name="a96a89c0-6022-410a-be07-201eab3c4575" msprop:QueryDefinition="SELECT        CFO_ID, CFO_NAME, CFO_PARENT_NAME, CFO_TYPE&#xD;&#xA;FROM            DIM_CFO" msprop:FriendlyName="DIM_CFO" msprop:TableType="View" msprop:DbTableName="DIM_CFO">
                   <xs:complexType>
                     <xs:sequence>
                       <xs:element name="CFO_ID" msdata:ReadOnly="true" msprop:FriendlyName="CFO_ID" msprop:DbColumnName="CFO_ID" msprop:design-time-name="4162a2eb-a205-4ecc-ae39-94828e7fcff3" type="xs:int" minOccurs="0" />
@@ -12926,7 +12926,7 @@ DIVIDE(
                     </xs:sequence>
                   </xs:complexType>
                 </xs:element>
-                <xs:element name="FCT_SET_FLAG_FLIGHT_PNL_ITEM" msprop:QueryBuilder="SpecificQueryBuilder" msprop:IsLogical="True" msprop:design-time-name="431e44f4-ddcd-4777-a314-6f78a45e5b1f" msprop:Description="" msprop:QueryDefinition="SELECT        PNL_ITEM, FLIGHT, FLAG_FLIGHT_PNL_ITEM&#xD;&#xA;FROM            FCT_SET_FLAG_FLIGHT_PNL_ITEM" msprop:FriendlyName="FCT_SET_FLAG_FLIGHT_PNL_ITEM" msprop:TableType="View" msprop:DbTableName="FCT_SET_FLAG_FLIGHT_PNL_ITEM">
+                <xs:element name="FCT_SET_FLAG_FLIGHT_PNL_ITEM" msprop:IsLogical="True" msprop:QueryBuilder="SpecificQueryBuilder" msprop:Description="" msprop:design-time-name="431e44f4-ddcd-4777-a314-6f78a45e5b1f" msprop:QueryDefinition="SELECT        PNL_ITEM, FLIGHT, FLAG_FLIGHT_PNL_ITEM&#xD;&#xA;FROM            FCT_SET_FLAG_FLIGHT_PNL_ITEM" msprop:FriendlyName="FCT_SET_FLAG_FLIGHT_PNL_ITEM" msprop:TableType="View" msprop:DbTableName="FCT_SET_FLAG_FLIGHT_PNL_ITEM">
                   <xs:complexType>
                     <xs:sequence>
                       <xs:element name="PNL_ITEM" msprop:FriendlyName="PNL_ITEM" msprop:DbColumnName="PNL_ITEM" msprop:design-time-name="61582bb3-5c65-4f61-9021-fb9d8c78d7f4" minOccurs="0">
@@ -12947,7 +12947,7 @@ DIVIDE(
                     </xs:sequence>
                   </xs:complexType>
                 </xs:element>
-                <xs:element name="FCT_DRIVER_SHARE" msprop:QueryBuilder="SpecificQueryBuilder" msprop:IsLogical="True" msprop:design-time-name="ffb76852-35e6-4d02-b954-8e50b2897e9a" msprop:Description="" msprop:QueryDefinition="SELECT        PNL_ITEM, FLIGHT, MONTH_ID, VERSION, FLAG_USE_FLIGHT, AMOUNT_FOR_ALLOCATION, DRIVER_FOR_ALLOCATION, DRIVER_USE_FLIGHT, DRIVER_USE_FLIGHT_TOTAL, SHARE_AMOUNT, &#xD;&#xA;                         AMOUNT_ALLOCATED&#xD;&#xA;FROM            FCT_DRIVER_SHARE" msprop:FriendlyName="FCT_DRIVER_SHARE" msprop:TableType="View" msprop:DbTableName="FCT_DRIVER_SHARE">
+                <xs:element name="FCT_DRIVER_SHARE" msprop:IsLogical="True" msprop:QueryBuilder="SpecificQueryBuilder" msprop:Description="" msprop:design-time-name="ffb76852-35e6-4d02-b954-8e50b2897e9a" msprop:QueryDefinition="SELECT        PNL_ITEM, FLIGHT, MONTH_ID, VERSION, FLAG_USE_FLIGHT, AMOUNT_FOR_ALLOCATION, DRIVER_FOR_ALLOCATION, DRIVER_USE_FLIGHT, DRIVER_USE_FLIGHT_TOTAL, SHARE_AMOUNT, &#xD;&#xA;                         AMOUNT_ALLOCATED&#xD;&#xA;FROM            FCT_DRIVER_SHARE" msprop:FriendlyName="FCT_DRIVER_SHARE" msprop:TableType="View" msprop:DbTableName="FCT_DRIVER_SHARE">
                   <xs:complexType>
                     <xs:sequence>
                       <xs:element name="PNL_ITEM" msprop:FriendlyName="PNL_ITEM" msprop:DbColumnName="PNL_ITEM" msprop:design-time-name="ed96e854-0fde-41a9-8afa-3ef4a1a73a78" minOccurs="0">

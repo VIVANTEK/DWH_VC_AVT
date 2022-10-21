@@ -365,7 +365,6 @@
           {
             "name": "ITEM",
             "dataType": "string",
-            "isHidden": true,
             "sourceColumn": "ITEM",
             "sortByColumn": "ITEM_ID",
             "displayFolder": "ATTRIBUTES"
@@ -373,7 +372,6 @@
           {
             "name": "PARENT_ITEM",
             "dataType": "string",
-            "isHidden": true,
             "sourceColumn": "PARENT_ITEM",
             "displayFolder": "ATTRIBUTES"
           },
@@ -774,56 +772,68 @@
               "           + ISFILTERED(PROFIT_LOSS[ItemLev4]) ",
               "           + ISFILTERED(PROFIT_LOSS[ItemLev3]) ",
               "           + ISFILTERED(PROFIT_LOSS[ItemLev2]) ",
-              "           + ISFILTERED(PROFIT_LOSS[ItemLev1])"
+              "           + ISFILTERED(PROFIT_LOSS[ItemLev1])",
+              " // IsFilterd return NON-Total column, because a given column id filterd by the row-context by default",
+              " //Thus Depth =  current item level number in relation to root leve that has depth = 1"
             ],
             "displayFolder": "HIDDEN"
           },
           {
             "name": "Length",
-            "expression": " IF(HASONEVALUE(PROFIT_LOSS[Level]), VALUES(PROFIT_LOSS[Level]), BLANK())",
-            "isHidden": true,
+            "expression": [
+              " IF(HASONEVALUE(PROFIT_LOSS[Level])",
+              "                    , VALUES(PROFIT_LOSS[Level]), BLANK())"
+            ],
             "displayFolder": "HIDDEN"
           },
           {
             "name": "Leaf",
-            "expression": " IF([Depth] = [Length], \"Leaf\", BLANK())",
-            "isHidden": true,
+            "expression": [
+              " IF([Depth] = [Length], \"Leaf\", BLANK())",
+              "//  Depth =  current item level number in relation to root leve that has depth = 1",
+              "",
+              ""
+            ],
             "displayFolder": "HIDDEN"
           },
           {
             "name": "Original",
             "expression": " SUM(FCT_CFO[CFO_AMOUNT])",
-            "isHidden": true,
             "displayFolder": "HIDDEN"
           },
           {
             "name": "Adjusted1",
-            "expression": " SUM(FCT_CFO[CFO_AdjustedAmount])",
-            "isHidden": true,
+            "expression": [
+              " SUM(FCT_CFO[CFO_AdjustedAmount])",
+              "// CFO_AdjustedAmount can be positive, negative or NULL depending in according Unary operator (+,-,~)"
+            ],
             "displayFolder": "HIDDEN"
           },
           {
             "name": "Adjusted2",
-            "expression": " IF([Leaf] = \"Leaf\" && ISBLANK([Adjusted1]), [Original], [Adjusted1])",
-            "isHidden": true,
+            "expression": [
+              " IF([Leaf] = \"Leaf\" && ISBLANK([Adjusted1]), [Original], [Adjusted1])",
+              "//When we're on leaf-level and our adjusted amount is NULL, because it has unary operator = ~ , then we use Original amount, otherwise we us adjsted amount",
+              ""
+            ],
             "displayFolder": "HIDDEN"
           },
           {
             "name": "Adjusted3",
-            "expression": " IF([Length] > 0 && [Depth] > [Length] && NOT(ISBLANK([Original])), BLANK(), [Adjusted2])",
-            "isHidden": true,
+            "expression": [
+              " IF([Length] > 0 && [Depth] > [Length] && NOT(ISBLANK([Original])), BLANK(), [Adjusted2])",
+              "//Depth =  total number of cild  levels in Parent level ;   [Length] = curent level of child"
+            ],
             "displayFolder": "HIDDEN"
           },
           {
             "name": "Adjusted4",
             "expression": " IF(ISBLANK([Adjusted3]) && [Depth] = 1, \"NA\", [Adjusted3])",
-            "isHidden": true,
             "displayFolder": "HIDDEN"
           },
           {
             "name": "Final",
             "expression": " IF(ISNUMBER([Adjusted4]), IF([Original] < 0,[Original],ABS([Adjusted4])), [Adjusted4])",
-            "isHidden": true,
             "displayFolder": "HIDDEN"
           },
           {
