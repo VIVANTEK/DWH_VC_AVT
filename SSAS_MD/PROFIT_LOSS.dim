@@ -1,0 +1,354 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="f9112089-441a-400f-8566-7349f0d80dd4" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>PROFIT_LOSS</ID>
+  <Name>PROFIT_LOSS</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="5" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1583" scrolltop="-4804" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="8387" y="13441" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01cc0000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="DIM_PROFIT_LOSS" left="20" top="0" logicalid="3" controlid="1" masterid="0" hint1="0" hint2="0" width="3969" height="4419" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000810f000043110000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_DIM_PROFIT_LOSS" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="-1280" top="-1300" logicalid="4" controlid="2" masterid="0" hint1="0" hint2="0" width="2484" height="2809" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[DIM_PROFIT_LOSS-DIM_PROFIT_LOSS]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="1" sourceattachpoint="16" destattachpoint="2" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="20" y="1109" />
+              <point x="-980" y="1109" />
+              <point x="-980" y="-1000" />
+              <point x="904" y="-1000" />
+              <point x="904" y="0" />
+            </connector>
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-1583</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-4804</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ARDiagramLayout</Name>
+      <Value>
+        <DiagramLayout ZoomPercent="100" ViewPortX="0" ViewPortY="0" xmlns="">
+          <Shapes NodeWidth="150">
+            <Shape Id="ITEM" Expanded="true">
+              <Attributes>
+                <Attribute Id="ITEM" />
+                <Attribute Id="FORMULA" />
+                <Attribute Id="HIERARCHY_TYPE" />
+                <Attribute Id="ITEM ID" />
+                <Attribute Id="ITEM_TYPE" />
+                <Attribute Id="UNARY_OPERATOR" />
+                <Attribute Id="PARENT_ITEM" />
+                <Attribute Id="PROPORTIONAL DRIVER" />
+              </Attributes>
+              <Position x="20" y="20" />
+            </Shape>
+          </Shapes>
+        </DiagramLayout>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="50844a98-ed26-41f5-b26f-c95d0f41ad61">
+    <DataSourceViewID>DWH_VC_AVT</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="e9b3f06a-d790-48c9-832e-7b5e028757c2">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyConvertedToUnknown>ReportAndStop</NullKeyConvertedToUnknown>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="692f799c-d15b-4c71-956b-5681af40006a">
+      <ID>ITEM</ID>
+      <Name>ITEM</Name>
+      <Usage>Key</Usage>
+      <EstimatedCount>405</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="3bdac74c-7f74-4e4a-9042-05ba9f88ae3f">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a1700a6b-1acf-4c65-bf1b-4cc256449a90">
+            <TableID>dbo_DIM_PROFIT_LOSS</TableID>
+            <ColumnID>ITEM</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="b3fdacf8-aad5-4f90-baf6-1927b051f940">
+        <DataType>WChar</DataType>
+        <DataSize>255</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="c8ce8850-61fe-42b3-a04a-44c9be52b02c">
+          <TableID>dbo_DIM_PROFIT_LOSS</TableID>
+          <ColumnID>ITEM</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="41df15ca-8d4c-43ec-ae54-408ff18a47e6">
+          <AttributeID>PARENT_ITEM</AttributeID>
+          <Name>PARENT_ITEM</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="3f5b633e-0d31-4e8b-a75c-522cadbce6b2">
+          <AttributeID>ITEM_TYPE</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Cardinality>One</Cardinality>
+          <Name>ITEM_TYPE</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="6990f77b-483b-4d14-a14f-b0bec3f39968">
+          <AttributeID>FORMULA</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>FORMULA</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="4612a9d4-204a-475e-8f85-49c32ded8a8f">
+          <AttributeID>HIERARCHY_TYPE</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>HIERARCHY_TYPE</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="6037366a-beb7-4b93-91a5-6b0d9a432688">
+          <AttributeID>ITEM ID</AttributeID>
+          <Name>ITEM_ORDER</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="4bebdae2-cee7-414a-89ba-283b4c45e0a5">
+          <AttributeID>PROPORTIONAL DRIVER</AttributeID>
+          <Name>PROPORTIONAL DRIVER</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="227cf47e-f27d-472f-b640-8991ce0fde8f">
+          <AttributeID>UNARY_OPERATOR</AttributeID>
+          <Name>OPERATOR_UNARY</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>AttributeKey</OrderBy>
+      <OrderByAttributeID>ITEM ID</OrderByAttributeID>
+      <MemberNamesUnique>true</MemberNamesUnique>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <AttributeHierarchyDisplayFolder>ATTRIBUTES</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="21848d0a-096a-4354-b787-69531b9deccd">
+      <ID>PARENT_ITEM</ID>
+      <Name>PARENT_ITEM</Name>
+      <Usage>Parent</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="4f740b32-75ff-4f95-a049-ac1b038d5c03">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="75818c74-226a-4aea-b4e7-5a26683bb6b1">
+            <TableID>dbo_DIM_PROFIT_LOSS</TableID>
+            <ColumnID>PARENT_ITEM</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <CustomRollupColumn dwd:design-time-name="86e9b3f6-1c1a-4bd7-82c3-d5e160769023">
+        <DataType>WChar</DataType>
+        <DataSize>255</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="47afb83b-3eb4-44a8-b13c-0f7374e8486b">
+          <TableID>dbo_DIM_PROFIT_LOSS</TableID>
+          <ColumnID>FORMULA</ColumnID>
+        </Source>
+      </CustomRollupColumn>
+      <UnaryOperatorColumn dwd:design-time-name="55fe8648-e89b-4aea-a4ad-d7ca855e6633">
+        <DataType>WChar</DataType>
+        <DataSize>255</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="02f2e25e-4502-4d5e-9b8f-aed6d844163a">
+          <TableID>dbo_DIM_PROFIT_LOSS</TableID>
+          <ColumnID>UNARY_OPERATOR</ColumnID>
+        </Source>
+      </UnaryOperatorColumn>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="7090439e-b576-4db8-950f-ddab60143b45">
+      <ID>ITEM_TYPE</ID>
+      <Name>ITEM_TYPE</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="33467e01-f58a-4ca7-b53f-f58c02283f99">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="fe14722e-69cf-478d-a5f1-3d6ff5695108">
+            <TableID>dbo_DIM_PROFIT_LOSS</TableID>
+            <ColumnID>ITEM_TYPE</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>ATTRIBUTES</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="455cd0f2-314e-4ec0-9927-f66d8a381320">
+      <ID>HIERARCHY_TYPE</ID>
+      <Name>HIERARCHY_TYPE</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="dd92286b-7e2a-4d58-9661-bf266d68aa64">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="25e37399-2850-435f-a44a-f8abe900f142">
+            <TableID>dbo_DIM_PROFIT_LOSS</TableID>
+            <ColumnID>HIERARCHY_TYPE</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>ATTRIBUTES</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="142c46d5-fcfb-48c7-9071-c2bf35f5c707">
+      <ID>UNARY_OPERATOR</ID>
+      <Name>OPERATOR_UNARY</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b749c1b2-28e2-46d6-baf7-c3e41f5a590c">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7b258119-1e9d-4d58-8403-fa54a70f9000">
+            <TableID>dbo_DIM_PROFIT_LOSS</TableID>
+            <ColumnID>UNARY_OPERATOR</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>ATTRIBUTES</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="7a300e06-58e6-4d54-9492-8cb9a52b5f4b">
+      <ID>FORMULA</ID>
+      <Name>FORMULA</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f2fb0210-7f65-45a7-a144-387b6822fc20">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="197cf899-8cc0-4965-9bc9-4b1b8f035972">
+            <TableID>dbo_DIM_PROFIT_LOSS</TableID>
+            <ColumnID>FORMULA</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyEnabled>false</AttributeHierarchyEnabled>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <AttributeHierarchyDisplayFolder>ATTRIBUTES</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="614aeb0c-9e3a-4bb8-a657-ceb695d75003">
+      <ID>ITEM ID</ID>
+      <Name>ITEM_ORDER</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e6571105-f34c-4df2-8dc7-3aa432f7118e">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="08208d56-db9b-4e78-80a9-731ba7d2d4ce">
+            <TableID>dbo_DIM_PROFIT_LOSS</TableID>
+            <ColumnID>ITEM_ID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyEnabled>false</AttributeHierarchyEnabled>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <AttributeHierarchyDisplayFolder>ATTRIBUTES</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="a8549a5d-e8aa-4d95-b5f3-0dbf00d4de03">
+      <ID>PROPORTIONAL DRIVER</ID>
+      <Name>PROPORTIONAL DRIVER</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="bc024867-242c-4056-b70e-65c11d89e5d9">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="04d71e65-7af4-4121-b23b-417ae90af175">
+            <TableID>dbo_DIM_PROFIT_LOSS</TableID>
+            <ColumnID>PROPORTIONAL_DRIVER</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeHierarchyDisplayFolder>ATTRIBUTES</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <Hierarchies>
+    <Hierarchy dwd:design-time-name="99340b29-d418-4263-b75d-94f220545ef4">
+      <ID>Hierarchy</ID>
+      <Name>DRIVER-ITEM</Name>
+      <Levels>
+        <Level dwd:design-time-name="636ca72c-4068-49b9-9ad5-728bfbcd9e3f">
+          <ID>PROPORTIONAL DRIVER</ID>
+          <Name>PROPORTIONAL DRIVER</Name>
+          <SourceAttributeID>PROPORTIONAL DRIVER</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="365c9377-a969-48d0-92f9-2542e37b9162">
+          <ID>ITEM</ID>
+          <Name>ITEM</Name>
+          <SourceAttributeID>ITEM</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

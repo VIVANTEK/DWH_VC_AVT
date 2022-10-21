@@ -1,0 +1,17 @@
+﻿CREATE TABLE [dbo].[PBL_SCHEDULE_PTP] (
+    [PATH_KEY]   NVARCHAR (255) NULL,
+    [VERSION]    NVARCHAR (255) NULL,
+    [LAYER_ID]   NVARCHAR (255) NULL,
+    [DATE]       NVARCHAR (255) NULL,
+    [FLT_DESC]   NVARCHAR (255) NULL,
+    [BH]         FLOAT (53)     NULL,
+    [SEATS]      FLOAT (53)     NULL,
+    [DEPARTURES] FLOAT (53)     NULL,
+    [SEATS_C]    FLOAT (53)     NULL,
+    [SEATS_W]    FLOAT (53)     NULL,
+    [SEATS_S]    FLOAT (53)     NULL,
+    [DISTANCE]   FLOAT (53)     NULL,
+    [LOAD_TIME]  DATETIME       NULL,
+    [LOAD_DATE]  AS             (CONVERT([date],[LOAD_TIME])) PERSISTED
+);
+

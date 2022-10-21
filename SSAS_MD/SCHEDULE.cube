@@ -1,0 +1,627 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="50646c7a-23c2-4114-8a35-4278411248bc" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>SCHEDULE</ID>
+  <Name>SCHEDULE</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="22" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-4491" scrolltop="63" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="20664" y="10795" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="FCT_SCHEDULE_PTP" left="2586" top="5134" logicalid="11" controlid="1" masterid="0" hint1="0" hint2="0" width="3519" height="4842" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000bf0d0000ea120000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="FCT_SCHEDULE_PTP" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="DIM_PATH" left="-4624" top="3035" logicalid="12" controlid="2" masterid="0" hint1="0" hint2="0" width="3493" height="4842" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000a50d0000ea120000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="PATH" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="-1431" top="6157" logicalid="13" controlid="3" masterid="0" hint1="0" hint2="0" width="4317" height="2248" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[DIM_PATH-FCT_SCHEDULE_PTP]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="1" sourceattachpoint="23" destattachpoint="24" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="-1131" y="6556" />
+              <point x="1809" y="6556" />
+              <point x="1809" y="8105" />
+              <point x="2586" y="8105" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="DIM_CALENDAR" left="8916" top="979" logicalid="14" controlid="4" masterid="0" hint1="0" hint2="0" width="4128" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c00002010000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="DIM_CALENDAR" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="5805" top="5280" logicalid="15" controlid="5" masterid="0" hint1="0" hint2="0" width="3411" height="2575" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FCT_SCHEDULE_PTP-DIM_CALENDAR]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="1" sourceattachpoint="30" destattachpoint="23" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="8916" y="5679" />
+              <point x="8225" y="5679" />
+              <point x="8225" y="7555" />
+              <point x="6105" y="7555" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="FCT_SCHEDULE_TRANSIT" left="1985" top="740" logicalid="16" controlid="6" masterid="0" hint1="0" hint2="0" width="4075" height="2725" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000eb0f0000a50a0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="FCT_SCHEDULE_FLIGHT_TRANSIT" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="-1431" top="1802" logicalid="17" controlid="7" masterid="0" hint1="0" hint2="0" width="3716" height="1854" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FCT_SCHEDULE_TRANSIT-DIM_PATH]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="6" sourceattachpoint="11" destattachpoint="18" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="-1131" y="3256" />
+              <point x="519" y="3256" />
+              <point x="519" y="2102" />
+              <point x="1985" y="2102" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="5760" top="880" logicalid="18" controlid="8" masterid="0" hint1="0" hint2="0" width="3456" height="1522" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FCT_SCHEDULE_TRANSIT-DIM_CALENDAR]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="6" sourceattachpoint="14" destattachpoint="19" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="8916" y="1279" />
+              <point x="7581" y="1279" />
+              <point x="7581" y="2102" />
+              <point x="6060" y="2102" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="DIM_TIME_CONNECTION" left="-3566" top="-4489" logicalid="19" controlid="9" masterid="0" hint1="0" hint2="0" width="4286" height="4419" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000be10000043110000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="DIM_TIME_CONNECTION" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="420" top="-1029" logicalid="20" controlid="10" masterid="0" hint1="0" hint2="0" width="1865" height="2331" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FCT_SCHEDULE_TRANSIT-DIM_TIME_CONNECTION]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="9" destid="6" sourceattachpoint="27" destattachpoint="14" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="720" y="-630" />
+              <point x="1352" y="-630" />
+              <point x="1352" y="1002" />
+              <point x="1985" y="1002" />
+            </connector>
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-4491</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>63</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>-4624</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>-4489</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="9c7a5df5-51f0-4639-a8cb-379c057d2cdc">
+      <ID>DIM PATH</ID>
+      <Name>PATH</Name>
+      <DimensionID>DIM PATH</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="ac85ee9f-62ce-4166-96a2-a07d2bbcae7f">
+          <AttributeID>PATH KEY</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="aa71c8d7-f766-44a9-8a69-a55d588b3763">
+          <AttributeID>FLT PATH ORG</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c9e053c3-011a-4358-bebc-7d9e30b5dec2">
+          <AttributeID>FLT PATH DST</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="30d57ad7-692d-49fb-b7f5-44a49e1f6a70">
+          <AttributeID>ORG DST</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b6797c66-c04b-48a8-8b69-8ca56e63469d">
+          <AttributeID>ORG DST TYPE</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="79bfaa90-9224-4afe-a77a-1e7c51f55d3b">
+          <AttributeID>COEF LOGIC</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c61e9a7b-2cd9-41a2-b138-45b1034b982c">
+          <AttributeID>VIA AIRPORT</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="fb560745-5afd-4c84-9f7c-3cb1f1b2ac3f">
+          <AttributeID>ORG AIRPORT</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="19053892-c613-4930-9db6-a172d2d10d16">
+          <AttributeID>DST AIRPORT</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="8afa9c60-0a92-4b55-8fc7-d6abe5d3762a">
+          <AttributeID>COUNTRY CODE</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a8e81730-058d-4922-a285-55525f51e56a">
+          <AttributeID>COUNTRY DESC</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="cb55b093-29b3-46b1-bbc1-00cabfdfa660">
+          <AttributeID>REGION CODE</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="cba66589-8994-4281-894e-e564c6df25d0">
+          <AttributeID>COUNTRY CODE 1</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="097e265b-1992-4e5f-9553-9d508c85d421">
+          <AttributeID>COUNTRY DESC 1</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="f7fb8068-915c-45ab-a1b9-2639d29d8a5a">
+          <AttributeID>REGION CODE 1</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="bc54a31c-2921-4aaf-89cb-9df06c63c23e">
+          <AttributeID>FLT NUM</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="259fbd36-f85c-47a0-94d8-c5c57943742d">
+          <AttributeID>HAUL</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="4fea98c3-237b-4710-9413-2c104b61d26e">
+          <AttributeID>FLT TYPE INT DOM</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="71fb0666-787d-4865-acd7-13e13ebc8117">
+          <AttributeID>FLT TYPE SCH CHR</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d622b4fa-3ecf-48c8-8ee4-9308f2cdd4c2">
+          <AttributeID>FLT TYPE PSN CAR</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="bd756922-a054-4d52-8106-0429a4af8aa8">
+          <AttributeID>FLT TYPE OWH OAL</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="bdd29e42-c665-4732-894e-f25a972292d2">
+          <AttributeID>COUNTRY TURNOVER</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ac0ca7f4-0a01-4311-990c-91646c1ec310">
+          <AttributeID>DEST GROUP</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="d89159a5-33fd-4392-87ab-0f8a6f8714ea">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+        <Hierarchy dwd:design-time-name="3bcc38dd-a123-4538-ab32-d0b83d6f622d">
+          <HierarchyID>Hierarchy 1</HierarchyID>
+        </Hierarchy>
+        <Hierarchy dwd:design-time-name="75f96ccd-712f-4725-8620-09a76fad6ec6">
+          <HierarchyID>Hierarchy 2</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="0e75eb7d-1c8b-40c7-8279-2bca189f0fa9">
+      <ID>DIM CALENDAR</ID>
+      <Name>CALENDAR</Name>
+      <DimensionID>DIM CALENDAR</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="dbd5fb2a-1816-4ab6-b958-03e4e4e280ec">
+          <AttributeID>D DATE</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e9ae7ce6-fbe9-437e-8a3e-c44fc336579b">
+          <AttributeID>DOW ID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="982b59ea-9e34-4529-8a8f-97a83a371030">
+          <AttributeID>DOW NAME</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="13c1b53d-1d63-4db0-add6-6d29386ca4b9">
+          <AttributeID>DOW DESC</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="de79652a-f94d-4265-903e-24e3695c9e4e">
+          <AttributeID>WEEK ID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="dbbab373-799d-43e7-ae2e-80630b0ee329">
+          <AttributeID>WEEK NUM</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="8618f7b3-8d10-4927-9ca0-3163e5d3a934">
+          <AttributeID>WEEK NAME</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="51eceb32-d9a5-4bd8-9f43-8e4191d682fb">
+          <AttributeID>WEEK DESC</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="4a11d899-1e54-4f7d-8a7a-f661c3f1436d">
+          <AttributeID>MONTH ID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c10d5868-fd67-41d8-bfa5-e316b79df6cd">
+          <AttributeID>MONTH NUM</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5cb1f9f3-db2b-41ad-9318-34dd6def287f">
+          <AttributeID>MONTH NAME SHORT</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="0c69b6e1-4126-4ff3-b820-f7b12ae43154">
+          <AttributeID>MONTH NAME FULL</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="9f83e78a-0e21-4fac-a1f8-9c2e0ca248b2">
+          <AttributeID>QUARTER ID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="284ad23b-95f6-41bc-a351-a630515b6678">
+          <AttributeID>QUARTER NUM</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e3e3d07a-9943-4092-ad0e-4c8e91821565">
+          <AttributeID>QUARTER NAME</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a105aea8-dc5a-4314-b522-ca8f272f0ae6">
+          <AttributeID>YEAR ID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e84cf73b-a0ac-42da-b3bf-4006943354c9">
+          <AttributeID>MOHTH DAY ID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d8d99d33-4d5d-4a0b-a668-6fd803e95f6a">
+          <AttributeID>YEAR DAY ID</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="d15b291c-da3c-4c14-8754-79479db9834d">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+        <Hierarchy dwd:design-time-name="9146a808-ee40-40fd-91ab-6750f1f8d57e">
+          <HierarchyID>Hierarchy 1</HierarchyID>
+        </Hierarchy>
+        <Hierarchy dwd:design-time-name="495d9fba-761f-4e61-b8d4-797793e582cc">
+          <HierarchyID>Hierarchy 2</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="b9e29f66-738a-418f-a346-c34625bb141a">
+      <ID>TIME_CONNECTION</ID>
+      <Name>TIME_CONNECTION</Name>
+      <DimensionID>TIME_CONNECTION</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="4435495e-383b-4c9d-954b-9a2b18556b9f">
+          <AttributeID>RNG ID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="0a34cac8-5dd8-4c46-8411-f6c8e79af89d">
+          <AttributeID>PERIOD HH</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="dfa63e70-d05b-439a-8373-5f0348ce098c">
+          <AttributeID>TIME RANGE</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="eaa70ce3-3554-4e3a-af23-12293b637283">
+          <AttributeID>QUALITY CONNECTION</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="42bb1f89-fd61-44e4-a7cd-c973f1816e39">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+        <Hierarchy dwd:design-time-name="34afb1f6-086c-4abb-9c25-60ad93548d7b">
+          <HierarchyID>Hierarchy 1</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="e63b8ba6-1b87-4f59-aecc-792098c12371">
+      <ID>FCT SCHEDULE PTP</ID>
+      <Name>FCT SCHEDULE PTP</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="fcdb3bee-6905-4a4c-b91b-93b037a4da7c">
+          <ID>BH</ID>
+          <Name>BH</Name>
+          <Source dwd:design-time-name="cebbb6b9-5b38-4b27-a88d-364d1d209bee">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="5106fa8a-9366-48ae-9722-81c0707cb2c9">
+              <TableID>FCT_SCHEDULE_PTP</TableID>
+              <ColumnID>BH</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="bf83ddd0-fe46-40a5-9a08-02aa90663cea">
+          <ID>SEATS</ID>
+          <Name>SEATS</Name>
+          <Source dwd:design-time-name="ce074e1d-02a0-46e7-98f1-358e293af729">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="229f4da9-9334-4f6a-b246-1a3e31453041">
+              <TableID>FCT_SCHEDULE_PTP</TableID>
+              <ColumnID>SEATS</ColumnID>
+            </Source>
+          </Source>
+          <FormatString>0</FormatString>
+        </Measure>
+        <Measure dwd:design-time-name="d2127664-6ad1-4036-b2c6-6f3543732b09">
+          <ID>DEPARTURES</ID>
+          <Name>DEPARTURES</Name>
+          <Source dwd:design-time-name="271d9239-872b-4810-b138-450a9a1dd8ca">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="1e095984-f62a-4f01-806e-d10f04e6d1c7">
+              <TableID>FCT_SCHEDULE_PTP</TableID>
+              <ColumnID>DEPARTURES</ColumnID>
+            </Source>
+          </Source>
+          <FormatString>0</FormatString>
+        </Measure>
+        <Measure dwd:design-time-name="7bcc99c0-1480-45c0-a379-c95fa48f72d8">
+          <ID>SEATS C</ID>
+          <Name>SEATS_C</Name>
+          <Source dwd:design-time-name="51d66169-2f00-4b22-8304-9582388f8531">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="cfc0ad08-819a-481e-aa91-a4fbfd3363b0">
+              <TableID>FCT_SCHEDULE_PTP</TableID>
+              <ColumnID>SEATS_C</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="8f14bfac-26be-4330-86cd-2997420a2309">
+          <ID>SEATS W</ID>
+          <Name>SEATS_W</Name>
+          <Source dwd:design-time-name="57aadf8b-4782-4bd1-9d6a-efdcc347f242">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="6e726011-0384-43ea-9a74-13fefee98839">
+              <TableID>FCT_SCHEDULE_PTP</TableID>
+              <ColumnID>SEATS_W</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="2cbb2ddd-69ca-4e32-9ac1-2ccd109379b8">
+          <ID>SEATS S</ID>
+          <Name>SEATS_S</Name>
+          <Source dwd:design-time-name="1a2cdf7b-8287-407c-bbbc-56d750250e56">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="5c413e03-b1f6-459d-989f-87d847eeb055">
+              <TableID>FCT_SCHEDULE_PTP</TableID>
+              <ColumnID>SEATS_S</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="f4cbc5e5-45d5-42bb-9f58-a6b0152e5a2a">
+          <CubeDimensionID>DIM PATH</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="4b5d40f1-6caf-4df6-89a7-3be6927e068c">
+              <AttributeID>PATH KEY</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="eeef1e0f-cf16-4197-82b5-8ced0bcbe2a8">
+                  <DataType>WChar</DataType>
+                  <DataSize>29</DataSize>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="d67b6983-b33d-41a3-8b59-a60ba678f012">
+                    <TableID>FCT_SCHEDULE_PTP</TableID>
+                    <ColumnID>FLT_DESC</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="19a21532-1699-4c72-9919-e7e7fde598c2">
+          <CubeDimensionID>DIM CALENDAR</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="0d796007-c5ce-4156-89ca-5dcada0d12f5">
+              <AttributeID>D DATE</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="598f8d5c-baa5-4b71-bbda-fb0fa1c1ba90">
+                  <DataType>Date</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="a75f453a-b3d9-4012-869e-dab0e3f233b9">
+                    <TableID>FCT_SCHEDULE_PTP</TableID>
+                    <ColumnID>FLIGHT_DATE</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="c4d11a26-af8f-4932-b610-fc69f283fcc7">
+      <ID>FCT SCHEDULE TRANSIT</ID>
+      <Name>FCT SCHEDULE TRANSIT</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="0ca67182-d433-448c-ab47-ea177f6448ba">
+          <ID>COUNT CONNECTION</ID>
+          <Name>COUNT_CONNECTION</Name>
+          <Source dwd:design-time-name="2da5a4d4-df52-4e03-97fe-f25d49902d07">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="a9869ea8-518b-49a8-9451-4d9b325a1bea">
+              <TableID>FCT_SCHEDULE_FLIGHT_TRANSIT</TableID>
+              <ColumnID>COUNT_CONNECTION</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="32cf17fd-7a9d-4a31-aa30-e82ede4f88cf">
+          <CubeDimensionID>DIM PATH</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="5893a8df-2893-4cdc-8c0d-bf71dd54ff3e">
+              <AttributeID>PATH KEY</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="e9641c65-0069-4ec7-a055-c7aba6064b30">
+                  <DataType>WChar</DataType>
+                  <DataSize>29</DataSize>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="0d6da5a6-3c61-4657-9264-b4c2e6879a0a">
+                    <TableID>FCT_SCHEDULE_FLIGHT_TRANSIT</TableID>
+                    <ColumnID>PATH_KEY</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="dc0b2b20-dc26-48e6-8c84-c8a5d2a45fda">
+          <CubeDimensionID>DIM CALENDAR</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="92761052-2bfc-4ef5-99d9-f6fc1332d9cc">
+              <AttributeID>D DATE</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="5eb7a479-f768-4c73-81ff-60f5f5ae5712">
+                  <DataType>Date</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="565ead29-f153-4d8d-a1d6-ed8b43d8bc29">
+                    <TableID>FCT_SCHEDULE_FLIGHT_TRANSIT</TableID>
+                    <ColumnID>FLIGHT_DATE</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="41171f93-58e9-4dff-b2ba-715d4fa75bf7">
+          <CubeDimensionID>TIME_CONNECTION</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="30fa3892-1065-448a-a58f-acda35740338">
+              <AttributeID>RNG ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="d80929cb-4b79-426e-bd54-6a116f380497">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="28d387f2-8363-4192-b6d8-de060df1146b">
+                    <TableID>FCT_SCHEDULE_FLIGHT_TRANSIT</TableID>
+                    <ColumnID>RNG_ID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="a3b303f3-1912-4185-a362-ccb2471b8b68">
+    <DataSourceViewID>DWH_VC_AVT</DataSourceViewID>
+  </Source>
+  <MdxScripts>
+    <MdxScript dwd:design-time-name="e413cd43-37c2-4b03-860a-ba6ad6075233">
+      <ID>MdxScript</ID>
+      <Name>MdxScript</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <Commands>
+        <Command>
+          <Text>/*
+The CALCULATE command controls the aggregation of leaf cells in the cube.
+If the CALCULATE command is deleted or modified, the data within the cube is affected.
+You should edit this command only if you manually specify how the cube is aggregated.
+*/
+CALCULATE; </Text>
+        </Command>
+      </Commands>
+    </MdxScript>
+  </MdxScripts>
+</Cube>

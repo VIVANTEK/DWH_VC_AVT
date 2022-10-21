@@ -1,0 +1,238 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="ec328963-b10e-49b4-984b-de87da20e96d" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>TIME_CONNECTION</ID>
+  <Name>TIME_CONNECTION</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1766" scrolltop="-4511" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="8202" y="10795" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="DIM_TIME_CONNECTION" left="-86" top="-1164" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="4471" height="4419" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c00007711000043110000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="DIM_TIME_CONNECTION" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-1766</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-4511</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>-86</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>-1164</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ARDiagramLayout</Name>
+      <Value>
+        <DiagramLayout ZoomPercent="100" ViewPortX="0" ViewPortY="0" xmlns="">
+          <Shapes NodeWidth="168">
+            <Shape Id="RNG ID" Expanded="true">
+              <Attributes>
+                <Attribute Id="RNG ID" />
+              </Attributes>
+              <Position x="20" y="20" />
+            </Shape>
+            <Shape Id="TIME RANGE" Expanded="false">
+              <Attributes>
+                <Attribute Id="TIME RANGE" />
+              </Attributes>
+              <Position x="235" y="20" />
+            </Shape>
+            <Shape Id="QUALITY CONNECTION" Expanded="false">
+              <Attributes>
+                <Attribute Id="QUALITY CONNECTION" />
+              </Attributes>
+              <Position x="450" y="20" />
+            </Shape>
+            <Shape Id="PERIOD HH" Expanded="false">
+              <Attributes>
+                <Attribute Id="PERIOD HH" />
+              </Attributes>
+              <Position x="450" y="68" />
+            </Shape>
+          </Shapes>
+        </DiagramLayout>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="e7fd13bc-bd8f-4791-922d-213534b3388b">
+    <DataSourceViewID>DWH_VC_AVT</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="8afa94a4-5606-49fd-97f0-4d3895e16490">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="e6372ea4-a7fb-491d-87ee-9c362ac9c79e">
+      <ID>RNG ID</ID>
+      <Name>RNG ID</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="4526857e-a72e-4460-8f4e-13595e6d1153">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e9bc239a-df9a-4535-98e9-c55a7261f23e">
+            <TableID>DIM_TIME_CONNECTION</TableID>
+            <ColumnID>RNG_ID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="d835d3be-2889-4794-b35a-dc1e321ae649">
+          <AttributeID>TIME RANGE</AttributeID>
+          <Name>TIME RANGE</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>ATTRIBUTES</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f6091ed7-e071-4401-bc90-170828432949">
+      <ID>PERIOD HH</ID>
+      <Name>PERIOD HH</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="397db7c5-92af-41b9-9aac-3d5c9d84cf30">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="15e5d525-6fb9-46e9-b0b8-c0df8d2e24fe">
+            <TableID>DIM_TIME_CONNECTION</TableID>
+            <ColumnID>PERIOD_HH</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>ATTRIBUTES</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f3f4fa77-1d77-4dc7-8d87-097a586c6c75">
+      <ID>TIME RANGE</ID>
+      <Name>TIME RANGE</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b691b15a-a05d-4a60-b9bd-c5d57dbfe5c5">
+          <DataType>WChar</DataType>
+          <DataSize>1024</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f0942243-e0a9-475a-b85f-701a50d0c026">
+            <TableID>DIM_TIME_CONNECTION</TableID>
+            <ColumnID>TIME_RANGE</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="3a596ab0-5304-4357-9ee1-0566e577d5e1">
+          <AttributeID>PERIOD HH</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>PERIOD HH</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="766cd2ce-d395-4059-9321-f0da860d511f">
+          <AttributeID>QUALITY CONNECTION</AttributeID>
+          <Name>QUALITY CONNECTION</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>ATTRIBUTES</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="8e8da5e5-ade2-4e5d-9b36-fa4c3c17b361">
+      <ID>QUALITY CONNECTION</ID>
+      <Name>QUALITY CONNECTION</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="57d5ba5a-1e4a-4b57-b1ee-e067a0b36fc9">
+          <DataType>WChar</DataType>
+          <DataSize>16</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9ff8c19e-213d-4bd1-9ac9-b8e26eb331c0">
+            <TableID>DIM_TIME_CONNECTION</TableID>
+            <ColumnID>QUALITY_CONNECTION</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>ATTRIBUTES</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <Hierarchies>
+    <Hierarchy dwd:design-time-name="a9892ec7-ecd6-4e2b-8938-aa5c166a58ee">
+      <ID>Hierarchy</ID>
+      <Name>TIME_RANGE (HH-RANGE)</Name>
+      <Levels>
+        <Level dwd:design-time-name="f7fade0d-c2f2-48e5-a29c-e9613f006d96">
+          <ID>PERIOD HH</ID>
+          <Name>PERIOD HH</Name>
+          <SourceAttributeID>PERIOD HH</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="670dc64a-9272-4364-a17d-aa9b0d883e77">
+          <ID>TIME RANGE</ID>
+          <Name>TIME RANGE</Name>
+          <SourceAttributeID>TIME RANGE</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+    <Hierarchy dwd:design-time-name="61c2bea2-9ded-455e-b402-16f8fa60f540">
+      <ID>Hierarchy 1</ID>
+      <Name>TIME RANGE (QUALITY-RANGE)</Name>
+      <Levels>
+        <Level dwd:design-time-name="a13c0cce-5f12-4e7c-82fb-cc07f56950c7">
+          <ID>QUALITY CONNECTION</ID>
+          <Name>QUALITY CONNECTION</Name>
+          <SourceAttributeID>QUALITY CONNECTION</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="940640a1-611d-48bd-974a-b5552279155e">
+          <ID>TIME RANGE</ID>
+          <Name>TIME RANGE</Name>
+          <SourceAttributeID>TIME RANGE</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

@@ -1,0 +1,88 @@
+10/7/2022 10:09:52 PM	This log contains information about the import schema operation into project 'SQLDB' on computer 'WIN-2016_SQL' by user 'pdobrokhotov'.
+10/7/2022 10:09:53 PM	Import of database schema has started.
+10/7/2022 10:09:58 PM	Gathering database credentials
+10/7/2022 10:09:58 PM	Gathering database options
+10/7/2022 10:09:58 PM	Gathering generic database scoped configuration option
+10/7/2022 10:09:58 PM	Gathering users
+10/7/2022 10:09:58 PM	Gathering roles
+10/7/2022 10:09:58 PM	Gathering application roles
+10/7/2022 10:09:58 PM	Gathering role memberships
+10/7/2022 10:09:58 PM	Gathering filegroups
+10/7/2022 10:09:58 PM	Gathering full-text catalogs
+10/7/2022 10:09:58 PM	Gathering assemblies
+10/7/2022 10:09:58 PM	Gathering certificates
+10/7/2022 10:09:58 PM	Gathering asymmetric keys
+10/7/2022 10:09:58 PM	Gathering symmetric keys
+10/7/2022 10:09:58 PM	Gathering encrypted symmetric keys
+10/7/2022 10:09:58 PM	Gathering schemas
+10/7/2022 10:09:58 PM	Gathering XML schema collections
+10/7/2022 10:09:58 PM	Gathering user-defined data types
+10/7/2022 10:09:58 PM	Gathering user-defined types
+10/7/2022 10:09:58 PM	Gathering table types
+10/7/2022 10:09:58 PM	Gathering unique keys for table types
+10/7/2022 10:09:58 PM	Gathering primary keys for table types
+10/7/2022 10:09:58 PM	Gathering indexes for table types
+10/7/2022 10:09:58 PM	Gathering check constraints for table types
+10/7/2022 10:09:58 PM	Gathering default constraints for table types
+10/7/2022 10:09:58 PM	Gathering partition functions
+10/7/2022 10:09:58 PM	Gathering partition schemes
+10/7/2022 10:09:58 PM	Gathering functions
+10/7/2022 10:09:58 PM	Gathering encrypted functions
+10/7/2022 10:09:58 PM	Gathering aggregates
+10/7/2022 10:09:58 PM	Gathering procedures
+10/7/2022 10:09:58 PM	Gathering encrypted procedures
+10/7/2022 10:09:58 PM	Gathering tables
+10/7/2022 10:09:58 PM	Gathering primary keys
+10/7/2022 10:09:58 PM	Gathering unique constraints
+10/7/2022 10:09:58 PM	Gathering foreign keys
+10/7/2022 10:09:58 PM	Gathering default constraints
+10/7/2022 10:09:58 PM	Gathering check constraints
+10/7/2022 10:09:58 PM	Gathering views
+10/7/2022 10:09:58 PM	Gathering encrypted views
+10/7/2022 10:09:58 PM	Gathering indexes
+10/7/2022 10:09:58 PM	Gathering statistics
+10/7/2022 10:09:58 PM	Gathering full-text index stoplists
+10/7/2022 10:09:58 PM	Gathering search property lists
+10/7/2022 10:09:58 PM	Gathering search properties
+10/7/2022 10:09:58 PM	Gathering full-text indexes
+10/7/2022 10:09:58 PM	Gathering column store indexes
+10/7/2022 10:09:58 PM	Gathering spatial indexes
+10/7/2022 10:09:58 PM	Gathering XML indexes
+10/7/2022 10:09:58 PM	Gathering Selective XML indexes
+10/7/2022 10:09:58 PM	Gathering encrypted triggers
+10/7/2022 10:09:58 PM	Gathering triggers
+10/7/2022 10:09:58 PM	Gathering encrypted and clr ddl triggers
+10/7/2022 10:09:58 PM	Gathering ddl triggers
+10/7/2022 10:09:58 PM	Creating edge constraints
+10/7/2022 10:09:59 PM	Gathering synonyms
+10/7/2022 10:09:59 PM	Gathering defaults
+10/7/2022 10:09:59 PM	Gathering data constraint uddt bindings
+10/7/2022 10:09:59 PM	Gathering rules
+10/7/2022 10:09:59 PM	Gathering data constraint uddt bindings
+10/7/2022 10:09:59 PM	Gathering message types
+10/7/2022 10:09:59 PM	Gathering queues
+10/7/2022 10:09:59 PM	Gathering contracts
+10/7/2022 10:09:59 PM	Gathering services
+10/7/2022 10:09:59 PM	Gathering event notifications
+10/7/2022 10:09:59 PM	Gathering remote service bindings
+10/7/2022 10:09:59 PM	Gathering broker priorities
+10/7/2022 10:09:59 PM	Gathering signatures
+10/7/2022 10:09:59 PM	Gathering data compression options
+10/7/2022 10:09:59 PM	Gathering sequence types
+10/7/2022 10:09:59 PM	Gathering security policies
+10/7/2022 10:09:59 PM	Gather column encryption keys
+10/7/2022 10:09:59 PM	Gathering column master keys
+10/7/2022 10:09:59 PM	Gathering external data sources
+10/7/2022 10:09:59 PM	Gathering external file formats
+10/7/2022 10:09:59 PM	Gathering external tables
+10/7/2022 10:09:59 PM	Gathering database permissions
+10/7/2022 10:09:59 PM	Gathering extended properties
+10/7/2022 10:09:59 PM	Gathering assemblies
+10/7/2022 10:09:59 PM	Gathering credentials
+10/7/2022 10:09:59 PM	Gathering logins
+10/7/2022 10:09:59 PM	Gathering server audits
+10/7/2022 10:10:00 PM	Scanning project for duplicate elements
+10/7/2022 10:10:01 PM	Finished duplicate element processing
+10/7/2022 10:10:02 PM	Finished importing database.
+10/7/2022 10:10:02 PM	A summary of the import was saved to the following location: C:\Users\pdobrokhotov\source\repos\VIVANTEK\DWH_VC_AVT\SQLDB\Import Schema Logs\SQLDB_20221007070952.log
+10/7/2022 10:10:02 PM	Click Finish to continue...

@@ -1,0 +1,20 @@
+﻿CREATE TABLE [dbo].[WRB_CFO] (
+    [CFO_AMOUNT_0]    INT            NULL,
+    [VERSION_1]       NVARCHAR (255) NULL,
+    [MONTH_ID_2]      INT            NULL,
+    [ITEM_3]          NVARCHAR (255) NULL,
+    [LAYER_ID_4]      INT            NULL,
+    [CFO_NAME_5]      NVARCHAR (255) NULL,
+    [MS_AUDIT_TIME_6] DATETIME       NULL,
+    [MS_AUDIT_USER_7] NVARCHAR (255) NULL
+);
+
+
+GO
+ 
+CREATE TRIGGER [dbo].[TR_WRB_CFO_AFTER_INSERT] ON [dbo].[WRB_CFO]
+AFTER INSERT NOT FOR REPLICATION 
+AS
+ BEGIN
+	EXEC [dbo].[P_UPDATE_FCT_CFO] ;
+END

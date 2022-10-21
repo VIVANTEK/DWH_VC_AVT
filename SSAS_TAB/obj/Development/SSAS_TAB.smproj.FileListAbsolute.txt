@@ -1,0 +1,9 @@
+C:\Users\pdobrokhotov\DEVELOPMENT\DWH_VC_AVT\SSAS_TAB\bin\Model.asdatabase
+C:\Users\pdobrokhotov\DEVELOPMENT\DWH_VC_AVT\SSAS_TAB\bin\Model.deploymenttargets
+C:\Users\pdobrokhotov\DEVELOPMENT\DWH_VC_AVT\SSAS_TAB\bin\Model.deploymentoptions
+C:\Users\pdobrokhotov\DEVELOPMENT\DWH_VC_AVT\SSAS_TAB\obj\Development\SSAS_TAB.smproj.AssemblyReference.cache
+C:\Users\pdobrokhotov\DEVELOPMENT\DWH_VC_AVT\SSAS_TAB\obj\Development\SSAS_TAB.smproj.SuggestedBindingRedirects.cache
+C:\Users\pdobrokhotov\DEVELOPMENT\DWH_VC_AVT\SSAS_TAB\obj\Development\SSAS_TAB.smproj.CoreCompileInputs.cache
+C:\Users\pdobrokhotov\DEVELOPMENT\DWH_VC_AVT\SSAS_TAB\obj\Development\Model.asdatabase
+C:\Users\pdobrokhotov\DEVELOPMENT\DWH_VC_AVT\SSAS_TAB\obj\Development\Model.deploymentoptions
+C:\Users\pdobrokhotov\DEVELOPMENT\DWH_VC_AVT\SSAS_TAB\obj\Development\Model.deploymenttargets

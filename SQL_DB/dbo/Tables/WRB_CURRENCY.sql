@@ -1,0 +1,9 @@
+﻿CREATE TABLE [dbo].[WRB_CURRENCY] (
+    [CURRENCY_RATE_0] FLOAT (53)     NULL,
+    [DIGITAL_CODE_1]  INT            NULL,
+    [MONTH_ID_2]      INT            NULL,
+    [VERSION_3]       NVARCHAR (255) NULL,
+    [MS_AUDIT_TIME_4] DATETIME       NULL,
+    [MS_AUDIT_USER_5] NVARCHAR (255) NULL
+);
+

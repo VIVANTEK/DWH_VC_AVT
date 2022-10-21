@@ -1,0 +1,421 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="6470fde1-630a-4e23-ac2d-84d688c1e188" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>DIM FLIGHT</ID>
+  <Name>FLIGHT</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-3724" scrolltop="-5000" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="14102" y="13441" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01cc0000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="DIM_FLIGHT" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="4392" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c00002811000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_DIM_FLIGHT" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-3724</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-5000</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ARDiagramLayout</Name>
+      <Value>
+        <DiagramLayout ZoomPercent="100" ViewPortX="0" ViewPortY="20" xmlns="">
+          <Shapes NodeWidth="150">
+            <Shape Id="FLT DESC" Expanded="true">
+              <Attributes>
+                <Attribute Id="FLT DESC" />
+                <Attribute Id="AIRLINE" />
+                <Attribute Id="DEST GROUP" />
+                <Attribute Id="DSTN" />
+                <Attribute Id="FLT NUM" />
+                <Attribute Id="FLT TYPE OWH OAL" />
+                <Attribute Id="FLT TYPE PSN CAR" />
+                <Attribute Id="FLT TYPE SCH CHR" />
+                <Attribute Id="HAUL" />
+                <Attribute Id="ORIG" />
+              </Attributes>
+              <Position x="20" y="20" />
+            </Shape>
+            <Shape Id="COUNTRY TURNOVER" Expanded="false">
+              <Attributes>
+                <Attribute Id="COUNTRY TURNOVER" />
+              </Attributes>
+              <Position x="212" y="20" />
+            </Shape>
+            <Shape Id="FLT TYPE INT DOM" Expanded="false">
+              <Attributes>
+                <Attribute Id="FLT TYPE INT DOM" />
+              </Attributes>
+              <Position x="405" y="20" />
+            </Shape>
+          </Shapes>
+        </DiagramLayout>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="21bf1117-db4f-4403-ac9c-7fe80731e106">
+    <DataSourceViewID>DWH_VC_AVT</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="973bd353-65fa-4c5b-be36-f699862f6653">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="2a09d191-274d-43cc-9859-24c27f70230c">
+      <ID>FLT DESC</ID>
+      <Name>FLT_DESC</Name>
+      <Usage>Key</Usage>
+      <EstimatedCount>809</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="53a5a37c-8f14-4044-bc45-4e3a391e2d4d">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="11207e34-7244-471b-9699-c2cefc5a25e7">
+            <TableID>dbo_DIM_FLIGHT</TableID>
+            <ColumnID>FLT_DESC</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="6b2b5a3e-e280-408d-b678-b0c686193dc0">
+          <AttributeID>AIRLINE</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>AIRLINE</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="53aac92b-cebf-460e-b278-728eff9b9455">
+          <AttributeID>FLT NUM</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>FLT_NUM</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="53235306-4012-4cb9-b30d-be68053378fa">
+          <AttributeID>ORIG</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>ORIG</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="c04b70a6-4e73-4d80-9094-dd086a81f7f8">
+          <AttributeID>DSTN</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>DSTN</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="cc960b93-40ed-443d-a638-60aa1f01e110">
+          <AttributeID>HAUL</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>HAUL</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="6a1c5c0a-75a6-46a0-8c47-6fe959001d06">
+          <AttributeID>FLT TYPE SCH CHR</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>FLT_TYPE_SCH_CHR</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="ecc65c65-52a8-49f5-a77c-6729362bdc06">
+          <AttributeID>FLT TYPE PSN CAR</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>FLT_TYPE_PSN_CAR</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="7eab2c9b-6a22-4ac1-9e19-28d72f98623e">
+          <AttributeID>FLT TYPE OWH OAL</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>FLT_TYPE_OWH_OAL</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="984f6d34-3b02-4797-bd2f-3a7dd2048144">
+          <AttributeID>DEST GROUP</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>DEST_GROUP</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="d1906665-db1a-4664-a8c1-611c98a28a01">
+          <AttributeID>COUNTRY TURNOVER</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>COUNTRY_TURNOVER</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>ATTRINUTES</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="5b1d59a6-518d-484e-b9d3-790cddec3c4c">
+      <ID>AIRLINE</ID>
+      <Name>AIRLINE</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e93f6b56-7cce-4ae5-b851-935951cb88b9">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f9fdd013-0db0-4d35-9588-01b0ee4233b1">
+            <TableID>dbo_DIM_FLIGHT</TableID>
+            <ColumnID>AIRLINE</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>ATTRINUTES</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9de54b51-d5da-4c19-8a3c-ed3e497cd078">
+      <ID>FLT NUM</ID>
+      <Name>FLT_NUM</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="96a7e5d5-3e6e-4ade-9293-ec4234045c86">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="972a25f9-7b6a-4a22-b63e-0590edadb44f">
+            <TableID>dbo_DIM_FLIGHT</TableID>
+            <ColumnID>FLT_NUM</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>ATTRINUTES</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="5106932d-db6c-4de7-8617-a9f6bed9d06d">
+      <ID>ORIG</ID>
+      <Name>ORIG</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="06de9fce-81d7-4fe4-aea0-50e540eac94c">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ff8ed1a6-e441-4ec7-bbc5-079cf317864f">
+            <TableID>dbo_DIM_FLIGHT</TableID>
+            <ColumnID>ORIG</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>ATTRINUTES</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="fbcbbb12-8599-4da9-afc8-f7988c92f7b0">
+      <ID>DSTN</ID>
+      <Name>DSTN</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="7046bb7c-7281-47a0-87d7-494c43ed798d">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="435ea41b-3921-4436-9279-d4d4a12f91e8">
+            <TableID>dbo_DIM_FLIGHT</TableID>
+            <ColumnID>DSTN</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>ATTRINUTES</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="2a8f8b82-7a0d-4fe5-970b-d097c4a01eb6">
+      <ID>HAUL</ID>
+      <Name>HAUL</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b7861480-1e5f-4661-bc02-62308725c781">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="876535f9-8f32-415b-a204-0d57a8dc4ed6">
+            <TableID>dbo_DIM_FLIGHT</TableID>
+            <ColumnID>HAUL</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>ATTRINUTES</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="7cb7e051-8f11-4c0a-bd6f-69151b2bae90">
+      <ID>FLT TYPE INT DOM</ID>
+      <Name>FLT_TYPE_INT_DOM</Name>
+      <EstimatedCount>2</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="95afe0e4-1b5d-4983-a0f1-285e0ef80d3c">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="024b8e73-5340-46cf-bb4a-ee1da0d46735">
+            <TableID>dbo_DIM_FLIGHT</TableID>
+            <ColumnID>FLT_TYPE_INT_DOM</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>ATTRINUTES</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="fda59e61-3770-47fa-904e-1a08945f1ead">
+      <ID>FLT TYPE SCH CHR</ID>
+      <Name>FLT_TYPE_SCH_CHR</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="957c66b1-b4cd-4c6c-8b20-6d9a2a7c6362">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c1d85bbf-5605-410a-a2e3-1231f48afeeb">
+            <TableID>dbo_DIM_FLIGHT</TableID>
+            <ColumnID>FLT_TYPE_SCH_CHR</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>ATTRINUTES</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="4763bf2f-60d7-4677-8394-6a6981febb64">
+      <ID>FLT TYPE PSN CAR</ID>
+      <Name>FLT_TYPE_PSN_CAR</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="dcb9eec8-8241-46d7-a472-4ca1dddf98f2">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c10b7028-6850-4597-99c7-ba3590684b29">
+            <TableID>dbo_DIM_FLIGHT</TableID>
+            <ColumnID>FLT_TYPE_PSN_CAR</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>ATTRINUTES</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="063f8583-777b-4c23-b6f3-2aafbb17cc13">
+      <ID>FLT TYPE OWH OAL</ID>
+      <Name>FLT_TYPE_OWH_OAL</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b9d7841a-7d06-40bf-8e47-d25fdc43b2eb">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="22692851-3624-4247-97d8-2d7bb809cd31">
+            <TableID>dbo_DIM_FLIGHT</TableID>
+            <ColumnID>FLT_TYPE_OWH_OAL</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>ATTRINUTES</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="92771409-9bf4-4de6-9fa2-52bb2e8607ab">
+      <ID>COUNTRY TURNOVER</ID>
+      <Name>COUNTRY_TURNOVER</Name>
+      <EstimatedCount>66</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="09ff8aca-8828-4da5-adb1-01462a7e5601">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a0a94775-8d9a-415c-b6df-5bd954412205">
+            <TableID>dbo_DIM_FLIGHT</TableID>
+            <ColumnID>COUNTRY_TURNOVER</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="be5f9374-24e5-4c25-9445-485fe11b0bb7">
+          <AttributeID>FLT TYPE INT DOM</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>FLT_TYPE_INT_DOM</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>ATTRINUTES</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="c71b26bb-b839-45e0-84e0-a8a534cb448c">
+      <ID>DEST GROUP</ID>
+      <Name>DEST_GROUP</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="8492e761-baa5-4a5b-90da-9f45867f5f9e">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5e2190a3-7955-424a-8590-04250f4686f3">
+            <TableID>dbo_DIM_FLIGHT</TableID>
+            <ColumnID>DEST_GROUP</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>ATTRINUTES</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <Hierarchies>
+    <Hierarchy dwd:design-time-name="8e4cb715-8fc0-4aee-bcbf-759b0262e6f3">
+      <ID>Hierarchy</ID>
+      <Name>TYPE-COUNTRY-FLT</Name>
+      <Levels>
+        <Level dwd:design-time-name="8c2c2c74-18e5-40f1-9e4c-d4cb71310785">
+          <ID>FLT TYPE INT DOM</ID>
+          <Name>TYPE</Name>
+          <SourceAttributeID>FLT TYPE INT DOM</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="f6936448-5048-4584-a808-87c2e558742b">
+          <ID>COUNTRY TURNOVER</ID>
+          <Name>COUNTRY</Name>
+          <SourceAttributeID>COUNTRY TURNOVER</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="a4134c3d-605f-4ebc-bae6-93ceffcae9d1">
+          <ID>FLT DESC</ID>
+          <Name>FLT</Name>
+          <SourceAttributeID>FLT DESC</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

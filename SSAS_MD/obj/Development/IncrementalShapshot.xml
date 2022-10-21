@@ -1,0 +1,152 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>DWH_VC_AVT_MASTER</Database>
+    <Server>localhost</Server>
+    <ConnectionString>Data Source=localhost;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>Default</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>H6ZbMhfvZVuHiQV3T4KQp9iC0eI=7/26/2022 1:13:39 PM10/21/2022 11:33:27 AM</TimeStamp>
+        <ID>
+          <String>DWH_VC_AVT</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>KwlkY9iMAynOKBsaS0YALdzSTlU=9/14/2022 5:45:56 PM10/21/2022 11:33:27 AM</TimeStamp>
+        <ID>
+          <String>DWH_VC_AVT</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>o3TmtRdnq5FIpr+ycnmbwECkWf8=9/9/2022 12:40:03 PM10/21/2022 11:33:27 AM</TimeStamp>
+        <ID>
+          <String>MONTH</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>7zCweJiVW6JUGdHIup5O+4X4ars=10/5/2022 1:35:39 PM10/21/2022 11:33:27 AM</TimeStamp>
+        <ID>
+          <String>PROFIT_LOSS</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>ebvpMAxLxxyoBiWsUPvdWN10Jyc=8/22/2022 11:58:50 AM10/21/2022 11:33:27 AM</TimeStamp>
+        <ID>
+          <String>VERSION</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>6gq1OV0Go7JTlHS2M4t1WCF41tM=7/22/2022 9:13:41 PM10/21/2022 11:33:27 AM</TimeStamp>
+        <ID>
+          <String>DIM CURRENCY</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>hzem0joIZ6gv+2Neh0tEaTY/Dlw=8/17/2022 4:49:51 PM10/21/2022 11:33:27 AM</TimeStamp>
+        <ID>
+          <String>DIM PATH</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>n4uXTZBJRSz0fZpv0YtKXilvoH4=9/9/2022 12:42:21 PM10/21/2022 11:33:27 AM</TimeStamp>
+        <ID>
+          <String>DIM CALENDAR</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>AA3bRPVPkoCVhKetrXEIt/fU1fU=8/22/2022 12:27:44 PM10/21/2022 11:33:27 AM</TimeStamp>
+        <ID>
+          <String>TIME_CONNECTION</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>q/6ekuN3YvQgArurYnWbGzgHtIU=9/15/2022 10:07:45 AM10/21/2022 11:33:27 AM</TimeStamp>
+        <ID>
+          <String>DIM FLIGHT</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>8p8sqRNYDbHBMGXFXgwglSJgC/Y=8/22/2022 12:04:23 PM10/21/2022 11:33:27 AM</TimeStamp>
+        <ID>
+          <String>DIM LAYER</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>4ZVMXA0ucxtchCqt/oe3nXsqQ0A=8/22/2022 12:29:34 PM10/21/2022 11:33:27 AM</TimeStamp>
+        <ID>
+          <String>DIM FLEET</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>Cyl6b1JYA/gQS6jRt3DHJpSiU4U=8/22/2022 12:30:03 PM10/21/2022 11:33:27 AM</TimeStamp>
+        <ID>
+          <String>DIM CFO</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>8UlQ+AbgevnrJ6WgAwrbn9KKnk4=8/14/2022 4:27:28 PM10/21/2022 11:33:27 AM+NpVeNtdHP0ENrkSDg3EhAqZsi4=7/22/2022 7:28:22 PM10/21/2022 11:33:27 AM</TimeStamp>
+        <ID>
+          <String>CURRENCY</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>0iGB1zWlWhD9kTffwiw7f/hPxp0=10/5/2022 1:33:54 PM10/21/2022 11:33:27 AMOfrPS55ROHjGQPanP8szn78hzWI=8/22/2022 12:42:44 PM10/21/2022 11:33:27 AM</TimeStamp>
+        <ID>
+          <String>PROFIT_LOSS</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>cqkiZR5nrpB9wRM+08aIp1xFqJY=8/22/2022 12:33:36 PM10/21/2022 11:33:27 AMNB4+8Y2XUz8SZvlx+rZJvLeWYF0=8/6/2022 4:04:18 PM10/21/2022 11:33:27 AM</TimeStamp>
+        <ID>
+          <String>SCHEDULE</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>T9JLrkj7bLUUEl044RTMMiAqZ1E=10/5/2022 3:05:42 PM10/21/2022 11:33:27 AMyhzbF2Uz12cZiUuZCwvkDtDI4IU=9/14/2022 5:45:56 PM10/21/2022 11:33:27 AM</TimeStamp>
+        <ID>
+          <String>CONSOLIDATED_MODEL</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>m1jP89afsVgHtfg64DIN4tj8/KE=7/18/2022 4:44:32 PM10/21/2022 11:33:27 AM</TimeStamp>
+      <ID>
+        <String>DWH_VC_AVT_MASTER</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2022-10-21T09:31:13.143333Z</LastDeployed>
+</DeploymentSnapshot>

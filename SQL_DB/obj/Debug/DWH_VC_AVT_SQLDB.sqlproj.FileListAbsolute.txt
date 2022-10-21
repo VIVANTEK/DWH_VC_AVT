@@ -1,0 +1,8 @@
+C:\Users\pdobrokhotov\source\repos\VIVANTEK\DWH_VC_AVT\SQLDB\bin\Debug\DWH_VC_AVT_SQLDB.dacpac
+C:\Users\pdobrokhotov\source\repos\VIVANTEK\DWH_VC_AVT\SQLDB\obj\Debug\DWH_VC_AVT_SQLDB.sqlproj.AssemblyReference.cache
+C:\Users\pdobrokhotov\source\repos\VIVANTEK\DWH_VC_AVT\SQLDB\obj\Debug\Model.xml
+C:\Users\pdobrokhotov\source\repos\VIVANTEK\DWH_VC_AVT\SQLDB\obj\Debug\refactor.xml
+C:\Users\pdobrokhotov\source\repos\VIVANTEK\DWH_VC_AVT\SQLDB\obj\Debug\postdeploy.sql
+C:\Users\pdobrokhotov\source\repos\VIVANTEK\DWH_VC_AVT\SQLDB\obj\Debug\predeploy.sql
+C:\Users\pdobrokhotov\source\repos\VIVANTEK\DWH_VC_AVT\SQLDB\obj\Debug\SQLDB.dll
+C:\Users\pdobrokhotov\source\repos\VIVANTEK\DWH_VC_AVT\SQLDB\obj\Debug\SQLDB.pdb

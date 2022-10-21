@@ -1,0 +1,187 @@
+﻿<ConfigurationSettings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Database>
+    <DataSources>
+      <DataSource>
+        <ID>DWH_VC_AVT</ID>
+        <ConnectionString>Provider=SQLNCLI11.1;Data Source=.;Integrated Security=SSPI;Initial Catalog=DWH_VC_AVT</ConnectionString>
+        <ImpersonationInfo>
+          <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">ImpersonateAccount</ImpersonationMode>
+          <Account xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">FLYUIA\srv_cognostm1</Account>
+          <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">PasswordRemoved</ImpersonationInfoSecurity>
+        </ImpersonationInfo>
+      </DataSource>
+    </DataSources>
+    <Dimensions>
+      <Dimension>
+        <ID>MONTH</ID>
+      </Dimension>
+      <Dimension>
+        <ID>PROFIT_LOSS</ID>
+      </Dimension>
+      <Dimension>
+        <ID>VERSION</ID>
+      </Dimension>
+      <Dimension>
+        <ID>DIM CURRENCY</ID>
+      </Dimension>
+      <Dimension>
+        <ID>DIM PATH</ID>
+      </Dimension>
+      <Dimension>
+        <ID>DIM CALENDAR</ID>
+      </Dimension>
+      <Dimension>
+        <ID>TIME_CONNECTION</ID>
+      </Dimension>
+      <Dimension>
+        <ID>DIM FLIGHT</ID>
+      </Dimension>
+      <Dimension>
+        <ID>DIM LAYER</ID>
+      </Dimension>
+      <Dimension>
+        <ID>DIM FLEET</ID>
+      </Dimension>
+      <Dimension>
+        <ID>DIM CFO</ID>
+      </Dimension>
+    </Dimensions>
+    <Cubes>
+      <Cube>
+        <ID>CURRENCY</ID>
+        <MeasureGroups>
+          <MeasureGroup>
+            <ID>FCT CURRENCY</ID>
+            <Partitions>
+              <Partition>
+                <ID>FCT CURRENCY</ID>
+              </Partition>
+              <Partition>
+                <ID>WRB_CURRENCY</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+        </MeasureGroups>
+      </Cube>
+      <Cube>
+        <ID>PROFIT_LOSS</ID>
+        <MeasureGroups>
+          <MeasureGroup>
+            <ID>FCT PROFIT LOSS</ID>
+            <Partitions>
+              <Partition>
+                <ID>FCT PROFIT LOSS</ID>
+              </Partition>
+              <Partition>
+                <ID>WRB_PROFIT_LOSS</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+        </MeasureGroups>
+      </Cube>
+      <Cube>
+        <ID>SCHEDULE</ID>
+        <MeasureGroups>
+          <MeasureGroup>
+            <ID>FCT SCHEDULE PTP</ID>
+            <Partitions>
+              <Partition>
+                <ID>FCT SCHEDULE PTP</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>FCT SCHEDULE TRANSIT</ID>
+            <Partitions>
+              <Partition>
+                <ID>FCT SCHEDULE TRANSIT</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+        </MeasureGroups>
+      </Cube>
+      <Cube>
+        <ID>CONSOLIDATED_MODEL</ID>
+        <MeasureGroups>
+          <MeasureGroup>
+            <ID>FCT SET FLEET</ID>
+            <Partitions>
+              <Partition>
+                <ID>FCT SET FLEET</ID>
+              </Partition>
+              <Partition>
+                <ID>WRB_SET_FLEET</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>FCT SET FLAG FLIGHT PNL ITEM</ID>
+            <Partitions>
+              <Partition>
+                <ID>FCT SET FLAG FLIGHT PNL ITEM</ID>
+              </Partition>
+              <Partition>
+                <ID>WRB_SET_FLAG_FLIGHT_PNL_ITEM</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>FCT SCHEDULE PTP</ID>
+            <Partitions>
+              <Partition>
+                <ID>FCT SCHEDULE PTP</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>FCT SCHEDULE TRANSIT</ID>
+            <Partitions>
+              <Partition>
+                <ID>FCT SCHEDULE TRANSIT</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>FCT SCHEDULE FLIGHT TIME</ID>
+            <Partitions>
+              <Partition>
+                <ID>FCT SCHEDULE FLIGHT TIME</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>FCT PROFIT LOSS</ID>
+            <Partitions>
+              <Partition>
+                <ID>FCT PROFIT LOSS</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>FCT CFO</ID>
+            <Partitions>
+              <Partition>
+                <ID>FCT CFO</ID>
+              </Partition>
+              <Partition>
+                <ID>WRB_CFO</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>FCT DRIVER SHARE</ID>
+            <Partitions>
+              <Partition>
+                <ID>FCT DRIVER SHARE</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+        </MeasureGroups>
+      </Cube>
+    </Cubes>
+    <DataSourceImpersonationInfo>
+      <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Default</ImpersonationMode>
+      <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Unchanged</ImpersonationInfoSecurity>
+    </DataSourceImpersonationInfo>
+  </Database>
+</ConfigurationSettings>

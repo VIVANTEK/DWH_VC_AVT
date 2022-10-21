@@ -1,0 +1,13 @@
+﻿CREATE TABLE [dbo].[DIM_PROFIT_LOSS] (
+    [ITEM_ID]             INT            IDENTITY (1, 1) NOT NULL,
+    [ITEM]                NVARCHAR (255) NULL,
+    [PARENT_ITEM]         NVARCHAR (255) NULL,
+    [ITEM_TYPE]           NVARCHAR (255) NULL,
+    [HIERARCHY_TYPE]      FLOAT (53)     NULL,
+    [UNARY_OPERATOR]      NVARCHAR (255) NULL,
+    [FORMULA]             NVARCHAR (255) NULL,
+    [PROPORTIONAL_DRIVER] NVARCHAR (255) NULL,
+    [LOAD_TIME]           SMALLDATETIME  CONSTRAINT [DF_DIM_PROFIT_LOSS_LOAD_TIME] DEFAULT (getdate()) NULL,
+    [LOAD_DATE]           AS             (CONVERT([date],[LOAD_TIME])) PERSISTED
+);
+

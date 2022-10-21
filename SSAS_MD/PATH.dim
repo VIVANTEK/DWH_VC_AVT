@@ -1,0 +1,864 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="32085236-dff2-4719-b44b-124afdcaa272" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>DIM PATH</ID>
+  <Name>PATH</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="18" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-417" scrolltop="-5536" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="14896" y="13441" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01cc0000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="DIM_PATH" left="20" top="0" logicalid="8" controlid="1" masterid="0" hint1="0" hint2="0" width="3493" height="4842" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000a50d0000ea120000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="PATH" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="DIM_AIRPORT_PATH_ORG" left="-371" top="-7223" logicalid="9" controlid="2" masterid="0" hint1="0" hint2="0" width="4313" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000d910000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="DIM_AIRPORT_PATH_ORG" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="286" top="-2722" logicalid="10" controlid="3" masterid="0" hint1="0" hint2="0" width="799" height="3022" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[DIM_AIRPORT_PATH_ORG-DIM_PATH]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="1" sourceattachpoint="3" destattachpoint="0" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="685" y="-2223" />
+              <point x="685" y="-1112" />
+              <point x="666" y="-1112" />
+              <point x="666" y="0" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="DIM_AIRPORT_PATH_DST" left="-132" top="6667" logicalid="11" controlid="4" masterid="0" hint1="0" hint2="0" width="4313" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000d910000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="DIM_AIRPORT_PATH_DST" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="366" top="4542" logicalid="12" controlid="5" masterid="0" hint1="0" hint2="0" width="1508" height="2625" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[DIM_AIRPORT_PATH_DST-DIM_PATH]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="1" sourceattachpoint="4" destattachpoint="1" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="1474" y="6667" />
+              <point x="1474" y="5755" />
+              <point x="666" y="5755" />
+              <point x="666" y="4842" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="DIM_FLIGHT" left="8281" top="-423" logicalid="13" controlid="6" masterid="0" hint1="0" hint2="0" width="4075" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000eb0f000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="DIM_FLIGHT" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="3213" top="-79" logicalid="17" controlid="10" masterid="0" hint1="0" hint2="0" width="5368" height="906" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[DIM_FLIGHT-DIM_PATH]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="6" destid="1" sourceattachpoint="16" destattachpoint="11" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="8281" y="427" />
+              <point x="5897" y="427" />
+              <point x="5897" y="221" />
+              <point x="3513" y="221" />
+            </connector>
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-417</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-5536</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>-371</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>-7223</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ARDiagramLayout</Name>
+      <Value>
+        <DiagramLayout ZoomPercent="100" ViewPortX="0" ViewPortY="0" xmlns="">
+          <Shapes NodeWidth="126">
+            <Shape Id="PATH KEY" Expanded="true">
+              <Attributes>
+                <Attribute Id="PATH KEY" />
+                <Attribute Id="COEF LOGIC" />
+                <Attribute Id="COUNTRY TURNOVER" />
+                <Attribute Id="DEST GROUP" />
+                <Attribute Id="FLT NUM" />
+                <Attribute Id="FLT PATH DST" />
+                <Attribute Id="FLT PATH ORG" />
+                <Attribute Id="FLT TYPE INT DOM" />
+                <Attribute Id="FLT TYPE OWH OAL" />
+                <Attribute Id="FLT TYPE PSN CAR" />
+                <Attribute Id="FLT TYPE SCH CHR" />
+                <Attribute Id="HAUL" />
+                <Attribute Id="VIA AIRPORT" />
+              </Attributes>
+              <Position x="20" y="20" />
+            </Shape>
+            <Shape Id="ORG DST TYPE" Expanded="false">
+              <Attributes>
+                <Attribute Id="ORG DST TYPE" />
+              </Attributes>
+              <Position x="182" y="20" />
+            </Shape>
+            <Shape Id="ORG DST" Expanded="false">
+              <Attributes>
+                <Attribute Id="ORG DST" />
+              </Attributes>
+              <Position x="182" y="68" />
+            </Shape>
+            <Shape Id="DST AIRPORT" Expanded="true">
+              <Attributes>
+                <Attribute Id="DST AIRPORT" />
+              </Attributes>
+              <Position x="345" y="68" />
+            </Shape>
+            <Shape Id="COUNTRY DESC 1" Expanded="true">
+              <Attributes>
+                <Attribute Id="COUNTRY DESC 1" />
+                <Attribute Id="COUNTRY CODE 1" />
+              </Attributes>
+              <Position x="507" y="68" />
+            </Shape>
+            <Shape Id="REGION CODE 1" Expanded="false">
+              <Attributes>
+                <Attribute Id="REGION CODE 1" />
+              </Attributes>
+              <Position x="670" y="68" />
+            </Shape>
+            <Shape Id="ORG AIRPORT" Expanded="true">
+              <Attributes>
+                <Attribute Id="ORG AIRPORT" />
+              </Attributes>
+              <Position x="345" y="140" />
+            </Shape>
+            <Shape Id="COUNTRY DESC" Expanded="true">
+              <Attributes>
+                <Attribute Id="COUNTRY DESC" />
+                <Attribute Id="COUNTRY CODE" />
+              </Attributes>
+              <Position x="507" y="140" />
+            </Shape>
+            <Shape Id="REGION CODE" Expanded="false">
+              <Attributes>
+                <Attribute Id="REGION CODE" />
+              </Attributes>
+              <Position x="670" y="140" />
+            </Shape>
+          </Shapes>
+        </DiagramLayout>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="b0a35709-ba62-4273-ac91-b0cd6add2dd6">
+    <DataSourceViewID>DWH_VC_AVT</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="40a94112-b266-40bd-a330-4d071d83c64e">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="a078178b-a930-49e1-861f-87d9cc6d8375">
+      <ID>PATH KEY</ID>
+      <Name>PATH KEY</Name>
+      <Usage>Key</Usage>
+      <EstimatedCount>9163</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="4ffeb573-22a2-4b11-a124-fb83aeba5855">
+          <DataType>WChar</DataType>
+          <DataSize>29</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ceef77af-4f0d-499c-9ada-22a36692f1bd">
+            <TableID>PATH</TableID>
+            <ColumnID>PATH_KEY</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="f8a58be7-6103-4fdf-a127-2097496e8779">
+          <AttributeID>FLT PATH ORG</AttributeID>
+          <Name>FLT PATH ORG</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="7d189861-b3d8-4301-8026-680689b6a871">
+          <AttributeID>FLT PATH DST</AttributeID>
+          <Name>FLT PATH DST</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="5753f167-9788-4e8f-b996-0f86bc11a8a6">
+          <AttributeID>ORG DST</AttributeID>
+          <Name>OND</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="2bc33e31-8eb1-4747-a8da-f89910e8317d">
+          <AttributeID>ORG DST TYPE</AttributeID>
+          <Name>PATH TYPE</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="6c54ef7a-ef44-452d-b5e7-0e63d80987ac">
+          <AttributeID>COEF LOGIC</AttributeID>
+          <Name>COEF LOGIC</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="ac468c2f-bb6e-4f48-807a-7ad563c260c1">
+          <AttributeID>FLT NUM</AttributeID>
+          <Name>FLT NUM</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="a739a1d3-5c8b-4163-8d96-0fc94f4e104f">
+          <AttributeID>HAUL</AttributeID>
+          <Name>HAUL</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="c5bccc2a-c266-41aa-940b-ea03b05b0eb5">
+          <AttributeID>FLT TYPE INT DOM</AttributeID>
+          <Name>FLT TYPE INT DOM</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="b93111bb-c711-4a1e-935f-a1c6a3de32fd">
+          <AttributeID>COUNTRY TURNOVER</AttributeID>
+          <Name>COUNTRY TURNOVER</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="897e4e31-ae17-4c1e-a72c-45ffeed157c3">
+          <AttributeID>VIA AIRPORT</AttributeID>
+          <Name>PATH VIA AIRPORT</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="8130bc5a-bc3c-45d1-9f5a-42f40e7919d5">
+          <AttributeID>DEST GROUP</AttributeID>
+          <Name>DEST GROUP</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="d5d92de5-5b20-47de-b179-2850522f4100">
+          <AttributeID>FLT TYPE OWH OAL</AttributeID>
+          <Name>FLT TYPE OWH OAL</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="6abdf7fe-025b-4aa4-b5e7-4ec8a66e91a7">
+          <AttributeID>FLT TYPE PSN CAR</AttributeID>
+          <Name>FLT TYPE PSN CAR</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="734f6a62-56df-45ca-ab14-e593057f7e54">
+          <AttributeID>FLT TYPE SCH CHR</AttributeID>
+          <Name>FLT TYPE SCH CHR</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>ATTRIBUTES\3_PATH</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="5d5d3302-3590-461a-8141-2efa0a0f9097">
+      <ID>FLT PATH ORG</ID>
+      <Name>FLT PATH ORG</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="824305a4-5440-4f79-a0f0-f3e1664f53fd">
+          <DataType>WChar</DataType>
+          <DataSize>16</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="def280d7-be54-4345-8284-8d044499020a">
+            <TableID>PATH</TableID>
+            <ColumnID>FLT_PATH_ORG</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>ATTRIBUTES\1_ORG</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="41eb0cfe-5036-4d4b-984d-5fa1b2216987">
+      <ID>FLT PATH DST</ID>
+      <Name>FLT PATH DST</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="3a3d2252-5d07-40ef-ad31-4b53e7ab938e">
+          <DataType>WChar</DataType>
+          <DataSize>16</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="535793c7-5a73-4985-bbf2-f45fcc4d2d88">
+            <TableID>PATH</TableID>
+            <ColumnID>FLT_PATH_DST</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>ATTRIBUTES\2_DST</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="5b3edd2e-97c4-4081-9bba-6aa35b95e31b">
+      <ID>ORG DST</ID>
+      <Name>OND</Name>
+      <EstimatedCount>2550</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="2db0f788-4322-4392-ba24-a7068231b469">
+          <DataType>WChar</DataType>
+          <DataSize>7</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3a81dec5-6fc1-42bb-a97e-b270785b45bc">
+            <TableID>PATH</TableID>
+            <ColumnID>ORG_DST</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="8a5bedce-ae14-4fef-8c1a-8155a79a8bd0">
+          <AttributeID>ORG AIRPORT</AttributeID>
+          <Name>ORG AIRPORT</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="84a1994f-add2-40df-b7e1-9afcab59e6f6">
+          <AttributeID>DST AIRPORT</AttributeID>
+          <Name>DST AIRPORT</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>ATTRIBUTES\3_PATH</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="15d5f652-eb69-40bf-b8ef-0766d37ae342">
+      <ID>ORG DST TYPE</ID>
+      <Name>PATH TYPE</Name>
+      <EstimatedCount>2</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f2986c4a-75fc-419b-9516-431e6d8dd952">
+          <DataType>WChar</DataType>
+          <DataSize>7</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="462ba366-63f7-4fc1-b67b-343fc77e2e3c">
+            <TableID>PATH</TableID>
+            <ColumnID>ORG_DST_TYPE</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>ATTRIBUTES\3_PATH</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="827221f2-ace8-491c-b558-336f87bf8409">
+      <ID>COEF LOGIC</ID>
+      <Name>COEF LOGIC</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="9dcb802c-dfb5-4f6e-8fad-edc2c38e4c47">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="776ddd3c-593c-4202-bf8c-93f7b9a32169">
+            <TableID>PATH</TableID>
+            <ColumnID>COEF_LOGIC</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>ATTRIBUTES\3_PATH</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="df488083-78a5-4be5-864c-18de6499e7da">
+      <ID>VIA AIRPORT</ID>
+      <Name>PATH VIA AIRPORT</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="3a507270-a2f1-4558-a796-62b22776d1a2">
+          <DataType>WChar</DataType>
+          <DataSize>3</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f64a36b5-e62d-49da-8261-9b7d8a0c9c57">
+            <TableID>PATH</TableID>
+            <ColumnID>VIA_AIRPORT</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>ATTRIBUTES\3_PATH</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="ca946603-e0dd-447e-822e-241dde54efb8">
+      <ID>ORG AIRPORT</ID>
+      <Name>ORG AIRPORT</Name>
+      <EstimatedCount>51</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="35218487-4b18-4c63-882a-000b54013795">
+          <DataType>WChar</DataType>
+          <DataSize>3</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="aee7fa6c-0432-47e2-909d-2288f47663a9">
+            <TableID>PATH</TableID>
+            <ColumnID>ORG_AIRPORT</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="fcb496bf-d0c7-4a93-bd96-dc4de689e6b3">
+          <AttributeID>COUNTRY DESC</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>ORG_COUNTRY_NAME</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>ATTRIBUTES\1_ORG</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="1a3feaf2-71df-4d65-a827-2e6e01280c86">
+      <ID>DST AIRPORT</ID>
+      <Name>DST AIRPORT</Name>
+      <EstimatedCount>51</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="6ed207b4-3995-4e50-9daa-06caab3f2f3c">
+          <DataType>WChar</DataType>
+          <DataSize>3</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="756494cd-1d31-47d3-8040-2a29ce08a971">
+            <TableID>PATH</TableID>
+            <ColumnID>DST_AIRPORT</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="635fe0ca-8d01-4e52-88b7-240d6e3372dd">
+          <AttributeID>COUNTRY DESC 1</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>DST_COUNTRY_NAME</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>ATTRIBUTES\2_DST</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9867d62b-b18c-4ad3-a881-8527c80da56c">
+      <ID>COUNTRY CODE</ID>
+      <Name>ORG_COUNTRY_CODE</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a5779b48-8410-462a-b730-2ef02030389e">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="247ce94a-0a3c-446e-bbf2-4e80e3bb94c9">
+            <TableID>DIM_AIRPORT_PATH_ORG</TableID>
+            <ColumnID>COUNTRY_CODE</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="57b566b3-ee8a-4d14-9c1b-11603ba9988f">
+        <DataType>WChar</DataType>
+        <DataSize>255</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="7db7c536-ec30-473d-a75e-f1cec53a3ded">
+          <TableID>DIM_AIRPORT_PATH_ORG</TableID>
+          <ColumnID>COUNTRY_DESC</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>ATTRIBUTES\1_ORG</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="2f682d04-5585-4410-84b7-a63d25353ed0">
+      <ID>COUNTRY DESC</ID>
+      <Name>ORG_COUNTRY_NAME</Name>
+      <EstimatedCount>215</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="9f498158-5d4a-4203-b262-883d2c1bbb6e">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="50eede7e-1663-44ca-bb71-d7ffeabe9a40">
+            <TableID>DIM_AIRPORT_PATH_ORG</TableID>
+            <ColumnID>COUNTRY_DESC</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="9f18fb75-0260-4554-b87b-8fa66949a926">
+          <AttributeID>COUNTRY CODE</AttributeID>
+          <Name>ORG_COUNTRY_CODE</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="dc65f73f-8a71-4dfe-aff0-3ff97bd20dbf">
+          <AttributeID>REGION CODE</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>ORG_REGION CODE</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <AttributeHierarchyDisplayFolder>ATTRIBUTES\1_ORG</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="adba1173-8a5b-4da1-bf92-248ed4d266be">
+      <ID>REGION CODE</ID>
+      <Name>ORG_REGION CODE</Name>
+      <EstimatedCount>15</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e23b1fe5-1360-4466-9229-d96d13d67cdb">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="714f89b3-52b8-41db-8f41-ed7596001188">
+            <TableID>DIM_AIRPORT_PATH_ORG</TableID>
+            <ColumnID>REGION_CODE</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeHierarchyDisplayFolder>ATTRIBUTES\1_ORG</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="b3b1fdd5-96c9-45f9-9a42-44de48c4cb96">
+      <ID>COUNTRY CODE 1</ID>
+      <Name>DST_COUNTRY_CODE</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="2bcdacda-74d3-4330-83fc-c251adaa9ee4">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="31ee6fe8-fa55-4c16-816d-726ae8f81f1b">
+            <TableID>DIM_AIRPORT_PATH_DST</TableID>
+            <ColumnID>COUNTRY_CODE</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="e5c5a581-adfa-418a-bf49-36905eb400ef">
+        <DataType>WChar</DataType>
+        <DataSize>255</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="1f660fc9-c5f6-4be8-acef-ca0c9d28c8da">
+          <TableID>DIM_AIRPORT_PATH_DST</TableID>
+          <ColumnID>COUNTRY_DESC</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>ATTRIBUTES\2_DST</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e1de7b5f-091d-444d-9e02-d66fe00a90da">
+      <ID>COUNTRY DESC 1</ID>
+      <Name>DST_COUNTRY_NAME</Name>
+      <EstimatedCount>215</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="768a52d0-26b7-4920-ba79-2c8e43929887">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="64bdd5a0-c797-4dcb-bdeb-ff90fe578f53">
+            <TableID>DIM_AIRPORT_PATH_DST</TableID>
+            <ColumnID>COUNTRY_DESC</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="f561d215-b826-4fb2-9125-6f4fd00c8622">
+          <AttributeID>COUNTRY CODE 1</AttributeID>
+          <Name>DST_COUNTRY_CODE</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="25d6bd2d-216a-460a-85d4-c0e3151d1ef9">
+          <AttributeID>REGION CODE 1</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>DST_REGION_CODE</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <AttributeHierarchyDisplayFolder>ATTRIBUTES\2_DST</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="cd77d575-a2e1-4cb8-b243-842bf829413d">
+      <ID>REGION CODE 1</ID>
+      <Name>DST_REGION_CODE</Name>
+      <EstimatedCount>15</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="9445b61c-4074-41d6-9dbb-4788c5bb5097">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="75308340-a94e-47fa-8ec8-330bcaeea97d">
+            <TableID>DIM_AIRPORT_PATH_DST</TableID>
+            <ColumnID>REGION_CODE</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeHierarchyDisplayFolder>ATTRIBUTES\2_DST</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="a5c4263a-22d0-493c-8fb6-a32ce973fd5b">
+      <ID>FLT NUM</ID>
+      <Name>FLT NUM</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="1c654035-8a50-484c-bb00-1b017e8f3c46">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="76d32e47-417f-44bf-88c5-e2a6902c4dd0">
+            <TableID>DIM_FLIGHT</TableID>
+            <ColumnID>FLT_NUM</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeHierarchyDisplayFolder>ATTRIBUTES\4_PTP</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="5b73efa8-6cfc-453d-afb8-8a21b72540f7">
+      <ID>HAUL</ID>
+      <Name>HAUL</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="fd769851-c17a-45a4-8927-4a11ca135663">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="45a2112e-4b2a-436e-9ae4-721c68c0b337">
+            <TableID>DIM_FLIGHT</TableID>
+            <ColumnID>HAUL</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeHierarchyDisplayFolder>ATTRIBUTES\4_PTP</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e183c489-b690-4ef7-8b74-59852365f4c4">
+      <ID>FLT TYPE INT DOM</ID>
+      <Name>FLT TYPE INT DOM</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0debb329-fc43-41b5-8035-bbe8ffc7ed59">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="be49c5f6-c7ed-4cf3-a41a-3ca256169d2d">
+            <TableID>DIM_FLIGHT</TableID>
+            <ColumnID>FLT_TYPE_INT_DOM</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeHierarchyDisplayFolder>ATTRIBUTES\4_PTP</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e2f035a0-f02d-43f4-af61-f1cae0b7204e">
+      <ID>FLT TYPE SCH CHR</ID>
+      <Name>FLT TYPE SCH CHR</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="08eb68a5-30bf-48ae-b6f6-d571e1896960">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="cac2cd04-15c6-4d61-ba48-3e51cf110aae">
+            <TableID>DIM_FLIGHT</TableID>
+            <ColumnID>FLT_TYPE_SCH_CHR</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeHierarchyDisplayFolder>ATTRIBUTES\4_PTP</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="a5b465ee-cfbe-4f8a-9b15-379c6ae59073">
+      <ID>FLT TYPE PSN CAR</ID>
+      <Name>FLT TYPE PSN CAR</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="5f291017-2d6f-4d9a-b464-fa9772d25ad5">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1b67bda0-90a2-4c5b-a18c-25a10e2e75c8">
+            <TableID>DIM_FLIGHT</TableID>
+            <ColumnID>FLT_TYPE_PSN_CAR</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeHierarchyDisplayFolder>ATTRIBUTES\4_PTP</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="4e8c8b5f-9132-4a38-8e9c-22107012af88">
+      <ID>FLT TYPE OWH OAL</ID>
+      <Name>FLT TYPE OWH OAL</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="3953ef45-87f1-4ec5-80ea-4b90c85d652e">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="fa2da87d-0f60-4495-9943-f3e232205f65">
+            <TableID>DIM_FLIGHT</TableID>
+            <ColumnID>FLT_TYPE_OWH_OAL</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeHierarchyDisplayFolder>ATTRIBUTES\4_PTP</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="a054444e-72cf-4ab7-9ef9-fbaac9b2caab">
+      <ID>COUNTRY TURNOVER</ID>
+      <Name>COUNTRY TURNOVER</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="bde08914-4e86-4649-9bc5-e4e483963d3e">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="95ee7190-5e1b-4421-a658-2213da3d34de">
+            <TableID>DIM_FLIGHT</TableID>
+            <ColumnID>COUNTRY_TURNOVER</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeHierarchyDisplayFolder>ATTRIBUTES\4_PTP</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e048f5b4-6577-4f79-bfd2-7769c19b7dc2">
+      <ID>DEST GROUP</ID>
+      <Name>DEST GROUP</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="79cbce9c-e4e8-4382-93c6-a78f7766f0c1">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e53288fb-6641-4aab-ad38-bdfa3afb04c2">
+            <TableID>DIM_FLIGHT</TableID>
+            <ColumnID>DEST_GROUP</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeHierarchyDisplayFolder>ATTRIBUTES\4_PTP</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <Hierarchies>
+    <Hierarchy dwd:design-time-name="fd397988-637c-4d2e-aff6-68782ad8ef8b">
+      <ID>Hierarchy</ID>
+      <Name>TYPE-PATH</Name>
+      <ddl2:MemberKeysUnique valuens="ddl2_2">Unique</ddl2:MemberKeysUnique>
+      <AllowDuplicateNames>false</AllowDuplicateNames>
+      <Levels>
+        <Level dwd:design-time-name="a1e0bd48-fbac-4e7e-8ece-b2ad7ff2dffd">
+          <ID>ORG DST TYPE</ID>
+          <Name>ORG DST TYPE</Name>
+          <SourceAttributeID>ORG DST TYPE</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="7012617d-d7c0-4f8c-b812-c7b3fd6ec329">
+          <ID>PATH KEY</ID>
+          <Name>PATH KEY</Name>
+          <SourceAttributeID>PATH KEY</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+    <Hierarchy dwd:design-time-name="8ebac303-7fd0-4079-a12c-b34695831c21">
+      <ID>Hierarchy 1</ID>
+      <Name>ORG (REGION-COUNTRY-AIRPORT-OND-PATH)</Name>
+      <Levels>
+        <Level dwd:design-time-name="4e2566c5-1d7c-48ed-a835-3c83c283479e">
+          <ID>ORG_REGION CODE</ID>
+          <Name>ORG_REGION CODE</Name>
+          <SourceAttributeID>REGION CODE</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="b5f60508-736b-480f-9a88-34e957f78dc9">
+          <ID>ORG_COUNTRY_NAME</ID>
+          <Name>ORG_COUNTRY_NAME</Name>
+          <SourceAttributeID>COUNTRY DESC</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="1a630107-380c-4bdb-8d3c-3079bdc6e194">
+          <ID>ORG AIRPORT</ID>
+          <Name>ORG AIRPORT</Name>
+          <SourceAttributeID>ORG AIRPORT</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="ddb7e9e8-39d5-401a-a173-f6b0fe6ca203">
+          <ID>ORG DST</ID>
+          <Name>ORG DST</Name>
+          <SourceAttributeID>ORG DST</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="2b96f387-268a-4d4d-9e54-bb8b1184ebd7">
+          <ID>PATH KEY</ID>
+          <Name>PATH KEY</Name>
+          <SourceAttributeID>PATH KEY</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+    <Hierarchy dwd:design-time-name="c6681a68-0464-4866-8429-f18c203c5d32">
+      <ID>Hierarchy 2</ID>
+      <Name>DST ( REGION-COUNTY-AIRPORT-OND-PATH)</Name>
+      <Levels>
+        <Level dwd:design-time-name="1a300dbc-2ac5-4255-9227-deb553b865d6">
+          <ID>DST_REGION_CODE</ID>
+          <Name>DST_REGION_CODE</Name>
+          <SourceAttributeID>REGION CODE 1</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="778e3888-5fe9-40b0-9861-fe608608650f">
+          <ID>DST_COUNTRY_NAME</ID>
+          <Name>DST_COUNTRY_NAME</Name>
+          <SourceAttributeID>COUNTRY DESC 1</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="7eba84b6-a83e-4922-bb67-ba2d9704a6eb">
+          <ID>DST AIRPORT</ID>
+          <Name>DST AIRPORT</Name>
+          <SourceAttributeID>DST AIRPORT</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="f6ab5609-2e9b-4a45-ad87-a0934d7c9d78">
+          <ID>ORG DST</ID>
+          <Name>ORG DST</Name>
+          <SourceAttributeID>ORG DST</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="036ab689-57ea-4b69-8d7f-596fb0b0a28b">
+          <ID>PATH KEY</ID>
+          <Name>PATH KEY</Name>
+          <SourceAttributeID>PATH KEY</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

@@ -1,0 +1,45 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="9f4504d4-8e45-48d4-aef3-15cce738a844" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>SCHEDULE</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>FCT SCHEDULE PTP</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="5be1df75-e055-436f-8ec1-50578a025618">
+          <ID>FCT SCHEDULE PTP</ID>
+          <Name>FCT SCHEDULE PTP</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="2191d834-7aa7-4ae6-9314-8c114c8ffbe7">
+            <DataSourceViewID>DWH_VC_AVT</DataSourceViewID>
+            <TableID>FCT_SCHEDULE_PTP</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>FCT SCHEDULE TRANSIT</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="5cd21972-b055-409d-b2e9-72fee3f5a6cd">
+          <ID>FCT SCHEDULE TRANSIT</ID>
+          <Name>FCT SCHEDULE TRANSIT</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="071603b2-061d-406e-a3f6-9ec398c03523">
+            <DataSourceViewID>DWH_VC_AVT</DataSourceViewID>
+            <TableID>FCT_SCHEDULE_FLIGHT_TRANSIT</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>

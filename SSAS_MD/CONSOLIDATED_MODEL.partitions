@@ -1,0 +1,1377 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="92965861-96a5-4c67-8c5c-5692027d7228" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>CONSOLIDATED_MODEL</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>FCT PROFIT LOSS</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="ad64570c-828e-4f4d-8e71-ff971d9f69f9">
+          <ID>FCT PROFIT LOSS</ID>
+          <Name>FCT_PROFIT_LOSS</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="8a798d1d-b504-4ae6-b135-cd31fd946fd9">
+            <DataSourceViewID>DWH_VC_AVT</DataSourceViewID>
+            <TableID>FACT</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>FCT SCHEDULE PTP</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="e652900d-260b-4cb3-abf1-5cd4310fdcd5">
+          <ID>FCT SCHEDULE PTP</ID>
+          <Name>FCT SCHEDULE PTP</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="f628200f-065f-43f8-9cca-380e3a78a567">
+            <DataSourceViewID>DWH_VC_AVT</DataSourceViewID>
+            <TableID>FCT_SCHEDULE_PTP</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <EstimatedRows>28868</EstimatedRows>
+          <AggregationDesignID>AGG_FCT_SCHEDULE_PTP</AggregationDesignID>
+        </Partition>
+      </Partitions>
+      <AggregationDesigns>
+        <AggregationDesign>
+          <ID>AGG_FCT_SCHEDULE_PTP</ID>
+          <Name>AGG_FCT_SCHEDULE_PTP</Name>
+          <CreatedTimestamp>2022-08-17T13:49:06.523333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2022-08-17T13:49:06.523333Z</LastSchemaUpdate>
+          <EstimatedRows>28868</EstimatedRows>
+          <Dimensions>
+            <Dimension>
+              <CubeDimensionID>PATH</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>PATH KEY</AttributeID>
+                  <EstimatedCount>9163</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>FLT PATH ORG</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>FLT PATH DST</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ORG DST</AttributeID>
+                  <EstimatedCount>2550</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ORG DST TYPE</AttributeID>
+                  <EstimatedCount>2</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>COEF LOGIC</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>VIA AIRPORT</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ORG AIRPORT</AttributeID>
+                  <EstimatedCount>51</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>DST AIRPORT</AttributeID>
+                  <EstimatedCount>51</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>COUNTRY CODE</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>COUNTRY DESC</AttributeID>
+                  <EstimatedCount>215</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>REGION CODE</AttributeID>
+                  <EstimatedCount>15</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>COUNTRY CODE 1</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>COUNTRY DESC 1</AttributeID>
+                  <EstimatedCount>215</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>REGION CODE 1</AttributeID>
+                  <EstimatedCount>15</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>FLT NUM</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>HAUL</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>FLT TYPE INT DOM</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>FLT TYPE SCH CHR</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>FLT TYPE PSN CAR</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>FLT TYPE OWH OAL</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>COUNTRY TURNOVER</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>DEST GROUP</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>CALENDAR</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>D DATE</AttributeID>
+                  <EstimatedCount>3653</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>DOW ID</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>DOW NAME</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>DOW DESC</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>WEEK ID</AttributeID>
+                  <EstimatedCount>530</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>WEEK NUM</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>WEEK NAME</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>WEEK DESC</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>MONTH ID</AttributeID>
+                  <EstimatedCount>120</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>MONTH NUM</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>MONTH NAME SHORT</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>MONTH NAME FULL</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>QUARTER ID</AttributeID>
+                  <EstimatedCount>40</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>QUARTER NUM</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>QUARTER NAME</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>YEAR ID</AttributeID>
+                  <EstimatedCount>10</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>MOHTH DAY ID</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>YEAR DAY ID</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>VERSION</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>VERSION</AttributeID>
+                  <EstimatedCount>6</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>VERSION TYPE</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>FORMULA</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>DIM LAYER</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>LAYER ID</AttributeID>
+                  <EstimatedCount>3</EstimatedCount>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <Aggregations>
+            <Aggregation>
+              <ID>Aggregation 0</ID>
+              <Name>Aggregation 0</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>PATH</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ORG DST TYPE</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>ORG AIRPORT</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>CALENDAR</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>VERSION</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>VERSION</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>DIM LAYER</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>LAYER ID</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1</ID>
+              <Name>Aggregation 1</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>PATH</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ORG DST TYPE</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>DST AIRPORT</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>CALENDAR</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>VERSION</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>VERSION</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>DIM LAYER</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>LAYER ID</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2</ID>
+              <Name>Aggregation 2</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>PATH</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ORG DST TYPE</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>DST AIRPORT</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>CALENDAR</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>YEAR ID</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>VERSION</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>DIM LAYER</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>LAYER ID</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 3</ID>
+              <Name>Aggregation 3</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>PATH</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ORG DST TYPE</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>ORG AIRPORT</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>CALENDAR</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>YEAR ID</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>VERSION</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>DIM LAYER</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>LAYER ID</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 4</ID>
+              <Name>Aggregation 4</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>PATH</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ORG DST TYPE</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>CALENDAR</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>MONTH ID</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>VERSION</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>VERSION</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>DIM LAYER</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>LAYER ID</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 5</ID>
+              <Name>Aggregation 5</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>PATH</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ORG DST TYPE</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>REGION CODE 1</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>CALENDAR</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>VERSION</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>DIM LAYER</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>LAYER ID</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 6</ID>
+              <Name>Aggregation 6</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>PATH</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ORG DST TYPE</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>REGION CODE</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>CALENDAR</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>VERSION</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>DIM LAYER</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>LAYER ID</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 7</ID>
+              <Name>Aggregation 7</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>PATH</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ORG DST TYPE</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>REGION CODE</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>DST AIRPORT</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>CALENDAR</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>VERSION</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>DIM LAYER</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 8</ID>
+              <Name>Aggregation 8</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>PATH</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ORG DST TYPE</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>ORG AIRPORT</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>CALENDAR</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>VERSION</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>DIM LAYER</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 9</ID>
+              <Name>Aggregation 9</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>PATH</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ORG DST TYPE</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>CALENDAR</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>YEAR ID</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>VERSION</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>VERSION</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>DIM LAYER</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>LAYER ID</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation a</ID>
+              <Name>Aggregation a</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>PATH</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ORG DST TYPE</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>ORG AIRPORT</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>REGION CODE 1</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>CALENDAR</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>VERSION</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>DIM LAYER</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>LAYER ID</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation b</ID>
+              <Name>Aggregation b</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>PATH</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ORG DST TYPE</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>REGION CODE 1</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>CALENDAR</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>YEAR ID</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>VERSION</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>VERSION</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>DIM LAYER</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation c</ID>
+              <Name>Aggregation c</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>PATH</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ORG DST TYPE</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>REGION CODE</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>CALENDAR</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>YEAR ID</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>VERSION</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>VERSION</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>DIM LAYER</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation d</ID>
+              <Name>Aggregation d</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>PATH</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ORG DST TYPE</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>CALENDAR</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>YEAR ID</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>VERSION</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>DIM LAYER</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation e</ID>
+              <Name>Aggregation e</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>PATH</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>CALENDAR</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>VERSION</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>VERSION</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>DIM LAYER</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>LAYER ID</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation f</ID>
+              <Name>Aggregation f</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>PATH</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ORG DST TYPE</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>DST AIRPORT</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>CALENDAR</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>VERSION</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>DIM LAYER</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 10</ID>
+              <Name>Aggregation 10</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>PATH</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ORG DST TYPE</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>CALENDAR</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>MONTH ID</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>VERSION</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>DIM LAYER</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>LAYER ID</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 11</ID>
+              <Name>Aggregation 11</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>PATH</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ORG DST TYPE</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>CALENDAR</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>WEEK ID</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>VERSION</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>DIM LAYER</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 12</ID>
+              <Name>Aggregation 12</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>PATH</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ORG DST TYPE</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>REGION CODE</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>CALENDAR</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>QUARTER ID</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>VERSION</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>DIM LAYER</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 13</ID>
+              <Name>Aggregation 13</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>PATH</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ORG DST TYPE</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>REGION CODE 1</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>CALENDAR</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>QUARTER ID</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>VERSION</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>DIM LAYER</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 14</ID>
+              <Name>Aggregation 14</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>PATH</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>REGION CODE</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>REGION CODE 1</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>CALENDAR</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>VERSION</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>VERSION</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>DIM LAYER</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 15</ID>
+              <Name>Aggregation 15</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>PATH</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ORG DST TYPE</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>CALENDAR</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>VERSION</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>DIM LAYER</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>LAYER ID</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 16</ID>
+              <Name>Aggregation 16</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>PATH</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>CALENDAR</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>QUARTER ID</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>VERSION</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>VERSION</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>DIM LAYER</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 17</ID>
+              <Name>Aggregation 17</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>PATH</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>CALENDAR</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>WEEK ID</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>VERSION</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>DIM LAYER</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>LAYER ID</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 18</ID>
+              <Name>Aggregation 18</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>PATH</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>REGION CODE</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>CALENDAR</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>QUARTER ID</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>VERSION</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>DIM LAYER</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>LAYER ID</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 19</ID>
+              <Name>Aggregation 19</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>PATH</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>REGION CODE 1</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>CALENDAR</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>QUARTER ID</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>VERSION</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>DIM LAYER</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>LAYER ID</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1a</ID>
+              <Name>Aggregation 1a</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>PATH</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ORG DST TYPE</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>REGION CODE 1</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>CALENDAR</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>VERSION</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>VERSION</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>DIM LAYER</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1b</ID>
+              <Name>Aggregation 1b</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>PATH</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ORG DST TYPE</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>REGION CODE</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>CALENDAR</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>VERSION</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>VERSION</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>DIM LAYER</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+          </Aggregations>
+        </AggregationDesign>
+      </AggregationDesigns>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>FCT SCHEDULE TRANSIT</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="f6509b0b-cda3-4265-bd0e-b9e93f9ddf68">
+          <ID>FCT SCHEDULE TRANSIT</ID>
+          <Name>FCT_SCHEDULE_TRANSIT</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="db813063-0675-4e82-a600-4cf1a7413b31">
+            <DataSourceViewID>DWH_VC_AVT</DataSourceViewID>
+            <TableID>FCT_SCHEDULE_FLIGHT_TRANSIT</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>FCT SET FLEET</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="e88597b7-13a7-42f2-8dcc-10297cae4458">
+          <ID>FCT SET FLEET</ID>
+          <Name>FCT SET FLEET</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="765f39a9-617d-43d2-9f13-b7a9b797692c">
+            <DataSourceViewID>DWH_VC_AVT</DataSourceViewID>
+            <TableID>FCT_SET_FLEET</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="8b9f46b4-9cbb-4281-8149-c0eae25094ab">
+          <ID>WRB_SET_FLEET</ID>
+          <Name>WRB_SET_FLEET</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="TableBinding" dwd:design-time-name="a2e232c3-1d47-437d-bfc6-e407883469a4">
+            <DataSourceID>DWH_VC_AVT</DataSourceID>
+            <DbTableName>WRB_SET_FLEET</DbTableName>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <Type>Writeback</Type>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>FCT SCHEDULE FLIGHT TIME</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="e0ce5740-7413-4181-bb21-64f21e36da12">
+          <ID>FCT SCHEDULE FLIGHT TIME</ID>
+          <Name>FCT_SCHEDULE_FLIGHT_TIME</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="1d4cbdae-9a51-4804-930a-54a75d5ad324">
+            <DataSourceViewID>DWH_VC_AVT</DataSourceViewID>
+            <TableID>FCT_SCHEDULE_FLIGHT_TIME</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>FCT CFO</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="f56bf181-5e84-49d7-9683-1d3d90406a5a">
+          <ID>FCT CFO</ID>
+          <Name>FCT_CFO</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="0ec55f21-934d-4405-b2bd-a4f4a26d60c7">
+            <DataSourceViewID>DWH_VC_AVT</DataSourceViewID>
+            <TableID>FCT_CFO</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="69a6707c-dcb7-4a3b-962a-adc34ab1bae1">
+          <ID>WRB_CFO</ID>
+          <Name>WRB_CFO</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="TableBinding" dwd:design-time-name="3339e9ae-f348-4327-93f4-86ff3d03fef6">
+            <DataSourceID>DWH_VC_AVT</DataSourceID>
+            <DbTableName>WRB_CFO</DbTableName>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <Type>Writeback</Type>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>FCT SET FLAG FLIGHT PNL ITEM</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="b450123f-9a6a-4676-8966-530b7d34d8b5">
+          <ID>FCT SET FLAG FLIGHT PNL ITEM</ID>
+          <Name>FCT SET FLAG FLIGHT PNL ITEM</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="193812be-619b-4a23-b86b-f808bb427b3f">
+            <DataSourceViewID>DWH_VC_AVT</DataSourceViewID>
+            <TableID>FCT_SET_FLAG_FLIGHT_PNL_ITEM</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <EstimatedRows>811</EstimatedRows>
+          <AggregationDesignID>AggregationDesign</AggregationDesignID>
+        </Partition>
+        <Partition dwd:design-time-name="7a782a9d-4b2b-4c07-be04-a8d8ebfc9645">
+          <ID>WRB_SET_FLAG_FLIGHT_PNL_ITEM</ID>
+          <Name>WRB_SET_FLAG_FLIGHT_PNL_ITEM</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="TableBinding" dwd:design-time-name="06d92b86-1f5e-4e50-90f9-a23defdadffc">
+            <DataSourceID>DWH_VC_AVT</DataSourceID>
+            <DbTableName>WRB_SET_FLAG_FLIGHT_PNL_ITEM</DbTableName>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <Type>Writeback</Type>
+        </Partition>
+      </Partitions>
+      <AggregationDesigns>
+        <AggregationDesign>
+          <ID>AggregationDesign</ID>
+          <Name>AggregationDesign</Name>
+          <CreatedTimestamp>2022-09-02T08:35:21.91Z</CreatedTimestamp>
+          <LastSchemaUpdate>2022-09-02T08:35:21.91Z</LastSchemaUpdate>
+          <EstimatedRows>811</EstimatedRows>
+          <Dimensions>
+            <Dimension>
+              <CubeDimensionID>PROFIT_LOSS</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ITEM</AttributeID>
+                  <EstimatedCount>405</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>PARENT_ITEM</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ITEM_TYPE</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>HIERARCHY_TYPE</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>UNARY_OPERATOR</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>FORMULA</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ITEM ID</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>PROPORTIONAL DRIVER</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>FLIGHT</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>FLT DESC</AttributeID>
+                  <EstimatedCount>809</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>AIRLINE</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>FLT NUM</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ORIG</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>DSTN</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>HAUL</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>FLT TYPE INT DOM</AttributeID>
+                  <EstimatedCount>2</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>FLT TYPE SCH CHR</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>FLT TYPE PSN CAR</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>FLT TYPE OWH OAL</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>COUNTRY TURNOVER</AttributeID>
+                  <EstimatedCount>66</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>DEST GROUP</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+        </AggregationDesign>
+      </AggregationDesigns>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>FCT DRIVER SHARE</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="69c64aa1-8a25-47d1-93eb-363a2ecd9993">
+          <ID>FCT DRIVER SHARE</ID>
+          <Name>FCT DRIVER SHARE</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="573d6d17-d78e-47c2-b7c1-3809ad4cb84e">
+            <DataSourceViewID>DWH_VC_AVT</DataSourceViewID>
+            <TableID>FCT_DRIVER_SHARE</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>

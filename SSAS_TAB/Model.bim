@@ -1,0 +1,933 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1500,
+  "model": {
+    "culture": "en-US",
+    "discourageImplicitMeasures": true,
+    "dataSources": [
+      {
+        "type": "structured",
+        "name": "SQL/ ;DWH_VC_AVT",
+        "connectionDetails": {
+          "protocol": "tds",
+          "address": {
+            "server": ".",
+            "database": "DWH_VC_AVT"
+          },
+          "authentication": null,
+          "query": null
+        },
+        "credential": {
+          "AuthenticationKind": "ServiceAccount",
+          "EncryptConnection": false
+        }
+      }
+    ],
+    "tables": [
+      {
+        "name": "VERSION",
+        "columns": [
+          {
+            "name": "VERSION",
+            "dataType": "string",
+            "sourceColumn": "VERSION"
+          },
+          {
+            "name": "VERSION_TYPE",
+            "dataType": "string",
+            "sourceColumn": "VERSION_TYPE"
+          },
+          {
+            "name": "FORMULA",
+            "dataType": "string",
+            "sourceColumn": "FORMULA"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/ ;DWH_VC_AVT\",",
+                "    dbo_V_DIM_VERSION = Source{[Schema=\"dbo\",Item=\"V_DIM_VERSION\"]}[Data]",
+                "in",
+                "    dbo_V_DIM_VERSION"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "CFO",
+        "columns": [
+          {
+            "name": "CFO_ID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "CFO_ID",
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "name": "CFO_NAME",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "CFO_NAME",
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "name": "CFO_PARENT_NAME",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "CFO_PARENT_NAME",
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "name": "CFO_TYPE",
+            "dataType": "string",
+            "sourceColumn": "CFO_TYPE",
+            "displayFolder": "ATTRIBUTES"
+          },
+          {
+            "type": "calculated",
+            "name": "PARENT_CFO_ID",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": "LOOKUPVALUE(CFO[CFO_ID],CFO[CFO_NAME], CFO[CFO_PARENT_NAME] )",
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "type": "calculated",
+            "name": "ItemPath",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": [
+              "",
+              "PATH(CFO[CFO_ID], CFO[PARENT_CFO_ID])"
+            ],
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "type": "calculated",
+            "name": "UtemDepth",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": [
+              " PATHLENGTH(CFO[ItemPath])",
+              ""
+            ],
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "type": "calculated",
+            "name": "ItemLev1",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": [
+              " LOOKUPVALUE(CFO[CFO_NAME]",
+              "                          ,CFO[CFO_ID]",
+              "                          ,PATHITEM(CFO[ItemPath],1,INTEGER)",
+              "    )",
+              "    "
+            ],
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "type": "calculated",
+            "name": "ItemLev2",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": [
+              " LOOKUPVALUE(CFO[CFO_NAME]",
+              "                          ,CFO[CFO_ID]",
+              "                          ,PATHITEM(CFO[ItemPath],2,INTEGER)",
+              "    )",
+              ""
+            ],
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "type": "calculated",
+            "name": "ItemLev3",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": [
+              " LOOKUPVALUE(CFO[CFO_NAME]",
+              "                          ,CFO[CFO_ID]",
+              "                          ,PATHITEM(CFO[ItemPath],3,INTEGER)",
+              "    )",
+              ""
+            ],
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "type": "calculated",
+            "name": "ItemSort",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": "CFO[CFO_NAME]",
+            "displayFolder": "HIDDEN"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/ ;DWH_VC_AVT\",",
+                "    dbo_DIM_CFO = Source{[Schema=\"dbo\",Item=\"DIM_CFO\"]}[Data],",
+                "    #\"Removed Columns\" = Table.RemoveColumns(dbo_DIM_CFO,{\"LOAD_TIME\", \"LOAD_DATE\"})",
+                "in",
+                "    #\"Removed Columns\""
+              ]
+            }
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "CFO_HIERARCHY",
+            "hideMembers": "hideBlankMembers",
+            "levels": [
+              {
+                "name": "ItemLev1",
+                "ordinal": 0,
+                "column": "ItemLev1"
+              },
+              {
+                "name": "ItemLev2",
+                "ordinal": 1,
+                "column": "ItemLev2"
+              },
+              {
+                "name": "ItemLev3",
+                "ordinal": 2,
+                "column": "ItemLev3"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "MONTH",
+        "columns": [
+          {
+            "name": "YEAR_ID",
+            "dataType": "int64",
+            "sourceColumn": "YEAR_ID",
+            "displayFolder": "ATTRIBUTES"
+          },
+          {
+            "name": "QUARTER_ID",
+            "dataType": "int64",
+            "sourceColumn": "QUARTER_ID",
+            "displayFolder": "ATTRIBUTES"
+          },
+          {
+            "name": "QUARTER_DESC",
+            "dataType": "string",
+            "sourceColumn": "QUARTER_DESC",
+            "displayFolder": "ATTRIBUTES"
+          },
+          {
+            "name": "MONTH_ID",
+            "dataType": "int64",
+            "sourceColumn": "MONTH_ID",
+            "displayFolder": "ATTRIBUTES"
+          },
+          {
+            "name": "MONTH_DESC",
+            "dataType": "string",
+            "sourceColumn": "MONTH_DESC",
+            "sortByColumn": "MONTH_ID",
+            "displayFolder": "ATTRIBUTES"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/ ;DWH_VC_AVT\",",
+                "    dbo_V_DIM_CALENDAR = Source{[Schema=\"dbo\",Item=\"V_DIM_CALENDAR\"]}[Data],",
+                "    #\"Removed Columns\" = Table.RemoveColumns(dbo_V_DIM_CALENDAR,{\"DATE_ID\", \"D_DATE\", \"DATE_DESC\", \"DOW_ID\", \"DOW_NAME\", \"DOW_DESC\", \"WEEK_ID\", \"WEEK_NUM\", \"WEEK_NAME\", \"WEEK_DESC\", \"MONTH_NUM\", \"MONTH_NAME_SHORT\", \"MONTH_NAME_FULL\", \"QUARTER_NUM\", \"QUARTER_NAME\", \"MOHTH_DAY_ID\", \"MOHTH_DAY_NAME\", \"YEAR_DAY_ID\", \"YEAR_DAY_NAME\"}),",
+                "    #\"Grouped Rows\" = Table.Group(#\"Removed Columns\", {\"YEAR_ID\", \"QUARTER_ID\", \"QUARTER_DESC\", \"MONTH_ID\", \"MONTH_DESC\"}, {{\"Count\", each _, type table [MONTH_ID=nullable number, MONTH_DESC=nullable text, QUARTER_ID=nullable number, QUARTER_DESC=nullable text, YEAR_ID=nullable number]}}),",
+                "    #\"Removed Columns1\" = Table.RemoveColumns(#\"Grouped Rows\",{\"Count\"}),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Removed Columns1\",{{\"YEAR_ID\", Int64.Type}})",
+                "in",
+                "    #\"Changed Type\""
+              ]
+            }
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Y-M",
+            "levels": [
+              {
+                "name": "YEAR_ID",
+                "ordinal": 0,
+                "column": "YEAR_ID"
+              },
+              {
+                "name": "MONTH_DESC",
+                "ordinal": 1,
+                "column": "MONTH_DESC"
+              }
+            ]
+          },
+          {
+            "name": "Y-Q-M",
+            "levels": [
+              {
+                "name": "YEAR_ID",
+                "ordinal": 0,
+                "column": "YEAR_ID"
+              },
+              {
+                "name": "QUARTER_DESC",
+                "ordinal": 1,
+                "column": "QUARTER_DESC"
+              },
+              {
+                "name": "MONTH_DESC",
+                "ordinal": 2,
+                "column": "MONTH_DESC"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "LAYER",
+        "columns": [
+          {
+            "name": "LAYER_ID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "LAYER_ID"
+          },
+          {
+            "name": "LAYER_NAME",
+            "dataType": "string",
+            "sourceColumn": "LAYER_NAME"
+          },
+          {
+            "name": "UNARY_OPERATOR",
+            "dataType": "string",
+            "sourceColumn": "UNARY_OPERATOR"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/ ;DWH_VC_AVT\",",
+                "    dbo_DIM_LAYER = Source{[Schema=\"dbo\",Item=\"DIM_LAYER\"]}[Data]",
+                "in",
+                "    dbo_DIM_LAYER"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "PROFIT_LOSS",
+        "columns": [
+          {
+            "name": "ITEM_ID",
+            "dataType": "int64",
+            "isHidden": true,
+            "isKey": true,
+            "sourceColumn": "ITEM_ID",
+            "keepUniqueRows": true,
+            "displayFolder": "ATTRIBUTES",
+            "isDefaultLabel": true
+          },
+          {
+            "name": "ITEM",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "ITEM",
+            "sortByColumn": "ITEM_ID",
+            "displayFolder": "ATTRIBUTES"
+          },
+          {
+            "name": "PARENT_ITEM",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "PARENT_ITEM",
+            "displayFolder": "ATTRIBUTES"
+          },
+          {
+            "name": "ITEM_TYPE",
+            "dataType": "string",
+            "sourceColumn": "ITEM_TYPE",
+            "displayFolder": "ATTRIBUTES"
+          },
+          {
+            "name": "HIERARCHY_TYPE",
+            "dataType": "double",
+            "sourceColumn": "HIERARCHY_TYPE",
+            "displayFolder": "ATTRIBUTES"
+          },
+          {
+            "name": "UNARY_OPERATOR",
+            "dataType": "string",
+            "sourceColumn": "UNARY_OPERATOR",
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "name": "FORMULA",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "FORMULA",
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "name": "PROPORTIONAL_DRIVER",
+            "dataType": "string",
+            "sourceColumn": "PROPORTIONAL_DRIVER",
+            "displayFolder": "ATTRIBUTES"
+          },
+          {
+            "type": "calculated",
+            "name": "ItemPath",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": "PATH(PROFIT_LOSS[ITEM_ID], PROFIT_LOSS[PARENT_ITEM_ID])",
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "type": "calculated",
+            "name": "Level",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": "PATHLENGTH(PROFIT_LOSS[ItemPath])",
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "type": "calculated",
+            "name": "ItemLev1",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": [
+              "LOOKUPVALUE(PROFIT_LOSS[ITEM]",
+              "                          ,PROFIT_LOSS[ITEM_ID]",
+              "                          ,PATHITEM(PROFIT_LOSS[ItemPath],1,INTEGER)",
+              "    )",
+              "    ",
+              "    ",
+              "//The PATHITEM function takes three arguments: the hierarchy path, ",
+              "//the position we want to retrieve (the first in our case) and an optional argument ",
+              "//that specifies the type of the result. This type can be either text or integer."
+            ],
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "type": "calculated",
+            "name": "ItemLev2",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": [
+              "LOOKUPVALUE(PROFIT_LOSS[ITEM]",
+              "                          ,PROFIT_LOSS[ITEM_ID]",
+              "                          ,PATHITEM(PROFIT_LOSS[ItemPath],2,INTEGER)",
+              "    )    ",
+              "    ",
+              "//The PATHITEM function takes three arguments: the hierarchy path, ",
+              "//the position we want to retrieve (the 2nd our case) and an optional argument ",
+              "//that specifies the type of the result. This type can be either text or integer."
+            ],
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "type": "calculated",
+            "name": "ItemLev3",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": [
+              "LOOKUPVALUE(PROFIT_LOSS[ITEM]",
+              "                          ,PROFIT_LOSS[ITEM_ID]",
+              "                          ,PATHITEM(PROFIT_LOSS[ItemPath],3,INTEGER)",
+              "    )    ",
+              "    ",
+              "//The PATHITEM function takes three arguments: the hierarchy path, ",
+              "//the position we want to retrieve (the 3d our case) and an optional argument ",
+              "//that specifies the type of the result. This type can be either text or integer."
+            ],
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "type": "calculated",
+            "name": "ItemLev4",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": [
+              "LOOKUPVALUE(PROFIT_LOSS[ITEM]",
+              "                          ,PROFIT_LOSS[ITEM_ID]",
+              "                          ,PATHITEM(PROFIT_LOSS[ItemPath],4,INTEGER)",
+              "    )    ",
+              "//The PATHITEM function takes three arguments: the hierarchy path, ",
+              "//the position we want to retrieve (the 4th our case) and an optional argument ",
+              "//that specifies the type of the result. This type can be either text or integer."
+            ],
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "type": "calculated",
+            "name": "ItemLev5",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": [
+              "LOOKUPVALUE(PROFIT_LOSS[ITEM]",
+              "                          ,PROFIT_LOSS[ITEM_ID]",
+              "                          ,PATHITEM(PROFIT_LOSS[ItemPath],5,INTEGER)",
+              "    )    ",
+              "//The PATHITEM function takes three arguments: the hierarchy path, ",
+              "//the position we want to retrieve (the 5th our case) and an optional argument ",
+              "//that specifies the type of the result. This type can be either text or integer."
+            ],
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "type": "calculated",
+            "name": "ItemLev6",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": [
+              "LOOKUPVALUE(PROFIT_LOSS[ITEM]",
+              "                          ,PROFIT_LOSS[ITEM_ID]",
+              "                          ,PATHITEM(PROFIT_LOSS[ItemPath],6,INTEGER)",
+              "    )    ",
+              "//The PATHITEM function takes three arguments: the hierarchy path, ",
+              "//the position we want to retrieve (the 6th our case) and an optional argument ",
+              "//that specifies the type of the result. This type can be either text or integer."
+            ],
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "type": "calculated",
+            "name": "ItemLev7",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": [
+              "LOOKUPVALUE(PROFIT_LOSS[ITEM]",
+              "                          ,PROFIT_LOSS[ITEM_ID]",
+              "                          ,PATHITEM(PROFIT_LOSS[ItemPath],7,INTEGER)",
+              "    )    ",
+              "    ",
+              "//The PATHITEM function takes three arguments: the hierarchy path, ",
+              "//the position we want to retrieve (the 7th our case) and an optional argument ",
+              "//that specifies the type of the result. This type can be either text or integer."
+            ],
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "type": "calculated",
+            "name": "PARENT_ITEM_ID",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": [
+              "LOOKUPVALUE(PROFIT_LOSS[ITEM_ID]",
+              "                          ,PROFIT_LOSS[ITEM]",
+              "                          , PROFIT_LOSS[PARENT_ITEM]",
+              "    )"
+            ],
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "type": "calculated",
+            "name": "ItemSort",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": "PROFIT_LOSS[PARENT_ITEM_ID]*1000 + PROFIT_LOSS[ITEM_ID]",
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "type": "calculated",
+            "name": "UnaryOperatorParent",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "LOOKUPVALUE(PROFIT_LOSS[UNARY_OPERATOR], PROFIT_LOSS[ITEM_ID], PROFIT_LOSS[PARENT_ITEM_ID])",
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "type": "calculated",
+            "name": "IsLeafFlag",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "expression": "IF( ISBLANK(LOOKUPVALUE(PROFIT_LOSS[PARENT_ITEM_ID],PROFIT_LOSS[PARENT_ITEM_ID],PROFIT_LOSS[ITEM_ID]) ) , 1,0)",
+            "displayFolder": "HIDDEN"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/ ;DWH_VC_AVT\",",
+                "    dbo_DIM_PROFIT_LOSS = Source{[Schema=\"dbo\",Item=\"DIM_PROFIT_LOSS\"]}[Data],",
+                "    #\"Removed Columns\" = Table.RemoveColumns(dbo_DIM_PROFIT_LOSS,{\"LOAD_TIME\", \"LOAD_DATE\"}),",
+                "    #\"Replaced Value\" = Table.ReplaceValue(#\"Removed Columns\",\"[\",\"[PROFIT_LOSS].[PARENT_ITEM].&[\",Replacer.ReplaceText,{\"FORMULA\"}),",
+                "    #\"Sorted Rows\" = Table.Sort(#\"Replaced Value\",{{\"ITEM_ID\", Order.Ascending}})",
+                "in",
+                "    #\"Sorted Rows\""
+              ]
+            }
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "PARENT-ITEM",
+            "hideMembers": "hideBlankMembers",
+            "levels": [
+              {
+                "name": "ItemLev1",
+                "ordinal": 0,
+                "column": "ItemLev1"
+              },
+              {
+                "name": "ItemLev2",
+                "ordinal": 1,
+                "column": "ItemLev2"
+              },
+              {
+                "name": "ItemLev3",
+                "ordinal": 2,
+                "column": "ItemLev3"
+              },
+              {
+                "name": "ItemLev4",
+                "ordinal": 3,
+                "column": "ItemLev4"
+              },
+              {
+                "name": "ItemLev5",
+                "ordinal": 4,
+                "column": "ItemLev5"
+              },
+              {
+                "name": "ItemLev6",
+                "ordinal": 5,
+                "column": "ItemLev6"
+              },
+              {
+                "name": "ItemLev7",
+                "ordinal": 6,
+                "column": "ItemLev7"
+              }
+            ]
+          },
+          {
+            "name": "DRIVER-ITEM",
+            "hideMembers": "hideBlankMembers",
+            "levels": [
+              {
+                "name": "PROPORTIONAL_DRIVER",
+                "ordinal": 0,
+                "column": "PROPORTIONAL_DRIVER"
+              },
+              {
+                "name": "ITEM",
+                "ordinal": 1,
+                "column": "ITEM"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "FCT_CFO",
+        "isHidden": true,
+        "columns": [
+          {
+            "name": "PNL_ITEM",
+            "dataType": "string",
+            "sourceColumn": "PNL_ITEM"
+          },
+          {
+            "name": "CFO_NAME",
+            "dataType": "string",
+            "sourceColumn": "CFO_NAME"
+          },
+          {
+            "name": "MONTH_ID",
+            "dataType": "int64",
+            "sourceColumn": "MONTH_ID"
+          },
+          {
+            "name": "VERSION",
+            "dataType": "string",
+            "sourceColumn": "VERSION"
+          },
+          {
+            "name": "LAYER_ID",
+            "dataType": "int64",
+            "sourceColumn": "LAYER_ID"
+          },
+          {
+            "name": "CFO_AMOUNT",
+            "dataType": "int64",
+            "sourceColumn": "CFO_AMOUNT"
+          },
+          {
+            "type": "calculated",
+            "name": "CFO_AdjustedAmount",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "expression": [
+              " IF( RELATED(PROFIT_LOSS[UNARY_OPERATOR]) = \"~\" , BLANK()",
+              "      , IF(RELATED(PROFIT_LOSS[UNARY_OPERATOR]) = \"-\" || RELATED(PROFIT_LOSS[UnaryOperatorParent]) = \"-\" ",
+              "           ,[CFO_AMOUNT] * (-1)  , [CFO_AMOUNT]",
+              "        )",
+              "  )"
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/ ;DWH_VC_AVT\",",
+                "    dbo_FCT_CFO = Source{[Schema=\"dbo\",Item=\"FCT_CFO\"]}[Data],",
+                "    #\"Removed Columns\" = Table.RemoveColumns(dbo_FCT_CFO,{\"ROW_ID\"}),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Removed Columns\",{{\"PNL_AMOUNT\", \"CFO_AMOUNT\"}})",
+                "in",
+                "    #\"Renamed Columns\""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "_MEASURES_",
+        "description": "table to store measure group",
+        "columns": [
+          {
+            "type": "calculatedTableColumn",
+            "name": "DummyColumn",
+            "dataType": "int64",
+            "isNameInferred": false,
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "sourceColumn": "[Value]"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "CalculatedTable 1",
+            "source": {
+              "type": "calculated",
+              "expression": "{0} "
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "CFO AMOUNT",
+            "expression": "SUM(FCT_CFO[CFO_AMOUNT])",
+            "formatString": "0",
+            "displayFolder": "CFO"
+          },
+          {
+            "name": "Depth",
+            "expression": [
+              " ISFILTERED(PROFIT_LOSS[ItemLev7]) ",
+              "         + ISFILTERED(PROFIT_LOSS[ItemLev6]) ",
+              "         + ISFILTERED(PROFIT_LOSS[ItemLev5]) ",
+              "         + ISFILTERED(PROFIT_LOSS[ItemLev4]) ",
+              "         + ISFILTERED(PROFIT_LOSS[ItemLev3]) ",
+              "         + ISFILTERED(PROFIT_LOSS[ItemLev2]) ",
+              "         + ISFILTERED(PROFIT_LOSS[ItemLev1])"
+            ],
+            "isHidden": true,
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "name": "Length",
+            "expression": " IF(HASONEVALUE(PROFIT_LOSS[Level]), VALUES(PROFIT_LOSS[Level]), BLANK())",
+            "isHidden": true,
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "name": "Leaf",
+            "expression": " IF([Depth] = [Length], \"Leaf\", BLANK())",
+            "isHidden": true,
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "name": "Original",
+            "expression": " SUM(FCT_CFO[CFO_AMOUNT])",
+            "isHidden": true,
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "name": "Adjusted1",
+            "expression": " SUM(FCT_CFO[CFO_AdjustedAmount])",
+            "isHidden": true,
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "name": "Adjusted2",
+            "expression": " IF([Leaf] = \"Leaf\" && ISBLANK([Adjusted1]), [Original], [Adjusted1])",
+            "isHidden": true,
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "name": "Adjusted3",
+            "expression": " IF([Length] > 0 && [Depth] > [Length] && NOT(ISBLANK([Original])), BLANK(), [Adjusted2])",
+            "isHidden": true,
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "name": "Adjusted4",
+            "expression": " IF(ISBLANK([Adjusted3]) && [Depth] = 1, \"NA\", [Adjusted3])",
+            "isHidden": true,
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "name": "Final",
+            "expression": " IF(ISNUMBER([Adjusted4]), IF([Original] < 0,[Original],ABS([Adjusted4])), [Adjusted4])",
+            "isHidden": true,
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "name": "CFO AMOUNT ADJUSTED",
+            "expression": [
+              " ",
+              "",
+              "    VAR Depth  = ISFILTERED(PROFIT_LOSS[ItemLev7]) ",
+              "               + ISFILTERED(PROFIT_LOSS[ItemLev6]) ",
+              "               + ISFILTERED(PROFIT_LOSS[ItemLev5]) ",
+              "               + ISFILTERED(PROFIT_LOSS[ItemLev4]) ",
+              "               + ISFILTERED(PROFIT_LOSS[ItemLev3]) ",
+              "               + ISFILTERED(PROFIT_LOSS[ItemLev2]) ",
+              "               + ISFILTERED(PROFIT_LOSS[ItemLev1])",
+              "    VAR Length    = IF(HASONEVALUE(PROFIT_LOSS[Level]), VALUES(PROFIT_LOSS[Level]), BLANK())",
+              "    VAR Leaf      = IF(Depth = Length, \"Leaf\", BLANK())",
+              "    VAR Original  = SUM(FCT_CFO[CFO_AMOUNT])",
+              "    VAR Adjusted1 = SUM(FCT_CFO[CFO_AdjustedAmount])",
+              "    VAR Adjusted2 = IF([Leaf] = \"Leaf\" && ISBLANK([Adjusted1]), [Original], [Adjusted1])",
+              "    VAR Adjusted3 = IF([Length] > 0 && [Depth] > [Length] && NOT(ISBLANK([Original])), BLANK(), [Adjusted2])",
+              "    VAR Adjusted4 = IF(ISBLANK([Adjusted3]) && [Depth] = 1, \"NA\", [Adjusted3])",
+              "",
+              "    VAR Final = IF(ISNUMBER([Adjusted4]), IF([Original] < 0,[Original],ABS([Adjusted4])), [Adjusted4])",
+              "",
+              "RETURN Final"
+            ],
+            "displayFolder": "HIDDEN"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "5e735e3b-6a15-4220-b791-bcd35f97730f",
+        "fromTable": "FCT_CFO",
+        "fromColumn": "CFO_NAME",
+        "toTable": "CFO",
+        "toColumn": "CFO_NAME"
+      },
+      {
+        "name": "2ffa6daa-a86e-44e9-acfa-c2af41b20846",
+        "fromTable": "FCT_CFO",
+        "fromColumn": "MONTH_ID",
+        "toTable": "MONTH",
+        "toColumn": "MONTH_ID"
+      },
+      {
+        "name": "7bd6ea08-1da6-4722-a86d-60ad5783a2f3",
+        "fromTable": "FCT_CFO",
+        "fromColumn": "LAYER_ID",
+        "toTable": "LAYER",
+        "toColumn": "LAYER_ID"
+      },
+      {
+        "name": "a110e67c-4801-4203-af70-8eaec4c02b33",
+        "fromTable": "FCT_CFO",
+        "fromColumn": "VERSION",
+        "toTable": "VERSION",
+        "toColumn": "VERSION"
+      },
+      {
+        "name": "60e28606-4440-4a8b-a4c4-d8405d52334a",
+        "fromTable": "FCT_CFO",
+        "fromColumn": "PNL_ITEM",
+        "toTable": "PROFIT_LOSS",
+        "toColumn": "ITEM"
+      }
+    ],
+    "roles": [
+      {
+        "name": "Admins",
+        "modelPermission": "readRefresh",
+        "members": [
+          {
+            "memberName": "WIN-2016_SQL\\Administrator",
+            "memberId": "S-1-5-21-911536897-2377122139-487293552-500"
+          },
+          {
+            "memberName": "WIN-2016_SQL\\vzheltun",
+            "memberId": "S-1-5-21-911536897-2377122139-487293552-1010"
+          },
+          {
+            "memberName": "WIN-2016_SQL\\cognos",
+            "memberId": "S-1-5-21-911536897-2377122139-487293552-1000"
+          },
+          {
+            "memberName": "WIN-2016_SQL\\pdobrokhotov",
+            "memberId": "S-1-5-21-911536897-2377122139-487293552-1004"
+          }
+        ]
+      },
+      {
+        "name": "Users",
+        "modelPermission": "read"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "600"
+      }
+    ]
+  },
+  "id": "SemanticModel"
+}

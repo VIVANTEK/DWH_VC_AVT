@@ -1,0 +1,565 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="8723150d-1d78-4e6a-bd14-5f20b5791e7c" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>PROFIT_LOSS</ID>
+  <Name>PROFIT_LOSS</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="22" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="662" scrolltop="-2401" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="79" x="20664" y="10795" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="DIM_VERSION" left="6151" top="0" logicalid="11" controlid="1" masterid="0" hint1="0" hint2="0" width="3387" height="2302" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c00003b0d0000fe080000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="DIM_VERSION" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="FCT_PROFIT_LOSS" left="6389" top="5549" logicalid="12" controlid="2" masterid="0" hint1="0" hint2="0" width="3149" height="3149" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c00004d0c00004d0c0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="FACT" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="DIM_PROFIT_LOSS" left="20" top="4703" logicalid="13" controlid="3" masterid="0" hint1="0" hint2="0" width="3969" height="4842" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000810f0000ea120000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_DIM_PROFIT_LOSS" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="DIM_MONTH" left="5993" top="11945" logicalid="14" controlid="4" masterid="0" hint1="0" hint2="0" width="3545" height="3149" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000d90d00004d0c0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_DIM_DATE" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="7445" top="1803" logicalid="15" controlid="5" masterid="0" hint1="0" hint2="0" width="818" height="4046" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="2" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[DIM_VERSION-FACT]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="2" sourceattachpoint="5" destattachpoint="4" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="7844" y="2302" />
+              <point x="7844" y="3925" />
+              <point x="7963" y="3925" />
+              <point x="7963" y="5549" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="7366" top="8398" logicalid="16" controlid="6" masterid="0" hint1="0" hint2="0" width="897" height="4047" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FACT-DIM_MONTH]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="2" sourceattachpoint="6" destattachpoint="5" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="7765" y="11945" />
+              <point x="7765" y="10322" />
+              <point x="7963" y="10322" />
+              <point x="7963" y="8698" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="-1280" top="3403" logicalid="17" controlid="7" masterid="0" hint1="0" hint2="0" width="2484" height="2471" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[DIM_PROFIT_LOSS-DIM_PROFIT_LOSS]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="3" sourceattachpoint="16" destattachpoint="2" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="20" y="5474" />
+              <point x="-980" y="5474" />
+              <point x="-980" y="3703" />
+              <point x="904" y="3703" />
+              <point x="904" y="4703" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="3689" top="5625" logicalid="18" controlid="8" masterid="0" hint1="0" hint2="0" width="3000" height="1248" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FCT_PROFIT_LOSS-DIM_PROFIT_LOSS]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="2" sourceattachpoint="19" destattachpoint="12" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="3989" y="6024" />
+              <point x="5189" y="6024" />
+              <point x="5189" y="6573" />
+              <point x="6389" y="6573" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="DIM_FLIGHT" left="16434" top="99" logicalid="19" controlid="9" masterid="0" hint1="0" hint2="0" width="4756" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c00009412000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_DIM_FLIGHT" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="9238" top="4400" logicalid="20" controlid="10" masterid="0" hint1="0" hint2="0" width="7496" height="1923" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FCT_PROFIT_LOSS-DIM_FLIGHT]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="9" destid="2" sourceattachpoint="34" destattachpoint="11" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="16434" y="4799" />
+              <point x="12986" y="4799" />
+              <point x="12986" y="6023" />
+              <point x="9538" y="6023" />
+            </connector>
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>662</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-2401</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>79</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="0cc89a4b-93f6-41cd-9337-5b45c6814ec9">
+      <ID>FLIGHT</ID>
+      <Name>FLIGHT</Name>
+      <DimensionID>DIM FLIGHT</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="80b6d199-2fa0-439c-a552-9491fcb0f41c">
+          <AttributeID>FLT DESC</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="eded622e-4f96-448f-a46b-e0f7e20ed5c3">
+          <AttributeID>AIRLINE</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ddef271d-9563-4166-8991-de906c5edeb1">
+          <AttributeID>FLT NUM</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b66899af-a41b-4a07-b9de-845c92bceb21">
+          <AttributeID>ORIG</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="50ba13a4-8a31-46cf-962e-0e0a2847cdb9">
+          <AttributeID>DSTN</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="de730d6f-fb4c-44cd-b111-f1b8a0b2923b">
+          <AttributeID>HAUL</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="70dc8c7b-1434-4774-bbc4-1533a9080092">
+          <AttributeID>FLT TYPE INT DOM</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="1cbeda61-1497-42ee-a8c4-c5f98da0123d">
+          <AttributeID>FLT TYPE SCH CHR</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="3d80459f-1d37-4863-8a1c-f19d3f17bae0">
+          <AttributeID>FLT TYPE PSN CAR</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d85f7659-fd05-4288-9012-c1699de43226">
+          <AttributeID>FLT TYPE OWH OAL</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="205eae90-8cb7-4b22-ad51-47115d663d4c">
+          <AttributeID>COUNTRY TURNOVER</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="55c2a3f1-b09c-46a8-90e8-cb3dec944234">
+          <AttributeID>DEST GROUP</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="c3ad5265-edfb-47a4-a209-cd7a4c6fe74a">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="2ea87f49-7556-4c1e-9139-e0f07d0c3ce8">
+      <ID>MONTH</ID>
+      <Name>MONTH</Name>
+      <DimensionID>MONTH</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="5a4b25bf-f603-4052-829b-0b8f6f1b569d">
+          <AttributeID>MONTH_ID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="004987df-21f0-4a7b-a63e-2e79cda934c9">
+          <AttributeID>QUARTER_ID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="dd047042-a66a-468e-b28c-8174ec7b8b7f">
+          <AttributeID>YEAR_ID</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="3939a777-12d7-4121-a22b-085486d26468">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+        <Hierarchy dwd:design-time-name="2993eaf9-e483-4e29-88c2-977aeb876840">
+          <HierarchyID>Hierarchy 1</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="17e56350-4971-44f6-91e0-2b8e104cf569">
+      <ID>PROFIT_LOSS</ID>
+      <Name>PROFIT_LOSS</Name>
+      <DimensionID>PROFIT_LOSS</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="209960b3-07b5-45fc-9c6c-732e5fc0ad2b">
+          <AttributeID>ITEM</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d0370d3f-6469-42cc-920b-56e75c196899">
+          <AttributeID>PARENT_ITEM</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="298161e1-1bdb-4add-a152-454231a974a1">
+          <AttributeID>ITEM_TYPE</AttributeID>
+          <AttributeHierarchyEnabled>false</AttributeHierarchyEnabled>
+        </Attribute>
+        <Attribute dwd:design-time-name="8b5342bd-10e2-4be2-b59b-85d3730d2887">
+          <AttributeID>HIERARCHY_TYPE</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="cf78c139-052a-4dac-8d93-d2bf0ae3aed2">
+          <AttributeID>UNARY_OPERATOR</AttributeID>
+          <AttributeHierarchyEnabled>false</AttributeHierarchyEnabled>
+        </Attribute>
+        <Attribute dwd:design-time-name="168935fa-b075-4770-9722-ceb9a24cd8f5">
+          <AttributeID>FORMULA</AttributeID>
+          <AttributeHierarchyEnabled>false</AttributeHierarchyEnabled>
+        </Attribute>
+        <Attribute dwd:design-time-name="5b5d55dc-0496-43c9-90e9-6205ad2d4895">
+          <AttributeID>ITEM ID</AttributeID>
+          <AttributeHierarchyEnabled>false</AttributeHierarchyEnabled>
+        </Attribute>
+        <Attribute dwd:design-time-name="36ef4f0c-f1ae-45a7-900a-4adde1988c90">
+          <AttributeID>PROPORTIONAL DRIVER</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="a8e91185-ebf7-42cb-b7f7-72231812f2d8">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="2923f5ea-837d-4b29-a1ea-0325cae09c40">
+      <ID>VERSION</ID>
+      <Name>VERSION</Name>
+      <DimensionID>VERSION</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="b8ccde63-646e-4b43-ba4c-073bfa7a7177">
+          <AttributeID>VERSION</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b12aa709-3c24-4a5b-ac5c-15bc6c3e3a09">
+          <AttributeID>VERSION TYPE</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="03901a66-8dd0-415f-a738-90a8941b78cd">
+          <AttributeID>FORMULA</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="59f919a1-a788-4d0e-a412-7209983fd005">
+      <ID>FCT PROFIT LOSS</ID>
+      <Name>FCT_PROFIT_LOSS</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="ec3be95a-a58d-414b-bdf4-05e457fc4f67">
+          <ID>PNL AMOUNT</ID>
+          <Name>PNL_AMOUNT</Name>
+          <Source dwd:design-time-name="685ce20a-31b7-4edd-8c60-4dc9a3719aee">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="72cd15f3-e259-42dd-a6e3-49eab0a2a72b">
+              <TableID>FACT</TableID>
+              <ColumnID>PNL_AMOUNT</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="a3c8dc6c-cdb6-4ef4-a902-d050b4f61f10">
+          <CubeDimensionID>MONTH</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="7fef1992-152c-443d-b13e-30602a4e6541">
+              <AttributeID>MONTH_ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="6ae1e74a-19b8-45a7-a483-758d4fdd781c">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="db638f5d-d3b0-492c-89fc-e046644e2849">
+                    <TableID>FACT</TableID>
+                    <ColumnID>MONTH_ID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="ef7d33f9-1f92-4bcc-be3b-b7f983638129">
+          <CubeDimensionID>PROFIT_LOSS</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="42c86247-32ef-43f0-8627-30feccf4d179">
+              <AttributeID>ITEM</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="2efefdf9-7d32-4679-acc9-22f95cb6a66a">
+                  <DataType>WChar</DataType>
+                  <DataSize>255</DataSize>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="d0fe0065-f6c7-4e9c-b575-8c589a0a1cb4">
+                    <TableID>FACT</TableID>
+                    <ColumnID>PNL_ITEM</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="9b35e394-7a33-46fa-8a85-4428073eb0cd">
+          <CubeDimensionID>VERSION</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="0e79cd05-c2bb-4e6f-aa54-f0dbef97b07e">
+              <AttributeID>VERSION</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="198e19d7-0db1-435e-aa47-0dee696187e3">
+                  <DataType>WChar</DataType>
+                  <DataSize>255</DataSize>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="1ffaebb0-6939-4b6f-9043-af734167d5cb">
+                    <TableID>FACT</TableID>
+                    <ColumnID>VERSION</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="fc832be7-a169-4a10-a40b-463b82039e2b">
+          <CubeDimensionID>FLIGHT</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="c9f4fa75-debc-4f45-b066-9ad666d684db">
+              <AttributeID>FLT DESC</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="3c69956c-c6c8-4cef-9a4d-fd3743051455">
+                  <DataType>WChar</DataType>
+                  <DataSize>255</DataSize>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="466b3d85-be68-463e-bb2a-30e20513debd">
+                    <TableID>FACT</TableID>
+                    <ColumnID>FLIGHT</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="c822e1ae-88f2-4a71-a577-54257c9e341d">
+    <DataSourceViewID>DWH_VC_AVT</DataSourceViewID>
+  </Source>
+  <MdxScripts>
+    <MdxScript dwd:design-time-name="7bfee4d0-bc10-45b8-bd58-cb997c720533">
+      <ID>MdxScript</ID>
+      <Name>MdxScript</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <Commands>
+        <Command>
+          <Text>/*
+The CALCULATE command controls the aggregation of leaf cells in the cube.
+If the CALCULATE command is deleted or modified, the data within the cube is affected.
+You should edit this command only if you manually specify how the cube is aggregated.
+*/
+CALCULATE;
+
+SCOPE (LEAVES(),[Measures].[PNL_AMOUNT],[VERSION].[VERSION].&amp;[FCST] 
+ -- temporary optimization 
+   , {[MONTH].[YEAR_ID].&amp;[2021],[MONTH].[YEAR_ID].&amp;[2022],[MONTH].[YEAR_ID].&amp;[2023] });
+ --  ********************** Start Lookup Shedule **********************************************     */
+   Scope ([PROFIT_LOSS].[PARENT_ITEM].&amp;[BH] );
+     This =    LookupCube("SCHEDULE" ,
+                         "([PATH].[PATH KEY].&amp;["       + [FLIGHT].[FLT_DESC].CurrentMember.Name    + "]"
+                       + ",[CALENDAR].[MONTH_ID].[" + [MONTH].[MONTH_ID].CurrentMember.Name   + "]"  
+                       + ",[Measures].[BH])" ) ;
+   End Scope;
+ 
+   Scope ([VERSION].[VERSION].&amp;[FCST],[PROFIT_LOSS].[PARENT_ITEM].&amp;[Departures] );
+     This =   LookupCube("SCHEDULE" ,
+                        "( [PATH].[PATH KEY].&amp;["       + [FLIGHT].[FLT_DESC].CurrentMember.Name  + "]"
+                       + ",[CALENDAR].[MONTH_ID].[" + [MONTH].[MONTH_ID].CurrentMember.Name   + "]"  
+                       + ",[Measures].[Departures])" );
+   End Scope; 
+   Scope ([VERSION].[VERSION].&amp;[FCST],[PROFIT_LOSS].[PARENT_ITEM].&amp;[Seats] );
+     This =   LookupCube("SCHEDULE" ,
+                        "( [PATH].[PATH KEY].&amp;["       + [FLIGHT].[FLT_DESC].CurrentMember.Name  + "]"
+                       + ",[CALENDAR].[MONTH_ID].[" + [MONTH].[MONTH_ID].CurrentMember.Name   + "]"  
+                       + ",[Measures].[SEATS])" );
+   End Scope; 
+   Scope ([VERSION].[VERSION].&amp;[FCST],[PROFIT_LOSS].[PARENT_ITEM].&amp;[Seats C]);
+     This =   LookupCube("SCHEDULE" ,
+                        "( [PATH].[PATH KEY].&amp;["       + [FLIGHT].[FLT_DESC].CurrentMember.Name  + "]"
+                       + ",[CALENDAR].[MONTH_ID].[" + [MONTH].[MONTH_ID].CurrentMember.Name   + "]"  
+                       + ",[Measures].[SEATS_C])" );
+   End Scope; 
+   Scope ([VERSION].[VERSION].&amp;[FCST],[PROFIT_LOSS].[PARENT_ITEM].&amp;[Seats Y]);
+     This =   LookupCube("SCHEDULE" ,
+                        "( [PATH].[PATH KEY].&amp;["       + [FLIGHT].[FLT_DESC].CurrentMember.Name  + "]"
+                       + ",[CALENDAR].[MONTH_ID].[" + [MONTH].[MONTH_ID].CurrentMember.Name   + "]"  
+                       + ",[Measures].[SEATS_S])" );
+   End Scope; 
+   Scope ([VERSION].[VERSION].&amp;[FCST],[PROFIT_LOSS].[PARENT_ITEM].&amp;[Seats Y+]);
+     This =   LookupCube("SCHEDULE" ,
+                        "( [PATH].[PATH KEY].&amp;["       + [FLIGHT].[FLT_DESC].CurrentMember.Name  + "]"
+                       + ",[CALENDAR].[MONTH_ID].[" + [MONTH].[MONTH_ID].CurrentMember.Name   + "]"  
+                       + ",[Measures].[SEATS_W])" );
+   End Scope; 
+   --Remive not-found flights error
+   THIS = IIF(ISERROR ([Measures].[PNL_AMOUNT]), NULL ,[Measures].[PNL_AMOUNT] ) ; 
+   FORMAT_STRING(THIS) =  '### ### ### ##0.0;-### ### ### ##0.0';
+
+END SCOPE;
+
+/*    ********************** End Lookup Shedule **********************************************     */
+
+</Text>
+        </Command>
+      </Commands>
+    </MdxScript>
+  </MdxScripts>
+  <Actions>
+    <Action xsi:type="StandardAction" dwd:design-time-name="63776ae2-72a0-4549-8ff9-43290cd3eea6">
+      <ID>Action</ID>
+      <Name>DRILL_SQL</Name>
+      <Caption>Drill report for current cell (edits log)</Caption>
+      <TargetType>Cells</TargetType>
+      <Target></Target>
+      <Condition>[VERSION].[VERSION].CurrentMember IS [VERSION].[VERSION].&amp;[ACT] OR
+[VERSION].[VERSION].CurrentMember IS [VERSION].[VERSION].&amp;[BDG] OR
+[VERSION].[VERSION].CurrentMember IS [VERSION].[VERSION].&amp;[FCST]</Condition>
+      <Type>Rowset</Type>
+      <Expression>'CALL SQLQueryX.ExecuteSql(
+    "Provider=SQLNCLI11;Server=SQL2016COGNOS;Database=DWH_VC_AVT;Uid=cognostm1;Pwd=9tJzD936"'
+ + ',"EXEC [dbo].[P_DRILL_PROFIT_LOSS] '
+ + ' N''' + [VERSION].[VERSION].CurrentMember.MEMBER_KEY + ''''
+---------------------------PNL-------------------------------------------
+ + ',N''' + [PROFIT_LOSS].[ITEM].CurrentMember.MEMBER_KEY + '''' 
+ + ',N''' + [PROFIT_LOSS].[PARENT_ITEM].CurrentMember.MEMBER_KEY + ''''
+ + ',N''' + [PROFIT_LOSS].[HIERARCHY_TYPE].CurrentMember.MEMBER_CAPTION  + '''' 
+---------------------------FLT-------------------------------------------
+ + ',N''' + [FLIGHT].[FLT_DESC].CurrentMember.MEMBER_CAPTION  + '''' 
+ + ',N''' + [FLIGHT].[AIRLINE].CurrentMember.MEMBER_CAPTION  + '''' 
+ + ',N''' + [FLIGHT].[COUNTRY_TURNOVER].CurrentMember.MEMBER_CAPTION  + '''' 
+ + ',N''' + [FLIGHT].[DEST_GROUP].CurrentMember.MEMBER_CAPTION  + '''' 
+ + ',N''' + [FLIGHT].[DSTN].CurrentMember.MEMBER_CAPTION  + '''' 
+ + ',N''' + [FLIGHT].[FLT_NUM].CurrentMember.MEMBER_CAPTION  + '''' 
+ + ',N''' + [FLIGHT].[FLT_TYPE_INT_DOM].CurrentMember.MEMBER_CAPTION  + '''' 
+ + ',N''' + [FLIGHT].[FLT_TYPE_OWH_OAL].CurrentMember.MEMBER_CAPTION  + '''' 
+ + ',N''' + [FLIGHT].[FLT_TYPE_PSN_CAR].CurrentMember.MEMBER_CAPTION  + '''' 
+ + ',N''' + [FLIGHT].[FLT_TYPE_SCH_CHR].CurrentMember.MEMBER_CAPTION  + '''' 
+ + ',N''' + [FLIGHT].[HAUL].CurrentMember.MEMBER_CAPTION  + '''' 
+ + ',N''' + [FLIGHT].[ORIG].CurrentMember.MEMBER_CAPTION  + '''' 
+ + ',N''' + [FLIGHT].[TYPE-COUNTRY-FLT].MEMBER_CAPTION  + '''' 
+---------------------------CLDR------------------------------------------
+ + ',N''' + [MONTH].[MONTH_ID].CurrentMember.MEMBER_KEY + '''' 
+ + ',N''' + [MONTH].[QUARTER_ID].CurrentMember.MEMBER_KEY + ''''
+ + ',N''' + [MONTH].[YEAR_ID].CurrentMember.MEMBER_KEY + ''''
+ + ',N''' + [MONTH].[MONTH (YYYY-QQ-MM)].CurrentMember.MEMBER_KEY + ''''
+---------------------------------------------------------------
+//+ ',''' + IIF([XXXX].[YYYY].CurrentMember.MEMBER_KEY="0","All",[XXXX].[YYYY].CurrentMember.MEMBER_KEY)   + ''''
+---------------------------------------------------------------
++ '",300)'</Expression>
+    </Action>
+  </Actions>
+</Cube>
