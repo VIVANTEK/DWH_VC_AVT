@@ -417,9 +417,10 @@
           },
           {
             "type": "calculated",
-            "name": "Level",
+            "name": "ItemDepth",
             "dataType": "int64",
             "isDataTypeInferred": true,
+            "isHidden": true,
             "expression": "PATHLENGTH(PROFIT_LOSS[ItemPath])",
             "displayFolder": "HIDDEN"
           },
@@ -436,9 +437,14 @@
               "    )",
               "    ",
               "    ",
-              "//The PATHITEM function takes three arguments: the hierarchy path, ",
-              "//the position we want to retrieve (the first in our case) and an optional argument ",
-              "//that specifies the type of the result. This type can be either text or integer."
+              " /*",
+              "The PATHITEM function takes three arguments: the hierarchy path, ",
+              "the position we want to retrieve (the 4th our case) and an optional argument ",
+              "that specifies the type of the result. This type can be either text or integer.",
+              "Instead of last param - INTEGER you may use =  1",
+              "",
+              "*/",
+              ""
             ],
             "displayFolder": "HIDDEN"
           },
@@ -454,9 +460,14 @@
               "                          ,PATHITEM(PROFIT_LOSS[ItemPath],2,INTEGER)",
               "    )    ",
               "    ",
-              "//The PATHITEM function takes three arguments: the hierarchy path, ",
-              "//the position we want to retrieve (the 2nd our case) and an optional argument ",
-              "//that specifies the type of the result. This type can be either text or integer."
+              " /*",
+              "The PATHITEM function takes three arguments: the hierarchy path, ",
+              "the position we want to retrieve (the 4th our case) and an optional argument ",
+              "that specifies the type of the result. This type can be either text or integer.",
+              "Instead of last param - INTEGER you may use =  1",
+              "",
+              "*/",
+              ""
             ],
             "displayFolder": "HIDDEN"
           },
@@ -472,9 +483,14 @@
               "                          ,PATHITEM(PROFIT_LOSS[ItemPath],3,INTEGER)",
               "    )    ",
               "    ",
-              "//The PATHITEM function takes three arguments: the hierarchy path, ",
-              "//the position we want to retrieve (the 3d our case) and an optional argument ",
-              "//that specifies the type of the result. This type can be either text or integer."
+              " /*",
+              "The PATHITEM function takes three arguments: the hierarchy path, ",
+              "the position we want to retrieve (the 4th our case) and an optional argument ",
+              "that specifies the type of the result. This type can be either text or integer.",
+              "Instead of last param - INTEGER you may use =  1",
+              "",
+              "*/",
+              ""
             ],
             "displayFolder": "HIDDEN"
           },
@@ -489,9 +505,13 @@
               "                          ,PROFIT_LOSS[ITEM_ID]",
               "                          ,PATHITEM(PROFIT_LOSS[ItemPath],4,INTEGER)",
               "    )    ",
-              "//The PATHITEM function takes three arguments: the hierarchy path, ",
-              "//the position we want to retrieve (the 4th our case) and an optional argument ",
-              "//that specifies the type of the result. This type can be either text or integer."
+              " /*",
+              "The PATHITEM function takes three arguments: the hierarchy path, ",
+              "the position we want to retrieve (the 4th our case) and an optional argument ",
+              "that specifies the type of the result. This type can be either text or integer.",
+              "Instead of last param - INTEGER you may use =  1",
+              "",
+              "*/"
             ],
             "displayFolder": "HIDDEN"
           },
@@ -506,9 +526,15 @@
               "                          ,PROFIT_LOSS[ITEM_ID]",
               "                          ,PATHITEM(PROFIT_LOSS[ItemPath],5,INTEGER)",
               "    )    ",
-              "//The PATHITEM function takes three arguments: the hierarchy path, ",
-              "//the position we want to retrieve (the 5th our case) and an optional argument ",
-              "//that specifies the type of the result. This type can be either text or integer."
+              "    ",
+              " /*",
+              "The PATHITEM function takes three arguments: the hierarchy path, ",
+              "the position we want to retrieve (the 4th our case) and an optional argument ",
+              "that specifies the type of the result. This type can be either text or integer.",
+              "Instead of last param - INTEGER you may use =  1",
+              "",
+              "*/",
+              ""
             ],
             "displayFolder": "HIDDEN"
           },
@@ -523,9 +549,15 @@
               "                          ,PROFIT_LOSS[ITEM_ID]",
               "                          ,PATHITEM(PROFIT_LOSS[ItemPath],6,INTEGER)",
               "    )    ",
-              "//The PATHITEM function takes three arguments: the hierarchy path, ",
-              "//the position we want to retrieve (the 6th our case) and an optional argument ",
-              "//that specifies the type of the result. This type can be either text or integer."
+              "",
+              " /*",
+              "The PATHITEM function takes three arguments: the hierarchy path, ",
+              "the position we want to retrieve (the 4th our case) and an optional argument ",
+              "that specifies the type of the result. This type can be either text or integer.",
+              "Instead of last param - INTEGER you may use =  1",
+              "",
+              "*/",
+              ""
             ],
             "displayFolder": "HIDDEN"
           },
@@ -541,9 +573,14 @@
               "                          ,PATHITEM(PROFIT_LOSS[ItemPath],7,INTEGER)",
               "    )    ",
               "    ",
-              "//The PATHITEM function takes three arguments: the hierarchy path, ",
-              "//the position we want to retrieve (the 7th our case) and an optional argument ",
-              "//that specifies the type of the result. This type can be either text or integer."
+              " /*",
+              "The PATHITEM function takes three arguments: the hierarchy path, ",
+              "the position we want to retrieve (the 4th our case) and an optional argument ",
+              "that specifies the type of the result. This type can be either text or integer.",
+              "Instead of last param - INTEGER you may use =  1",
+              "",
+              "*/",
+              ""
             ],
             "displayFolder": "HIDDEN"
           },
@@ -572,18 +609,226 @@
           },
           {
             "type": "calculated",
-            "name": "UnaryOperatorParent",
-            "dataType": "string",
+            "name": "IsLeafFlag",
+            "dataType": "int64",
             "isDataTypeInferred": true,
-            "expression": "LOOKUPVALUE(PROFIT_LOSS[UNARY_OPERATOR], PROFIT_LOSS[ITEM_ID], PROFIT_LOSS[PARENT_ITEM_ID])",
+            "expression": [
+              "IF( ISBLANK(LOOKUPVALUE(PROFIT_LOSS[PARENT_ITEM_ID],PROFIT_LOSS[PARENT_ITEM_ID],PROFIT_LOSS[ITEM_ID]) ) , 1,0)",
+              "",
+              "/* =======================================================",
+              "another variant",
+              "=  VAR CurrentItemID = PROFIT_LOSS[ITEM_ID]",
+              "  VAR ChildItemCount = CALCULATE (COUNTROWS ( PROFIT_LOSS ),",
+              "                                  ALL ( PROFIT_LOSS ),",
+              "                                  PROFIT_LOSS[PARENT_ITEM_ID] = CurrentItemID",
+              "                       )",
+              "  VAR Result = ( ChildItemCount = 0 )",
+              "RETURN Result",
+              "",
+              "==========================================================*/"
+            ],
             "displayFolder": "HIDDEN"
           },
           {
             "type": "calculated",
-            "name": "IsLeafFlag",
+            "name": "SignToLevel7",
             "dataType": "int64",
             "isDataTypeInferred": true,
-            "expression": "IF( ISBLANK(LOOKUPVALUE(PROFIT_LOSS[PARENT_ITEM_ID],PROFIT_LOSS[PARENT_ITEM_ID],PROFIT_LOSS[ITEM_ID]) ) , 1,0)",
+            "isHidden": true,
+            "expression": [
+              "",
+              "VAR LevelNumber = 7",
+              "VAR Depth = 'PROFIT_LOSS'[ItemDepth]",
+              "RETURN",
+              "    IF ( LevelNumber = Depth, IF ( 'PROFIT_LOSS'[UNARY_OPERATOR] = \"-\", -1, +1 ) )",
+              "",
+              "/*====================================================",
+              "The DAX formula computing the sign at each level starts ",
+              "from the most granular level  = 7  (leaf level) here. ",
+              "At this most granular level, the sign to use is just ",
+              "the operator converted into +1 or -1 ",
+              "=====================================================*/"
+            ],
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "type": "calculated",
+            "name": "SignToLevel6",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": [
+              "",
+              "VAR LevelNumber = 6",
+              "VAR PrevSign = 'PROFIT_LOSS'[SignToLevel7]",
+              "VAR Depth = 'PROFIT_LOSS'[ItemDepth]",
+              "VAR LevelKey =",
+              "    PATHITEM ( 'PROFIT_LOSS'[ItemPath], LevelNumber, INTEGER )",
+              "VAR LevelSign =",
+              "    LOOKUPVALUE ( 'PROFIT_LOSS'[UNARY_OPERATOR], 'PROFIT_LOSS'[ITEM_ID], LevelKey )",
+              "RETURN",
+              "    IF (LevelNumber = Depth",
+              "\t   ,IF ( 'PROFIT_LOSS'[UNARY_OPERATOR] = \"-\", -1, +1 )",
+              "\t   ,IF ( LevelNumber < Depth, IF ( LevelSign = \"-\", -1, +1 ) * PrevSign )",
+              "    )",
+              "/*====================================================",
+              "All the columns from level 1 to level 6 (except the lowest level = 7) ",
+              "should follow a similar pattern, though for each level ",
+              "the DAX expression must consider the sign at the more granular, ",
+              "adjacent level (stored in the PrevSign variable) and invert ",
+              "the result when that level shows a “-“ sign, as shown in the column for level 6:",
+              "=====================================================*/"
+            ],
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "type": "calculated",
+            "name": "SignToLevel5",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": [
+              "",
+              "VAR LevelNumber = 5",
+              "VAR PrevSign = 'PROFIT_LOSS'[SignToLevel6]",
+              "VAR Depth = 'PROFIT_LOSS'[ItemDepth]",
+              "VAR LevelKey =",
+              "    PATHITEM ( 'PROFIT_LOSS'[ItemPath], LevelNumber, INTEGER )",
+              "VAR LevelSign =",
+              "    LOOKUPVALUE ( 'PROFIT_LOSS'[UNARY_OPERATOR], 'PROFIT_LOSS'[ITEM_ID], LevelKey )",
+              "RETURN",
+              "    IF (LevelNumber = Depth",
+              "\t   ,IF ( 'PROFIT_LOSS'[UNARY_OPERATOR] = \"-\", -1, +1 )",
+              "\t   ,IF ( LevelNumber < Depth, IF ( LevelSign = \"-\", -1, +1 ) * PrevSign )",
+              "    )",
+              "/*====================================================",
+              "All the columns from level 1 to level 6 (except the lowest level = 7) ",
+              "should follow a similar pattern, though for each level ",
+              "the DAX expression must consider the sign at the more granular, ",
+              "adjacent level (stored in the PrevSign variable) and invert ",
+              "the result when that level shows a “-“ sign, as shown in the column for level 6:",
+              "=====================================================*/"
+            ],
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "type": "calculated",
+            "name": "SignToLevel4",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": [
+              "",
+              "VAR LevelNumber = 4",
+              "VAR PrevSign = 'PROFIT_LOSS'[SignToLevel5]",
+              "VAR Depth = 'PROFIT_LOSS'[ItemDepth]",
+              "VAR LevelKey =",
+              "    PATHITEM ( 'PROFIT_LOSS'[ItemPath], LevelNumber, INTEGER )",
+              "VAR LevelSign =",
+              "    LOOKUPVALUE ( 'PROFIT_LOSS'[UNARY_OPERATOR], 'PROFIT_LOSS'[ITEM_ID], LevelKey )",
+              "RETURN",
+              "    IF (LevelNumber = Depth",
+              "\t   ,IF ( 'PROFIT_LOSS'[UNARY_OPERATOR] = \"-\", -1, +1 )",
+              "\t   ,IF ( LevelNumber < Depth, IF ( LevelSign = \"-\", -1, +1 ) * PrevSign )",
+              "    )",
+              "/*====================================================",
+              "All the columns from level 1 to level 6 (except the lowest level = 7) ",
+              "should follow a similar pattern, though for each level ",
+              "the DAX expression must consider the sign at the more granular, ",
+              "adjacent level (stored in the PrevSign variable) and invert ",
+              "the result when that level shows a “-“ sign, as shown in the column for level 6:",
+              "=====================================================*/"
+            ],
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "type": "calculated",
+            "name": "SignToLevel3",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": [
+              "",
+              "VAR LevelNumber = 3",
+              "VAR PrevSign = 'PROFIT_LOSS'[SignToLevel4]",
+              "VAR Depth = 'PROFIT_LOSS'[ItemDepth]",
+              "VAR LevelKey =",
+              "    PATHITEM ( 'PROFIT_LOSS'[ItemPath], LevelNumber, INTEGER )",
+              "VAR LevelSign =",
+              "    LOOKUPVALUE ( 'PROFIT_LOSS'[UNARY_OPERATOR], 'PROFIT_LOSS'[ITEM_ID], LevelKey )",
+              "RETURN",
+              "    IF (LevelNumber = Depth",
+              "\t   ,IF ( 'PROFIT_LOSS'[UNARY_OPERATOR] = \"-\", -1, +1 )",
+              "\t   ,IF ( LevelNumber < Depth, IF ( LevelSign = \"-\", -1, +1 ) * PrevSign )",
+              "    )",
+              "/*====================================================",
+              "All the columns from level 1 to level 6 (except the lowest level = 7) ",
+              "should follow a similar pattern, though for each level ",
+              "the DAX expression must consider the sign at the more granular, ",
+              "adjacent level (stored in the PrevSign variable) and invert ",
+              "the result when that level shows a “-“ sign, as shown in the column for level 6:",
+              "=====================================================*/"
+            ],
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "type": "calculated",
+            "name": "SignToLevel2",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": [
+              "",
+              "VAR LevelNumber = 2",
+              "VAR PrevSign = 'PROFIT_LOSS'[SignToLevel3]",
+              "VAR Depth = 'PROFIT_LOSS'[ItemDepth]",
+              "VAR LevelKey =",
+              "    PATHITEM ( 'PROFIT_LOSS'[ItemPath], LevelNumber, INTEGER )",
+              "VAR LevelSign =",
+              "    LOOKUPVALUE ( 'PROFIT_LOSS'[UNARY_OPERATOR], 'PROFIT_LOSS'[ITEM_ID], LevelKey )",
+              "RETURN",
+              "    IF (LevelNumber = Depth",
+              "\t   ,IF ( 'PROFIT_LOSS'[UNARY_OPERATOR] = \"-\", -1, +1 )",
+              "\t   ,IF ( LevelNumber < Depth, IF ( LevelSign = \"-\", -1, +1 ) * PrevSign )",
+              "    )",
+              "/*====================================================",
+              "All the columns from level 1 to level 6 (except the lowest level = 7) ",
+              "should follow a similar pattern, though for each level ",
+              "the DAX expression must consider the sign at the more granular, ",
+              "adjacent level (stored in the PrevSign variable) and invert ",
+              "the result when that level shows a “-“ sign, as shown in the column for level 6:",
+              "=====================================================*/"
+            ],
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "type": "calculated",
+            "name": "SignToLevel1",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": [
+              "",
+              "VAR LevelNumber = 1",
+              "VAR PrevSign = 'PROFIT_LOSS'[SignToLevel2]",
+              "VAR Depth = 'PROFIT_LOSS'[ItemDepth]",
+              "VAR LevelKey =",
+              "    PATHITEM ( 'PROFIT_LOSS'[ItemPath], LevelNumber, INTEGER )",
+              "VAR LevelSign =",
+              "    LOOKUPVALUE ( 'PROFIT_LOSS'[UNARY_OPERATOR], 'PROFIT_LOSS'[ITEM_ID], LevelKey )",
+              "RETURN",
+              "    IF (LevelNumber = Depth",
+              "\t   ,IF ( 'PROFIT_LOSS'[UNARY_OPERATOR] = \"-\", -1, +1 )",
+              "\t   ,IF ( LevelNumber < Depth, IF ( LevelSign = \"-\", -1, +1 ) * PrevSign )",
+              "    )",
+              "/*====================================================",
+              "All the columns from level 1 to level 6 (except the lowest level = 7) ",
+              "should follow a similar pattern, though for each level ",
+              "the DAX expression must consider the sign at the more granular, ",
+              "adjacent level (stored in the PrevSign variable) and invert ",
+              "the result when that level shows a “-“ sign, as shown in the column for level 6:",
+              "=====================================================*/"
+            ],
             "displayFolder": "HIDDEN"
           }
         ],
@@ -699,19 +944,6 @@
             "name": "CFO_AMOUNT",
             "dataType": "int64",
             "sourceColumn": "CFO_AMOUNT"
-          },
-          {
-            "type": "calculated",
-            "name": "CFO_AdjustedAmount",
-            "dataType": "int64",
-            "isDataTypeInferred": true,
-            "expression": [
-              " IF( RELATED(PROFIT_LOSS[UNARY_OPERATOR]) = \"~\" , BLANK()",
-              "      , IF(RELATED(PROFIT_LOSS[UNARY_OPERATOR]) = \"-\" || RELATED(PROFIT_LOSS[UnaryOperatorParent]) = \"-\" ",
-              "           ,[CFO_AMOUNT] * (-1)  , [CFO_AMOUNT]",
-              "        )",
-              "  )"
-            ]
           }
         ],
         "partitions": [
@@ -759,108 +991,224 @@
         "measures": [
           {
             "name": "CFO AMOUNT",
-            "expression": "SUM(FCT_CFO[CFO_AMOUNT])",
-            "formatString": "0",
-            "displayFolder": "CFO"
+            "expression": "SUM('FCT_CFO'[CFO_AMOUNT])"
           },
           {
-            "name": "Depth",
+            "name": "CurrentItemDepth",
             "expression": [
-              " ISFILTERED(PROFIT_LOSS[ItemLev7]) ",
-              "           + ISFILTERED(PROFIT_LOSS[ItemLev6]) ",
-              "           + ISFILTERED(PROFIT_LOSS[ItemLev5]) ",
-              "           + ISFILTERED(PROFIT_LOSS[ItemLev4]) ",
-              "           + ISFILTERED(PROFIT_LOSS[ItemLev3]) ",
-              "           + ISFILTERED(PROFIT_LOSS[ItemLev2]) ",
-              "           + ISFILTERED(PROFIT_LOSS[ItemLev1])",
-              " // IsFilterd return NON-Total column, because a given column id filterd by the row-context by default",
-              " //Thus Depth =  current item level number in relation to root leve that has depth = 1"
-            ],
-            "displayFolder": "HIDDEN"
-          },
-          {
-            "name": "Length",
-            "expression": [
-              " IF(HASONEVALUE(PROFIT_LOSS[Level])",
-              "                    , VALUES(PROFIT_LOSS[Level]), BLANK())"
-            ],
-            "displayFolder": "HIDDEN"
-          },
-          {
-            "name": "Leaf",
-            "expression": [
-              " IF([Depth] = [Length], \"Leaf\", BLANK())",
-              "//  Depth =  current item level number in relation to root leve that has depth = 1",
               "",
-              ""
+              "   ISFILTERED ( 'PROFIT_LOSS'[ItemLev1] )",
+              " + ISFILTERED ( 'PROFIT_LOSS'[ItemLev2] )",
+              " + ISFILTERED ( 'PROFIT_LOSS'[ItemLev3] )",
+              " + ISFILTERED ( 'PROFIT_LOSS'[ItemLev4] )",
+              " + ISFILTERED ( 'PROFIT_LOSS'[ItemLev5] )",
+              " + ISFILTERED ( 'PROFIT_LOSS'[ItemLev6] )",
+              " + ISFILTERED ( 'PROFIT_LOSS'[ItemLev7] )"
             ],
+            "isHidden": true,
             "displayFolder": "HIDDEN"
           },
           {
-            "name": "Original",
-            "expression": " SUM(FCT_CFO[CFO_AMOUNT])",
+            "name": "MaxItemDepth",
+            "expression": " MAX ( 'PROFIT_LOSS'[ItemDepth] )",
+            "isHidden": true,
             "displayFolder": "HIDDEN"
           },
           {
-            "name": "Adjusted1",
+            "name": "MinItemDepth",
+            "expression": " MIN ( 'PROFIT_LOSS'[ItemDepth] )",
+            "isHidden": true,
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "name": "ItemUnaryOperator",
             "expression": [
-              " SUM(FCT_CFO[CFO_AdjustedAmount])",
-              "// CFO_AdjustedAmount can be positive, negative or NULL depending in according Unary operator (+,-,~)"
-            ],
-            "displayFolder": "HIDDEN"
-          },
-          {
-            "name": "Adjusted2",
-            "expression": [
-              " IF([Leaf] = \"Leaf\" && ISBLANK([Adjusted1]), [Original], [Adjusted1])",
-              "//When we're on leaf-level and our adjusted amount is NULL, because it has unary operator = ~ , then we use Original amount, otherwise we us adjsted amount",
-              ""
-            ],
-            "displayFolder": "HIDDEN"
-          },
-          {
-            "name": "Adjusted3",
-            "expression": [
-              " IF([Length] > 0 && [Depth] > [Length] && NOT(ISBLANK([Original])), BLANK(), [Adjusted2])",
-              "//Depth =  total number of cild  levels in Parent level ;   [Length] = curent level of child"
-            ],
-            "displayFolder": "HIDDEN"
-          },
-          {
-            "name": "Adjusted4",
-            "expression": " IF(ISBLANK([Adjusted3]) && [Depth] = 1, \"NA\", [Adjusted3])",
-            "displayFolder": "HIDDEN"
-          },
-          {
-            "name": "Final",
-            "expression": " IF(ISNUMBER([Adjusted4]), IF([Original] < 0,[Original],ABS([Adjusted4])), [Adjusted4])",
-            "displayFolder": "HIDDEN"
-          },
-          {
-            "name": "CFO AMOUNT ADJUSTED",
-            "expression": [
-              " ",
               "",
-              "    VAR Depth  = ISFILTERED(PROFIT_LOSS[ItemLev7]) ",
-              "               + ISFILTERED(PROFIT_LOSS[ItemLev6]) ",
-              "               + ISFILTERED(PROFIT_LOSS[ItemLev5]) ",
-              "               + ISFILTERED(PROFIT_LOSS[ItemLev4]) ",
-              "               + ISFILTERED(PROFIT_LOSS[ItemLev3]) ",
-              "               + ISFILTERED(PROFIT_LOSS[ItemLev2]) ",
-              "               + ISFILTERED(PROFIT_LOSS[ItemLev1])",
-              "    VAR Length    = IF(HASONEVALUE(PROFIT_LOSS[Level]), VALUES(PROFIT_LOSS[Level]), BLANK())",
-              "    VAR Leaf      = IF(Depth = Length, \"Leaf\", BLANK())",
-              "    VAR Original  = SUM(FCT_CFO[CFO_AMOUNT])",
-              "    VAR Adjusted1 = SUM(FCT_CFO[CFO_AdjustedAmount])",
-              "    VAR Adjusted2 = IF([Leaf] = \"Leaf\" && ISBLANK([Adjusted1]), [Original], [Adjusted1])",
-              "    VAR Adjusted3 = IF([Length] > 0 && [Depth] > [Length] && NOT(ISBLANK([Original])), BLANK(), [Adjusted2])",
-              "    VAR Adjusted4 = IF(ISBLANK([Adjusted3]) && [Depth] = 1, \"NA\", [Adjusted3])",
-              "",
-              "    VAR Final = IF(ISNUMBER([Adjusted4]), IF([Original] < 0,[Original],ABS([Adjusted4])), [Adjusted4])",
-              "",
-              "RETURN Final"
+              " VAR CurrentLevel = [CurrentItemDepth]",
+              " RETURN",
+              "   IF (CurrentLevel = [MaxItemDepth]",
+              "      ,CALCULATE (",
+              "                  IF ( HASONEVALUE ( 'PROFIT_LOSS'[UNARY_OPERATOR] )",
+              "\t\t\t\t     , VAR Operator =  VALUES ( 'PROFIT_LOSS'[UNARY_OPERATOR] )",
+              "                       RETURN IF ( Operator = \"-\", \"–\", Operator )",
+              "                  ), 'PROFIT_LOSS'[ItemDepth] = CurrentLevel",
+              "      )",
+              "   )"
             ],
+            "isHidden": true,
             "displayFolder": "HIDDEN"
+          },
+          {
+            "name": "CFO AMOUNT SIGNED",
+            "expression": [
+              "",
+              " IF ( [MinItemDepth] >= [CurrentItemDepth]",
+              "    , SWITCH ([CurrentItemDepth]",
+              "\t         , 1, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel1]), 'PROFIT_LOSS'[SignToLevel1] * [CFO AMOUNT] )",
+              "\t\t\t , 2, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel2]), 'PROFIT_LOSS'[SignToLevel2] * [CFO AMOUNT] )",
+              "\t\t\t , 3, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel3]), 'PROFIT_LOSS'[SignToLevel3] * [CFO AMOUNT] )",
+              "\t\t\t , 4, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel4]), 'PROFIT_LOSS'[SignToLevel4] * [CFO AMOUNT] )",
+              "\t\t\t , 5, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel5]), 'PROFIT_LOSS'[SignToLevel5] * [CFO AMOUNT] )",
+              "\t\t\t , 6, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel6]), 'PROFIT_LOSS'[SignToLevel6] * [CFO AMOUNT] )",
+              "\t\t\t , 7, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel7]), 'PROFIT_LOSS'[SignToLevel7] * [CFO AMOUNT] )",
+              "     )",
+              " )"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "DIM_FLIGHT",
+        "columns": [
+          {
+            "name": "AIRLINE",
+            "dataType": "string",
+            "sourceColumn": "AIRLINE"
+          },
+          {
+            "name": "FLT_NUM",
+            "dataType": "string",
+            "sourceColumn": "FLT_NUM"
+          },
+          {
+            "name": "ORIG",
+            "dataType": "string",
+            "sourceColumn": "ORIG"
+          },
+          {
+            "name": "DSTN",
+            "dataType": "string",
+            "sourceColumn": "DSTN"
+          },
+          {
+            "name": "FLT_DESC",
+            "dataType": "string",
+            "sourceColumn": "FLT_DESC"
+          },
+          {
+            "name": "HAUL",
+            "dataType": "string",
+            "sourceColumn": "HAUL"
+          },
+          {
+            "name": "FLT_TYPE_INT_DOM",
+            "dataType": "string",
+            "sourceColumn": "FLT_TYPE_INT_DOM"
+          },
+          {
+            "name": "FLT_TYPE_SCH_CHR",
+            "dataType": "string",
+            "sourceColumn": "FLT_TYPE_SCH_CHR"
+          },
+          {
+            "name": "FLT_TYPE_PSN_CAR",
+            "dataType": "string",
+            "sourceColumn": "FLT_TYPE_PSN_CAR"
+          },
+          {
+            "name": "FLT_TYPE_OWH_OAL",
+            "dataType": "string",
+            "sourceColumn": "FLT_TYPE_OWH_OAL"
+          },
+          {
+            "name": "COUNTRY_TURNOVER",
+            "dataType": "string",
+            "sourceColumn": "COUNTRY_TURNOVER"
+          },
+          {
+            "name": "DEST_GROUP",
+            "dataType": "string",
+            "sourceColumn": "DEST_GROUP"
+          },
+          {
+            "name": "LOAD_TIME",
+            "dataType": "dateTime",
+            "sourceColumn": "LOAD_TIME"
+          },
+          {
+            "name": "LOAD_DATE",
+            "dataType": "dateTime",
+            "sourceColumn": "LOAD_DATE"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/ ;DWH_VC_AVT\",",
+                "    dbo_DIM_FLIGHT = Source{[Schema=\"dbo\",Item=\"DIM_FLIGHT\"]}[Data]",
+                "in",
+                "    dbo_DIM_FLIGHT"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "FCT_PROFIT_LOSS",
+        "isHidden": true,
+        "columns": [
+          {
+            "name": "PNL_ITEM",
+            "dataType": "string",
+            "sourceColumn": "PNL_ITEM"
+          },
+          {
+            "name": "FLIGHT",
+            "dataType": "string",
+            "sourceColumn": "FLIGHT"
+          },
+          {
+            "name": "MONTH_ID",
+            "dataType": "int64",
+            "sourceColumn": "MONTH_ID"
+          },
+          {
+            "name": "VERSION",
+            "dataType": "string",
+            "sourceColumn": "VERSION"
+          },
+          {
+            "name": "PNL_AMOUNT",
+            "dataType": "decimal",
+            "sourceColumn": "PNL_AMOUNT"
+          },
+          {
+            "name": "CELL_PROP_ID",
+            "dataType": "int64",
+            "sourceColumn": "CELL_PROP_ID"
+          },
+          {
+            "name": "ROW_ID",
+            "dataType": "int64",
+            "sourceColumn": "ROW_ID"
+          },
+          {
+            "type": "calculated",
+            "name": "LAYER_ID",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "expression": "0"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/ ;DWH_VC_AVT\",",
+                "    dbo_FCT_PROFIT_LOSS = Source{[Schema=\"dbo\",Item=\"FCT_PROFIT_LOSS\"]}[Data]",
+                "in",
+                "    dbo_FCT_PROFIT_LOSS"
+              ]
+            }
           }
         ]
       }
@@ -900,6 +1248,54 @@
         "fromColumn": "PNL_ITEM",
         "toTable": "PROFIT_LOSS",
         "toColumn": "ITEM"
+      },
+      {
+        "name": "53fd5e5f-68bb-4d4a-b9ba-515ef755bb43",
+        "fromCardinality": "one",
+        "fromTable": "FCT_PROFIT_LOSS",
+        "fromColumn": "FLIGHT",
+        "toTable": "DIM_FLIGHT",
+        "toColumn": "FLT_DESC",
+        "crossFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "69d23724-2ad1-46b9-8d97-ad54eca7a060",
+        "fromCardinality": "one",
+        "fromTable": "FCT_PROFIT_LOSS",
+        "fromColumn": "VERSION",
+        "toTable": "VERSION",
+        "toColumn": "VERSION",
+        "crossFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "247f81ac-c80c-4c55-8ba5-3c3c2356bc8f",
+        "fromCardinality": "one",
+        "fromTable": "FCT_PROFIT_LOSS",
+        "fromColumn": "LAYER_ID",
+        "toTable": "LAYER",
+        "toColumn": "LAYER_ID",
+        "isActive": false,
+        "crossFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "b81e194b-aeda-48f9-943c-311a02d47080",
+        "fromCardinality": "one",
+        "fromTable": "FCT_PROFIT_LOSS",
+        "fromColumn": "ROW_ID",
+        "toTable": "MONTH",
+        "toColumn": "MONTH_ID",
+        "isActive": false,
+        "crossFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "354c0aae-5ef1-4084-aeef-c8af78a85f52",
+        "fromCardinality": "one",
+        "fromTable": "PROFIT_LOSS",
+        "fromColumn": "ITEM",
+        "toTable": "FCT_PROFIT_LOSS",
+        "toColumn": "PNL_ITEM",
+        "isActive": false,
+        "crossFilteringBehavior": "bothDirections"
       }
     ],
     "roles": [
