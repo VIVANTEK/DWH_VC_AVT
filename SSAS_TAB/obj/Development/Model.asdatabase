@@ -1054,6 +1054,49 @@
               "     )",
               " )"
             ]
+          },
+          {
+            "name": "CFO AMOUNT DataMember",
+            "expression": [
+              " CALCULATE( SUM('FCT_CFO'[CFO_AMOUNT])",
+              "                        ,FILTER('PROFIT_LOSS', 'PROFIT_LOSS'[ItemDepth] = [MinItemDepth]))",
+              "/*",
+              "simulation of DataMember propery that exists in SSAS Multi in Tabular Model (that does NOT have this Proiperty)",
+              "see:  https://gbrueckl.wordpress.com/2013/07/26/dax-vs-mdx-datamembers-in-parent-child-hierarchies/",
+              "",
+              "[CFO AMOUNT DataMember (ver2)]:= CALCULATE(",
+              "SUM('Sales Quota'[Sales Amount Quota])",
+              "   , FILTER(VALUES('PROFIT_LOSS'[ItemDepth])",
+              "           ,'PROFIT_LOSS'[ItemDepth] = MIN('PROFIT_LOSS'[ItemDepth])))",
+              "*/"
+            ],
+            "isHidden": true
+          },
+          {
+            "name": "PNL AMOUNT",
+            "expression": [
+              " CALCULATE(SUM('FCT_PROFIT_LOSS'[PNL_AMOUNT])",
+              "                                                 ,USERELATIONSHIP('FCT_PROFIT_LOSS'[MONTH_ID], 'MONTH'[MONTH_ID])",
+              "                                                 ,USERELATIONSHIP('FCT_PROFIT_LOSS'[PNL_ITEM], 'PROFIT_LOSS'[ITEM])",
+              "                                                 ,USERELATIONSHIP('FCT_PROFIT_LOSS'[LAYER_ID], 'LAYER'[LAYER_ID])",
+              "                                                 //,USERELATIONSHIP('FCT_PROFIT_LOSS'[VERSION] , 'VERSION'[VERSION])",
+              "                             )",
+              "                                      ",
+              " /*=================================================================",
+              " //This is correct",
+              "PNL AMOUNT:= CALCULATE(SUM('FCT_PROFIT_LOSS'[PNL_AMOUNT])",
+              "                                                 ,USERELATIONSHIP('FCT_PROFIT_LOSS'[MONTH_ID], 'MONTH'[MONTH_ID])",
+              "                                                 ,USERELATIONSHIP('FCT_PROFIT_LOSS'[PNL_ITEM], 'PROFIT_LOSS'[ITEM])",
+              "                                                 ,USERELATIONSHIP('FCT_PROFIT_LOSS'[LAYER_ID], 'LAYER'[LAYER_ID])",
+              "                                                 //,USERELATIONSHIP('FCT_PROFIT_LOSS'[VERSION] , 'VERSION'[VERSION])",
+              "                             )",
+              "                                                 ",
+              "                                                 ",
+              "----------------------------- below is not corrcet- al PL-items = 15 insted of only Departures = 15---------------------",
+              " PNL AMOUNT:= SUM('FCT_PROFIT_LOSS'[PNL_AMOUNT])",
+              "",
+              "================================================================== */"
+            ]
           }
         ]
       },
@@ -1278,22 +1321,22 @@
         "crossFilteringBehavior": "bothDirections"
       },
       {
-        "name": "b81e194b-aeda-48f9-943c-311a02d47080",
-        "fromCardinality": "one",
-        "fromTable": "FCT_PROFIT_LOSS",
-        "fromColumn": "ROW_ID",
-        "toTable": "MONTH",
-        "toColumn": "MONTH_ID",
-        "isActive": false,
-        "crossFilteringBehavior": "bothDirections"
-      },
-      {
         "name": "354c0aae-5ef1-4084-aeef-c8af78a85f52",
         "fromCardinality": "one",
         "fromTable": "PROFIT_LOSS",
         "fromColumn": "ITEM",
         "toTable": "FCT_PROFIT_LOSS",
         "toColumn": "PNL_ITEM",
+        "isActive": false,
+        "crossFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "2fd49e1a-5233-4d50-9cab-d584d84fd5bd",
+        "fromCardinality": "one",
+        "fromTable": "FCT_PROFIT_LOSS",
+        "fromColumn": "MONTH_ID",
+        "toTable": "MONTH",
+        "toColumn": "MONTH_ID",
         "isActive": false,
         "crossFilteringBehavior": "bothDirections"
       }
