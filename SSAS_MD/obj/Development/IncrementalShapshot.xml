@@ -26,7 +26,7 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>z9d5BRY87WC0glkfOXOsNrH2sBI=2022-10-22 7:00:37 PM2022-10-21 11:33:27 AM</TimeStamp>
+        <TimeStamp>czpfI6r1NKVbHCoxo8YKWX0AOnU=2022-10-24 8:56:58 PM2022-10-21 11:33:27 AM</TimeStamp>
         <ID>
           <String>DWH_VC_AVT</String>
         </ID>
@@ -131,7 +131,7 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>T9JLrkj7bLUUEl044RTMMiAqZ1E=2022-10-05 3:05:42 PM2022-10-21 11:33:27 AMyhzbF2Uz12cZiUuZCwvkDtDI4IU=2022-09-14 5:45:56 PM2022-10-21 11:33:27 AM</TimeStamp>
+        <TimeStamp>FCSCGb2rDNOeyvPnjVLw+jrxU5g=2022-10-24 6:52:18 PM2022-10-21 11:33:27 AMyhzbF2Uz12cZiUuZCwvkDtDI4IU=2022-09-14 5:45:56 PM2022-10-21 11:33:27 AM</TimeStamp>
         <ID>
           <String>CONSOLIDATED_MODEL</String>
         </ID>
@@ -148,5 +148,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2022-10-23T19:09:03.38Z</LastDeployed>
+  <LastDeployed>2022-10-25T19:38:13.033333Z</LastDeployed>
 </DeploymentSnapshot>

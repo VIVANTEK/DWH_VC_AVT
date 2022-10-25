@@ -356,6 +356,7 @@
             "name": "ITEM_ID",
             "dataType": "int64",
             "isHidden": true,
+            "isUnique": true,
             "isKey": true,
             "sourceColumn": "ITEM_ID",
             "keepUniqueRows": true,
@@ -612,6 +613,7 @@
             "name": "IsLeafFlag",
             "dataType": "int64",
             "isDataTypeInferred": true,
+            "isHidden": true,
             "expression": [
               "IF( ISBLANK(LOOKUPVALUE(PROFIT_LOSS[PARENT_ITEM_ID],PROFIT_LOSS[PARENT_ITEM_ID],PROFIT_LOSS[ITEM_ID]) ) , 1,0)",
               "",
@@ -851,6 +853,48 @@
             }
           }
         ],
+        "measures": [
+          {
+            "name": "CurrentItemDepth",
+            "expression": [
+              "",
+              "   ISFILTERED ( 'PROFIT_LOSS'[ItemLev1] )",
+              " + ISFILTERED ( 'PROFIT_LOSS'[ItemLev2] )",
+              " + ISFILTERED ( 'PROFIT_LOSS'[ItemLev3] )",
+              " + ISFILTERED ( 'PROFIT_LOSS'[ItemLev4] )",
+              " + ISFILTERED ( 'PROFIT_LOSS'[ItemLev5] )",
+              " + ISFILTERED ( 'PROFIT_LOSS'[ItemLev6] )",
+              " + ISFILTERED ( 'PROFIT_LOSS'[ItemLev7] )"
+            ],
+            "isHidden": true
+          },
+          {
+            "name": "MaxItemDepth",
+            "expression": " MAX ( 'PROFIT_LOSS'[ItemDepth] )",
+            "isHidden": true
+          },
+          {
+            "name": "MinItemDepth",
+            "expression": " MIN ( 'PROFIT_LOSS'[ItemDepth] )",
+            "isHidden": true
+          },
+          {
+            "name": "ItemUnaryOperator",
+            "expression": [
+              "",
+              " VAR CurrentLevel = [Sum of CurrentItemDepth]",
+              " RETURN",
+              "   IF (CurrentLevel = [Sum of MaxItemDepth]",
+              "      ,CALCULATE (",
+              "                  IF ( HASONEVALUE ( 'PROFIT_LOSS'[UNARY_OPERATOR] )",
+              "\t\t\t\t     , VAR Operator =  VALUES ( 'PROFIT_LOSS'[UNARY_OPERATOR] )",
+              "                       RETURN IF ( Operator = \"-\", \"–\", Operator )",
+              "                  ), 'PROFIT_LOSS'[ItemDepth] = CurrentLevel",
+              "      )",
+              "   )"
+            ]
+          }
+        ],
         "hierarchies": [
           {
             "name": "PARENT-ITEM",
@@ -912,37 +956,42 @@
         ]
       },
       {
-        "name": "FCT_CFO",
-        "isHidden": true,
+        "name": "_FCT_CFO",
         "columns": [
           {
             "name": "PNL_ITEM",
             "dataType": "string",
+            "isHidden": true,
             "sourceColumn": "PNL_ITEM"
           },
           {
             "name": "CFO_NAME",
             "dataType": "string",
+            "isHidden": true,
             "sourceColumn": "CFO_NAME"
           },
           {
             "name": "MONTH_ID",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "MONTH_ID"
           },
           {
             "name": "VERSION",
             "dataType": "string",
+            "isHidden": true,
             "sourceColumn": "VERSION"
           },
           {
             "name": "LAYER_ID",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "LAYER_ID"
           },
           {
             "name": "CFO_AMOUNT",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "CFO_AMOUNT"
           }
         ],
@@ -963,11 +1012,53 @@
               ]
             }
           }
+        ],
+        "measures": [
+          {
+            "name": "Sum of CFO_AMOUNT",
+            "expression": "SUM('_FCT_CFO'[CFO_AMOUNT])"
+          },
+          {
+            "name": "Sum of CFO_AMOUNT_SIGNED",
+            "expression": [
+              "",
+              " IF ( [Sum of  MinItemDepth] >= [Sum of CurrentItemDepth]",
+              "    , SWITCH ([Sum of CurrentItemDepth]",
+              "\t         , 1, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel1]), 'PROFIT_LOSS'[SignToLevel1] * [Sum of  CFO AMOUNT] )",
+              "\t\t\t , 2, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel2]), 'PROFIT_LOSS'[SignToLevel2] * [Sum of  CFO AMOUNT] )",
+              "\t\t\t , 3, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel3]), 'PROFIT_LOSS'[SignToLevel3] * [Sum of  CFO AMOUNT] )",
+              "\t\t\t , 4, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel4]), 'PROFIT_LOSS'[SignToLevel4] * [Sum of  CFO AMOUNT] )",
+              "\t\t\t , 5, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel5]), 'PROFIT_LOSS'[SignToLevel5] * [Sum of  CFO AMOUNT] )",
+              "\t\t\t , 6, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel6]), 'PROFIT_LOSS'[SignToLevel6] * [Sum of  CFO AMOUNT] )",
+              "\t\t\t , 7, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel7]), 'PROFIT_LOSS'[SignToLevel7] * [Sum of  CFO AMOUNT] )",
+              "     )",
+              " )"
+            ],
+            "isHidden": true
+          },
+          {
+            "name": "Sum of CFO_AMOUNT_DataMember",
+            "expression": [
+              " CALCULATE( SUM('_FCT_CFO'[CFO_AMOUNT])",
+              "                        ,FILTER('PROFIT_LOSS', 'PROFIT_LOSS'[ItemDepth] = [Sum of  MinItemDepth]))",
+              "/*",
+              "simulation of DataMember propery that exists in SSAS Multi in Tabular Model (that does NOT have this Proiperty)",
+              "see:  https://gbrueckl.wordpress.com/2013/07/26/dax-vs-mdx-datamembers-in-parent-child-hierarchies/",
+              "",
+              "[CFO AMOUNT DataMember (ver2)]:= CALCULATE(",
+              "SUM('Sales Quota'[Sales Amount Quota])",
+              "   , FILTER(VALUES('PROFIT_LOSS'[ItemDepth])",
+              "           ,'PROFIT_LOSS'[ItemDepth] = MIN('PROFIT_LOSS'[ItemDepth])))",
+              "*/"
+            ],
+            "isHidden": true
+          }
         ]
       },
       {
         "name": "_MEASURES_",
         "description": "table to store measure group",
+        "isHidden": true,
         "columns": [
           {
             "type": "calculatedTableColumn",
@@ -990,11 +1081,11 @@
         ],
         "measures": [
           {
-            "name": "CFO AMOUNT",
-            "expression": "SUM('FCT_CFO'[CFO_AMOUNT])"
+            "name": "Sum of  CFO AMOUNT",
+            "expression": "SUM('_FCT_CFO'[CFO_AMOUNT])"
           },
           {
-            "name": "CurrentItemDepth",
+            "name": "Sum of CurrentItemDepth",
             "expression": [
               "",
               "   ISFILTERED ( 'PROFIT_LOSS'[ItemLev1] )",
@@ -1009,24 +1100,24 @@
             "displayFolder": "HIDDEN"
           },
           {
-            "name": "MaxItemDepth",
+            "name": "Sum of MaxItemDepth",
             "expression": " MAX ( 'PROFIT_LOSS'[ItemDepth] )",
             "isHidden": true,
             "displayFolder": "HIDDEN"
           },
           {
-            "name": "MinItemDepth",
+            "name": "Sum of  MinItemDepth",
             "expression": " MIN ( 'PROFIT_LOSS'[ItemDepth] )",
             "isHidden": true,
             "displayFolder": "HIDDEN"
           },
           {
-            "name": "ItemUnaryOperator",
+            "name": "Sum of  ItemUnaryOperator",
             "expression": [
               "",
-              " VAR CurrentLevel = [CurrentItemDepth]",
+              " VAR CurrentLevel = [Sum of CurrentItemDepth]",
               " RETURN",
-              "   IF (CurrentLevel = [MaxItemDepth]",
+              "   IF (CurrentLevel = [Sum of MaxItemDepth]",
               "      ,CALCULATE (",
               "                  IF ( HASONEVALUE ( 'PROFIT_LOSS'[UNARY_OPERATOR] )",
               "\t\t\t\t     , VAR Operator =  VALUES ( 'PROFIT_LOSS'[UNARY_OPERATOR] )",
@@ -1039,27 +1130,27 @@
             "displayFolder": "HIDDEN"
           },
           {
-            "name": "CFO AMOUNT SIGNED",
+            "name": "Sum of  CFO AMOUNT SIGNED",
             "expression": [
               "",
-              " IF ( [MinItemDepth] >= [CurrentItemDepth]",
-              "    , SWITCH ([CurrentItemDepth]",
-              "\t         , 1, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel1]), 'PROFIT_LOSS'[SignToLevel1] * [CFO AMOUNT] )",
-              "\t\t\t , 2, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel2]), 'PROFIT_LOSS'[SignToLevel2] * [CFO AMOUNT] )",
-              "\t\t\t , 3, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel3]), 'PROFIT_LOSS'[SignToLevel3] * [CFO AMOUNT] )",
-              "\t\t\t , 4, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel4]), 'PROFIT_LOSS'[SignToLevel4] * [CFO AMOUNT] )",
-              "\t\t\t , 5, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel5]), 'PROFIT_LOSS'[SignToLevel5] * [CFO AMOUNT] )",
-              "\t\t\t , 6, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel6]), 'PROFIT_LOSS'[SignToLevel6] * [CFO AMOUNT] )",
-              "\t\t\t , 7, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel7]), 'PROFIT_LOSS'[SignToLevel7] * [CFO AMOUNT] )",
+              " IF ( [Sum of  MinItemDepth] >= [Sum of CurrentItemDepth]",
+              "    , SWITCH ([Sum of CurrentItemDepth]",
+              "\t         , 1, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel1]), 'PROFIT_LOSS'[SignToLevel1] * [Sum of  CFO AMOUNT] )",
+              "\t\t\t , 2, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel2]), 'PROFIT_LOSS'[SignToLevel2] * [Sum of  CFO AMOUNT] )",
+              "\t\t\t , 3, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel3]), 'PROFIT_LOSS'[SignToLevel3] * [Sum of  CFO AMOUNT] )",
+              "\t\t\t , 4, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel4]), 'PROFIT_LOSS'[SignToLevel4] * [Sum of  CFO AMOUNT] )",
+              "\t\t\t , 5, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel5]), 'PROFIT_LOSS'[SignToLevel5] * [Sum of  CFO AMOUNT] )",
+              "\t\t\t , 6, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel6]), 'PROFIT_LOSS'[SignToLevel6] * [Sum of  CFO AMOUNT] )",
+              "\t\t\t , 7, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel7]), 'PROFIT_LOSS'[SignToLevel7] * [Sum of  CFO AMOUNT] )",
               "     )",
               " )"
             ]
           },
           {
-            "name": "CFO AMOUNT DataMember",
+            "name": "Sum of  CFO AMOUNT DataMember",
             "expression": [
-              " CALCULATE( SUM('FCT_CFO'[CFO_AMOUNT])",
-              "                        ,FILTER('PROFIT_LOSS', 'PROFIT_LOSS'[ItemDepth] = [MinItemDepth]))",
+              " CALCULATE( SUM('_FCT_CFO'[CFO_AMOUNT])",
+              "                        ,FILTER('PROFIT_LOSS', 'PROFIT_LOSS'[ItemDepth] = [Sum of  MinItemDepth]))",
               "/*",
               "simulation of DataMember propery that exists in SSAS Multi in Tabular Model (that does NOT have this Proiperty)",
               "see:  https://gbrueckl.wordpress.com/2013/07/26/dax-vs-mdx-datamembers-in-parent-child-hierarchies/",
@@ -1073,12 +1164,12 @@
             "isHidden": true
           },
           {
-            "name": "PNL AMOUNT",
+            "name": "Sum of  PNL AMOUNT",
             "expression": [
-              " CALCULATE(SUM('FCT_PROFIT_LOSS'[PNL_AMOUNT])",
-              "                                                 ,USERELATIONSHIP('FCT_PROFIT_LOSS'[MONTH_ID], 'MONTH'[MONTH_ID])",
-              "                                                 ,USERELATIONSHIP('FCT_PROFIT_LOSS'[PNL_ITEM], 'PROFIT_LOSS'[ITEM])",
-              "                                                 ,USERELATIONSHIP('FCT_PROFIT_LOSS'[LAYER_ID], 'LAYER'[LAYER_ID])",
+              " CALCULATE(SUM('_FCT_PROFIT_LOSS'[PNL_AMOUNT])",
+              "                                                 ,USERELATIONSHIP('_FCT_PROFIT_LOSS'[MONTH_ID], 'MONTH'[MONTH_ID])",
+              "                                                 ,USERELATIONSHIP('_FCT_PROFIT_LOSS'[PNL_ITEM], 'PROFIT_LOSS'[ITEM])",
+              "                                                 ,USERELATIONSHIP('_FCT_PROFIT_LOSS'[LAYER_ID], 'LAYER'[LAYER_ID])",
               "                                                 //,USERELATIONSHIP('FCT_PROFIT_LOSS'[VERSION] , 'VERSION'[VERSION])",
               "                             )",
               "                                      ",
@@ -1097,81 +1188,102 @@
               "",
               "================================================================== */"
             ]
+          },
+          {
+            "name": "Sum of  BH",
+            "expression": [
+              "  ",
+              "IF(SELECTEDVALUE('PROFIT_LOSS'[ITEM]) =\"BH\"   &&",
+              "   SELECTEDVALUE('VERSION'[VERSION] ) =\"FCST\" &&",
+              "   SELECTEDVALUE('LAYER'[LAYER_NAME]) =\"IS_DATA_LAYER\" ",
+              "   --------------------- THEN -------------------------------------------",
+              "  ,CALCULATE (SUM('_FCT_SCHEDULE_PTP'[BH])",
+              "             ,TREATAS(VALUES('PATH'[PATH_KEY]),    'FLIGHT'[FLT_DESC])",
+              "             ,TREATAS(VALUES('CALENDAR'[MONTH_ID]),'MONTH'[MONTH_ID])",
+              "             --,USERELATIONSHIP('CALENDAR'[MONTH_ID],   'MONTH'[MONTH_ID]) ",
+              "             --,USERELATIONSHIP('CALENDAR'[QUARTER_ID], 'MONTH'[QUARTER_ID]) ",
+              "             --,USERELATIONSHIP('CALENDAR'[YEAR_ID],    'MONTH'[YEAR_ID]) ",
+              "  )",
+              "  ----------------------- ELSE--------------------------------------------",
+              "  ,[Sum of  PNL AMOUNT])"
+            ]
           }
         ]
       },
       {
-        "name": "DIM_FLIGHT",
+        "name": "FLIGHT",
         "columns": [
           {
             "name": "AIRLINE",
             "dataType": "string",
-            "sourceColumn": "AIRLINE"
+            "sourceColumn": "AIRLINE",
+            "displayFolder": "ATTRIBUTES"
           },
           {
             "name": "FLT_NUM",
             "dataType": "string",
-            "sourceColumn": "FLT_NUM"
+            "sourceColumn": "FLT_NUM",
+            "displayFolder": "ATTRIBUTES"
           },
           {
             "name": "ORIG",
             "dataType": "string",
-            "sourceColumn": "ORIG"
+            "sourceColumn": "ORIG",
+            "displayFolder": "ATTRIBUTES"
           },
           {
             "name": "DSTN",
             "dataType": "string",
-            "sourceColumn": "DSTN"
+            "sourceColumn": "DSTN",
+            "displayFolder": "ATTRIBUTES"
           },
           {
             "name": "FLT_DESC",
             "dataType": "string",
-            "sourceColumn": "FLT_DESC"
+            "sourceColumn": "FLT_DESC",
+            "displayFolder": "ATTRIBUTES"
           },
           {
             "name": "HAUL",
             "dataType": "string",
-            "sourceColumn": "HAUL"
+            "sourceColumn": "HAUL",
+            "displayFolder": "ATTRIBUTES"
           },
           {
             "name": "FLT_TYPE_INT_DOM",
             "dataType": "string",
-            "sourceColumn": "FLT_TYPE_INT_DOM"
+            "sourceColumn": "FLT_TYPE_INT_DOM",
+            "displayFolder": "ATTRIBUTES"
           },
           {
             "name": "FLT_TYPE_SCH_CHR",
             "dataType": "string",
-            "sourceColumn": "FLT_TYPE_SCH_CHR"
+            "sourceColumn": "FLT_TYPE_SCH_CHR",
+            "displayFolder": "ATTRIBUTES"
           },
           {
             "name": "FLT_TYPE_PSN_CAR",
             "dataType": "string",
-            "sourceColumn": "FLT_TYPE_PSN_CAR"
+            "sourceColumn": "FLT_TYPE_PSN_CAR",
+            "displayFolder": "ATTRIBUTES"
           },
           {
             "name": "FLT_TYPE_OWH_OAL",
             "dataType": "string",
-            "sourceColumn": "FLT_TYPE_OWH_OAL"
+            "sourceColumn": "FLT_TYPE_OWH_OAL",
+            "displayFolder": "ATTRIBUTES"
           },
           {
             "name": "COUNTRY_TURNOVER",
             "dataType": "string",
-            "sourceColumn": "COUNTRY_TURNOVER"
+            "sourceColumn": "COUNTRY_TURNOVER",
+            "displayFolder": "ATTRIBUTES"
           },
           {
             "name": "DEST_GROUP",
             "dataType": "string",
-            "sourceColumn": "DEST_GROUP"
-          },
-          {
-            "name": "LOAD_TIME",
-            "dataType": "dateTime",
-            "sourceColumn": "LOAD_TIME"
-          },
-          {
-            "name": "LOAD_DATE",
-            "dataType": "dateTime",
-            "sourceColumn": "LOAD_DATE"
+            "sourceColumn": "DEST_GROUP",
+            "displayFolder": "ATTRIBUTES"
           }
         ],
         "partitions": [
@@ -1183,51 +1295,80 @@
               "expression": [
                 "let",
                 "    Source = #\"SQL/ ;DWH_VC_AVT\",",
-                "    dbo_DIM_FLIGHT = Source{[Schema=\"dbo\",Item=\"DIM_FLIGHT\"]}[Data]",
+                "    dbo_DIM_FLIGHT = Source{[Schema=\"dbo\",Item=\"DIM_FLIGHT\"]}[Data],",
+                "    #\"Removed Columns\" = Table.RemoveColumns(dbo_DIM_FLIGHT,{\"LOAD_TIME\", \"LOAD_DATE\"})",
                 "in",
-                "    dbo_DIM_FLIGHT"
+                "    #\"Removed Columns\""
               ]
             }
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "TYPE-COUNTRY-FLT",
+            "levels": [
+              {
+                "name": "TYPE",
+                "ordinal": 0,
+                "column": "FLT_TYPE_INT_DOM"
+              },
+              {
+                "name": "COUNTRY",
+                "ordinal": 1,
+                "column": "COUNTRY_TURNOVER"
+              },
+              {
+                "name": "FLT",
+                "ordinal": 2,
+                "column": "FLT_DESC"
+              }
+            ]
           }
         ]
       },
       {
-        "name": "FCT_PROFIT_LOSS",
-        "isHidden": true,
+        "name": "_FCT_PROFIT_LOSS",
         "columns": [
           {
             "name": "PNL_ITEM",
             "dataType": "string",
+            "isHidden": true,
             "sourceColumn": "PNL_ITEM"
           },
           {
             "name": "FLIGHT",
             "dataType": "string",
+            "isHidden": true,
             "sourceColumn": "FLIGHT"
           },
           {
             "name": "MONTH_ID",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "MONTH_ID"
           },
           {
             "name": "VERSION",
             "dataType": "string",
+            "isHidden": true,
             "sourceColumn": "VERSION"
           },
           {
             "name": "PNL_AMOUNT",
             "dataType": "decimal",
+            "isHidden": true,
             "sourceColumn": "PNL_AMOUNT"
           },
           {
             "name": "CELL_PROP_ID",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "CELL_PROP_ID"
           },
           {
             "name": "ROW_ID",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "ROW_ID"
           },
           {
@@ -1235,6 +1376,7 @@
             "name": "LAYER_ID",
             "dataType": "int64",
             "isDataTypeInferred": true,
+            "isHidden": true,
             "expression": "0"
           }
         ],
@@ -1253,92 +1395,545 @@
               ]
             }
           }
+        ],
+        "measures": [
+          {
+            "name": "Sum of PNL_AMOUNT",
+            "expression": [
+              "",
+              "VAR ItemValue =",
+              " SWITCH(SELECTEDVALUE('PROFIT_LOSS'[ITEM])",
+              "          ,\"BH\",         SUM('_FCT_SCHEDULE_PTP'[BH]) ",
+              "          ,\"Departures\", SUM('_FCT_SCHEDULE_PTP'[DEPARTURES]) ",
+              "          ,\"Seats\",      SUM('_FCT_SCHEDULE_PTP'[SEATS]) ",
+              "          ,\"Seats C\",    SUM('_FCT_SCHEDULE_PTP'[SEATS_C]) ",
+              "          ,\"Seats Y\",    SUM('_FCT_SCHEDULE_PTP'[SEATS_S]) ",
+              "          ,\"Seats Y+\",   SUM('_FCT_SCHEDULE_PTP'[SEATS_W]) ",
+              "          ,\"KM\",         SUM('_FCT_SCHEDULE_PTP'[DISTANCE]) ",
+              "         -- , SUM('_FCT_PROFIT_LOSS'[PNL_AMOUNT]) ",
+              " )",
+              "          ",
+              "RETURN",
+              "    IF(SELECTEDVALUE('VERSION'[VERSION] ) =\"FCST\" &&  SELECTEDVALUE('LAYER'[LAYER_NAME]) =\"IS_DATA_LAYER\" ",
+              "      ,CALCULATE(ItemValue  ,TREATAS(VALUES('PATH'[PATH_KEY]),    'FLIGHT'[FLT_DESC]) ,TREATAS(VALUES('CALENDAR'[MONTH_ID]),'MONTH'[MONTH_ID])    )",
+              "      ,[Sum of  PNL AMOUNT]",
+              "    )",
+              "",
+              "",
+              "/*========================= OLD ===============================",
+              "Sum of  PNL_AMOUNT:=  ",
+              "IF(SELECTEDVALUE('PROFIT_LOSS'[ITEM]) =\"BH\"   &&",
+              "   SELECTEDVALUE('VERSION'[VERSION] ) =\"FCST\" &&",
+              "   SELECTEDVALUE('LAYER'[LAYER_NAME]) =\"IS_DATA_LAYER\" ",
+              "   --------------------- THEN -------------------------------------------",
+              "  ,CALCULATE (SUM('_FCT_SCHEDULE_PTP'[BH])",
+              "             ,TREATAS(VALUES('PATH'[PATH_KEY]),    'FLIGHT'[FLT_DESC])",
+              "             ,TREATAS(VALUES('CALENDAR'[MONTH_ID]),'MONTH'[MONTH_ID])",
+              "             --,USERELATIONSHIP('CALENDAR'[MONTH_ID],   'MONTH'[MONTH_ID]) ",
+              "             --,USERELATIONSHIP('CALENDAR'[QUARTER_ID], 'MONTH'[QUARTER_ID]) ",
+              "             --,USERELATIONSHIP('CALENDAR'[YEAR_ID],    'MONTH'[YEAR_ID]) ",
+              "  )",
+              "  ----------------------- ELSE--------------------------------------------",
+              "  ,[Sum of  PNL AMOUNT])",
+              "",
+              "=============================================================*/"
+            ]
+          },
+          {
+            "name": "Sum of PNL_AMOUNT_SIGNED",
+            "expression": [
+              " ",
+              "",
+              " IF ( [MinItemDepth] >= [CurrentItemDepth]",
+              "    , SWITCH ([CurrentItemDepth]",
+              "                     , 1, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel1]), 'PROFIT_LOSS'[SignToLevel1] * [Sum of PNL_AMOUNT] )",
+              "                     , 2, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel2]), 'PROFIT_LOSS'[SignToLevel2] * [Sum of PNL_AMOUNT] )",
+              "                     , 3, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel3]), 'PROFIT_LOSS'[SignToLevel3] * [Sum of PNL_AMOUNT] )",
+              "                     , 4, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel4]), 'PROFIT_LOSS'[SignToLevel4] * [Sum of PNL_AMOUNT] )",
+              "                     , 5, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel5]), 'PROFIT_LOSS'[SignToLevel5] * [Sum of PNL_AMOUNT] )",
+              "                     , 6, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel6]), 'PROFIT_LOSS'[SignToLevel6] * [Sum of PNL_AMOUNT] )",
+              "                     , 7, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel7]), 'PROFIT_LOSS'[SignToLevel7] * [Sum of PNL_AMOUNT] )",
+              "     )",
+              " )",
+              " "
+            ]
+          },
+          {
+            "name": "Sum of  PNL_AMOUNT (old)",
+            "expression": [
+              "  ",
+              "IF(SELECTEDVALUE('PROFIT_LOSS'[ITEM]) =\"BH\"   &&",
+              "   SELECTEDVALUE('VERSION'[VERSION] ) =\"FCST\" &&",
+              "   SELECTEDVALUE('LAYER'[LAYER_NAME]) =\"IS_DATA_LAYER\" ",
+              "   --------------------- THEN -------------------------------------------",
+              "  ,CALCULATE (SUM('_FCT_SCHEDULE_PTP'[BH])",
+              "             ,TREATAS(VALUES('PATH'[PATH_KEY]),    'FLIGHT'[FLT_DESC])",
+              "             ,TREATAS(VALUES('CALENDAR'[MONTH_ID]),'MONTH'[MONTH_ID])",
+              "             --,USERELATIONSHIP('CALENDAR'[MONTH_ID],   'MONTH'[MONTH_ID]) ",
+              "             --,USERELATIONSHIP('CALENDAR'[QUARTER_ID], 'MONTH'[QUARTER_ID]) ",
+              "             --,USERELATIONSHIP('CALENDAR'[YEAR_ID],    'MONTH'[YEAR_ID]) ",
+              "  )",
+              "  ----------------------- ELSE--------------------------------------------",
+              "  ,[Sum of  PNL AMOUNT])"
+            ],
+            "isHidden": true
+          }
+        ]
+      },
+      {
+        "name": "_FCT_SCHEDULE_PTP",
+        "columns": [
+          {
+            "name": "FLT_DESC",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "FLT_DESC"
+          },
+          {
+            "name": "FLT_DESC_OP",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "FLT_DESC_OP"
+          },
+          {
+            "name": "FLIGHT_DATE",
+            "dataType": "dateTime",
+            "isHidden": true,
+            "sourceColumn": "FLIGHT_DATE"
+          },
+          {
+            "name": "DEP_TIME",
+            "dataType": "dateTime",
+            "isHidden": true,
+            "sourceColumn": "DEP_TIME"
+          },
+          {
+            "name": "ARR_TIME",
+            "dataType": "dateTime",
+            "isHidden": true,
+            "sourceColumn": "ARR_TIME"
+          },
+          {
+            "name": "AIRCRAFT_TYPE",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "AIRCRAFT_TYPE"
+          },
+          {
+            "name": "VERSION",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "VERSION"
+          },
+          {
+            "name": "DEPARTURES",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "DEPARTURES"
+          },
+          {
+            "name": "DISTANCE",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "DISTANCE"
+          },
+          {
+            "name": "BH",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "BH"
+          },
+          {
+            "name": "SEATS",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "SEATS"
+          },
+          {
+            "name": "SEATS_C",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "SEATS_C"
+          },
+          {
+            "name": "SEATS_W",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "SEATS_W"
+          },
+          {
+            "name": "SEATS_S",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "SEATS_S"
+          },
+          {
+            "name": "LAYER_ID",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "LAYER_ID"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/ ;DWH_VC_AVT\",",
+                "    dbo_V_FCT_SCHEDULE_FLIGHT_PTP = Source{[Schema=\"dbo\",Item=\"V_FCT_SCHEDULE_FLIGHT_PTP\"]}[Data],",
+                "    #\"Added Custom\" = Table.AddColumn(dbo_V_FCT_SCHEDULE_FLIGHT_PTP, \"LAYER_ID\", each 0)",
+                "in",
+                "    #\"Added Custom\""
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Sum of BH",
+            "expression": " SUM(_FCT_SCHEDULE_PTP[BH])"
+          },
+          {
+            "name": "Sum of SEATS",
+            "expression": " SUM(_FCT_SCHEDULE_PTP[SEATS])"
+          },
+          {
+            "name": "Sum of SEATS_C",
+            "expression": " SUM(_FCT_SCHEDULE_PTP[SEATS_C])"
+          },
+          {
+            "name": "Sum of SEATS_W",
+            "expression": " SUM(_FCT_SCHEDULE_PTP[SEATS_W])"
+          },
+          {
+            "name": "Sum of SEATS_S",
+            "expression": " SUM(_FCT_SCHEDULE_PTP[SEATS_S])"
+          }
+        ]
+      },
+      {
+        "name": "CALENDAR",
+        "columns": [
+          {
+            "name": "DATE_ID",
+            "dataType": "int64",
+            "sourceColumn": "DATE_ID"
+          },
+          {
+            "name": "D_DATE",
+            "dataType": "dateTime",
+            "sourceColumn": "D_DATE"
+          },
+          {
+            "name": "DATE_DESC",
+            "dataType": "string",
+            "sourceColumn": "DATE_DESC"
+          },
+          {
+            "name": "DOW_ID",
+            "dataType": "int64",
+            "sourceColumn": "DOW_ID"
+          },
+          {
+            "name": "DOW_NAME",
+            "dataType": "string",
+            "sourceColumn": "DOW_NAME"
+          },
+          {
+            "name": "DOW_DESC",
+            "dataType": "string",
+            "sourceColumn": "DOW_DESC"
+          },
+          {
+            "name": "WEEK_ID",
+            "dataType": "int64",
+            "sourceColumn": "WEEK_ID"
+          },
+          {
+            "name": "WEEK_NUM",
+            "dataType": "int64",
+            "sourceColumn": "WEEK_NUM"
+          },
+          {
+            "name": "WEEK_NAME",
+            "dataType": "string",
+            "sourceColumn": "WEEK_NAME"
+          },
+          {
+            "name": "WEEK_DESC",
+            "dataType": "string",
+            "sourceColumn": "WEEK_DESC"
+          },
+          {
+            "name": "MONTH_ID",
+            "dataType": "int64",
+            "sourceColumn": "MONTH_ID"
+          },
+          {
+            "name": "MONTH_NUM",
+            "dataType": "int64",
+            "sourceColumn": "MONTH_NUM"
+          },
+          {
+            "name": "MONTH_NAME_SHORT",
+            "dataType": "string",
+            "sourceColumn": "MONTH_NAME_SHORT"
+          },
+          {
+            "name": "MONTH_NAME_FULL",
+            "dataType": "string",
+            "sourceColumn": "MONTH_NAME_FULL"
+          },
+          {
+            "name": "MONTH_DESC",
+            "dataType": "string",
+            "sourceColumn": "MONTH_DESC"
+          },
+          {
+            "name": "QUARTER_ID",
+            "dataType": "int64",
+            "sourceColumn": "QUARTER_ID"
+          },
+          {
+            "name": "QUARTER_NUM",
+            "dataType": "int64",
+            "sourceColumn": "QUARTER_NUM"
+          },
+          {
+            "name": "QUARTER_NAME",
+            "dataType": "string",
+            "sourceColumn": "QUARTER_NAME"
+          },
+          {
+            "name": "QUARTER_DESC",
+            "dataType": "string",
+            "sourceColumn": "QUARTER_DESC"
+          },
+          {
+            "name": "YEAR_ID",
+            "dataType": "int64",
+            "sourceColumn": "YEAR_ID"
+          },
+          {
+            "name": "MOHTH_DAY_ID",
+            "dataType": "int64",
+            "sourceColumn": "MOHTH_DAY_ID"
+          },
+          {
+            "name": "MOHTH_DAY_NAME",
+            "dataType": "string",
+            "sourceColumn": "MOHTH_DAY_NAME"
+          },
+          {
+            "name": "YEAR_DAY_ID",
+            "dataType": "int64",
+            "sourceColumn": "YEAR_DAY_ID"
+          },
+          {
+            "name": "YEAR_DAY_NAME",
+            "dataType": "string",
+            "sourceColumn": "YEAR_DAY_NAME"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/ ;DWH_VC_AVT\",",
+                "    dbo_V_DIM_CALENDAR = Source{[Schema=\"dbo\",Item=\"V_DIM_CALENDAR\"]}[Data]",
+                "in",
+                "    dbo_V_DIM_CALENDAR"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "PATH",
+        "columns": [
+          {
+            "name": "PATH_KEY",
+            "dataType": "string",
+            "sourceColumn": "PATH_KEY"
+          },
+          {
+            "name": "FLT_PATH_ORG",
+            "dataType": "string",
+            "sourceColumn": "FLT_PATH_ORG"
+          },
+          {
+            "name": "FLT_PATH_DST",
+            "dataType": "string",
+            "sourceColumn": "FLT_PATH_DST"
+          },
+          {
+            "name": "ORG_DST",
+            "dataType": "string",
+            "sourceColumn": "ORG_DST"
+          },
+          {
+            "name": "ORG_DST_TYPE",
+            "dataType": "string",
+            "sourceColumn": "ORG_DST_TYPE"
+          },
+          {
+            "name": "ORG_AIRPORT",
+            "dataType": "string",
+            "sourceColumn": "ORG_AIRPORT"
+          },
+          {
+            "name": "VIA_AIRPORT",
+            "dataType": "string",
+            "sourceColumn": "VIA_AIRPORT"
+          },
+          {
+            "name": "DST_AIRPORT",
+            "dataType": "string",
+            "sourceColumn": "DST_AIRPORT"
+          },
+          {
+            "name": "COEF_LOGIC",
+            "dataType": "double",
+            "sourceColumn": "COEF_LOGIC"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/ ;DWH_VC_AVT\",",
+                "    dbo_V_DIM_PATH = Source{[Schema=\"dbo\",Item=\"V_DIM_PATH\"]}[Data]",
+                "in",
+                "    dbo_V_DIM_PATH"
+              ]
+            }
+          }
         ]
       }
     ],
     "relationships": [
       {
         "name": "5e735e3b-6a15-4220-b791-bcd35f97730f",
-        "fromTable": "FCT_CFO",
+        "fromTable": "_FCT_CFO",
         "fromColumn": "CFO_NAME",
         "toTable": "CFO",
         "toColumn": "CFO_NAME"
       },
       {
         "name": "2ffa6daa-a86e-44e9-acfa-c2af41b20846",
-        "fromTable": "FCT_CFO",
+        "fromTable": "_FCT_CFO",
         "fromColumn": "MONTH_ID",
         "toTable": "MONTH",
         "toColumn": "MONTH_ID"
       },
       {
         "name": "7bd6ea08-1da6-4722-a86d-60ad5783a2f3",
-        "fromTable": "FCT_CFO",
+        "fromTable": "_FCT_CFO",
         "fromColumn": "LAYER_ID",
         "toTable": "LAYER",
         "toColumn": "LAYER_ID"
       },
       {
         "name": "a110e67c-4801-4203-af70-8eaec4c02b33",
-        "fromTable": "FCT_CFO",
+        "fromTable": "_FCT_CFO",
         "fromColumn": "VERSION",
         "toTable": "VERSION",
         "toColumn": "VERSION"
       },
       {
         "name": "60e28606-4440-4a8b-a4c4-d8405d52334a",
-        "fromTable": "FCT_CFO",
+        "fromTable": "_FCT_CFO",
         "fromColumn": "PNL_ITEM",
         "toTable": "PROFIT_LOSS",
         "toColumn": "ITEM"
       },
       {
-        "name": "53fd5e5f-68bb-4d4a-b9ba-515ef755bb43",
-        "fromCardinality": "one",
-        "fromTable": "FCT_PROFIT_LOSS",
-        "fromColumn": "FLIGHT",
-        "toTable": "DIM_FLIGHT",
-        "toColumn": "FLT_DESC",
-        "crossFilteringBehavior": "bothDirections"
+        "name": "39d4b7a2-f988-45fb-9740-a28c18eb7729",
+        "fromTable": "_FCT_SCHEDULE_PTP",
+        "fromColumn": "FLT_DESC",
+        "toTable": "PATH",
+        "toColumn": "PATH_KEY"
       },
       {
-        "name": "69d23724-2ad1-46b9-8d97-ad54eca7a060",
-        "fromCardinality": "one",
-        "fromTable": "FCT_PROFIT_LOSS",
+        "name": "32513ed3-7565-457e-94be-e6e778ce08bc",
+        "fromTable": "_FCT_PROFIT_LOSS",
+        "fromColumn": "FLIGHT",
+        "toTable": "FLIGHT",
+        "toColumn": "FLT_DESC"
+      },
+      {
+        "name": "985f1b6b-2ebc-4724-a0f7-28504d6fb4a7",
+        "fromTable": "_FCT_PROFIT_LOSS",
         "fromColumn": "VERSION",
         "toTable": "VERSION",
-        "toColumn": "VERSION",
-        "crossFilteringBehavior": "bothDirections"
+        "toColumn": "VERSION"
       },
       {
-        "name": "247f81ac-c80c-4c55-8ba5-3c3c2356bc8f",
-        "fromCardinality": "one",
-        "fromTable": "FCT_PROFIT_LOSS",
-        "fromColumn": "LAYER_ID",
-        "toTable": "LAYER",
-        "toColumn": "LAYER_ID",
-        "isActive": false,
-        "crossFilteringBehavior": "bothDirections"
-      },
-      {
-        "name": "354c0aae-5ef1-4084-aeef-c8af78a85f52",
-        "fromCardinality": "one",
-        "fromTable": "PROFIT_LOSS",
-        "fromColumn": "ITEM",
-        "toTable": "FCT_PROFIT_LOSS",
-        "toColumn": "PNL_ITEM",
-        "isActive": false,
-        "crossFilteringBehavior": "bothDirections"
-      },
-      {
-        "name": "2fd49e1a-5233-4d50-9cab-d584d84fd5bd",
-        "fromCardinality": "one",
-        "fromTable": "FCT_PROFIT_LOSS",
+        "name": "79c7374e-af3b-4498-a3f3-e5fb1c16fafc",
+        "fromTable": "_FCT_PROFIT_LOSS",
         "fromColumn": "MONTH_ID",
         "toTable": "MONTH",
-        "toColumn": "MONTH_ID",
-        "isActive": false,
-        "crossFilteringBehavior": "bothDirections"
+        "toColumn": "MONTH_ID"
+      },
+      {
+        "name": "2868ac6f-0eeb-4857-b784-4c505b7ebaf9",
+        "fromTable": "_FCT_PROFIT_LOSS",
+        "fromColumn": "PNL_ITEM",
+        "toTable": "PROFIT_LOSS",
+        "toColumn": "ITEM"
+      },
+      {
+        "name": "5f35d860-fddc-4e6d-90a7-3f7c1a7c05bb",
+        "fromTable": "_FCT_PROFIT_LOSS",
+        "fromColumn": "LAYER_ID",
+        "toTable": "LAYER",
+        "toColumn": "LAYER_ID"
+      },
+      {
+        "name": "63973f10-ecf0-42cb-80f0-ca5dd4e46a19",
+        "fromTable": "_FCT_SCHEDULE_PTP",
+        "fromColumn": "LAYER_ID",
+        "toTable": "LAYER",
+        "toColumn": "LAYER_ID"
+      },
+      {
+        "name": "ba8be961-b5ff-4863-936e-5d5eb3d811b2",
+        "fromTable": "_FCT_SCHEDULE_PTP",
+        "fromColumn": "VERSION",
+        "toTable": "VERSION",
+        "toColumn": "VERSION"
+      },
+      {
+        "name": "687b8f4a-7a67-486a-9c7d-f9fb867f5fdf",
+        "fromTable": "_FCT_SCHEDULE_PTP",
+        "fromColumn": "FLT_DESC",
+        "toTable": "FLIGHT",
+        "toColumn": "FLT_DESC"
+      },
+      {
+        "name": "9ab3dcd3-106f-4fdd-968e-7c01c4102a8e",
+        "fromTable": "CALENDAR",
+        "fromColumn": "MONTH_ID",
+        "toTable": "MONTH",
+        "toColumn": "MONTH_ID"
+      },
+      {
+        "name": "3a3ae448-f8fe-4dae-9b1e-7c51afd79c8c",
+        "fromTable": "_FCT_SCHEDULE_PTP",
+        "fromColumn": "FLIGHT_DATE",
+        "toTable": "CALENDAR",
+        "toColumn": "D_DATE"
       }
     ],
     "roles": [
