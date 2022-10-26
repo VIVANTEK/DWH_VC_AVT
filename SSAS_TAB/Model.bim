@@ -882,9 +882,9 @@
             "name": "ItemUnaryOperator",
             "expression": [
               "",
-              " VAR CurrentLevel = [Sum of CurrentItemDepth]",
+              " VAR CurrentLevel = [Sum2 of CurrentItemDepth]",
               " RETURN",
-              "   IF (CurrentLevel = [Sum of MaxItemDepth]",
+              "   IF (CurrentLevel = [Sum2 of MaxItemDepth]",
               "      ,CALCULATE (",
               "                  IF ( HASONEVALUE ( 'PROFIT_LOSS'[UNARY_OPERATOR] )",
               "\t\t\t\t     , VAR Operator =  VALUES ( 'PROFIT_LOSS'[UNARY_OPERATOR] )",
@@ -1022,15 +1022,15 @@
             "name": "Sum of CFO_AMOUNT_SIGNED",
             "expression": [
               "",
-              " IF ( [Sum of  MinItemDepth] >= [Sum of CurrentItemDepth]",
-              "    , SWITCH ([Sum of CurrentItemDepth]",
-              "\t         , 1, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel1]), 'PROFIT_LOSS'[SignToLevel1] * [Sum of  CFO AMOUNT] )",
-              "\t\t\t , 2, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel2]), 'PROFIT_LOSS'[SignToLevel2] * [Sum of  CFO AMOUNT] )",
-              "\t\t\t , 3, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel3]), 'PROFIT_LOSS'[SignToLevel3] * [Sum of  CFO AMOUNT] )",
-              "\t\t\t , 4, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel4]), 'PROFIT_LOSS'[SignToLevel4] * [Sum of  CFO AMOUNT] )",
-              "\t\t\t , 5, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel5]), 'PROFIT_LOSS'[SignToLevel5] * [Sum of  CFO AMOUNT] )",
-              "\t\t\t , 6, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel6]), 'PROFIT_LOSS'[SignToLevel6] * [Sum of  CFO AMOUNT] )",
-              "\t\t\t , 7, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel7]), 'PROFIT_LOSS'[SignToLevel7] * [Sum of  CFO AMOUNT] )",
+              " IF ( [Sum2 of  MinItemDepth] >= [Sum2 of CurrentItemDepth]",
+              "    , SWITCH ([Sum2 of CurrentItemDepth]",
+              "\t         , 1, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel1]), 'PROFIT_LOSS'[SignToLevel1] * [Sum2 of  CFO AMOUNT] )",
+              "\t\t\t , 2, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel2]), 'PROFIT_LOSS'[SignToLevel2] * [Sum2 of  CFO AMOUNT] )",
+              "\t\t\t , 3, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel3]), 'PROFIT_LOSS'[SignToLevel3] * [Sum2 of  CFO AMOUNT] )",
+              "\t\t\t , 4, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel4]), 'PROFIT_LOSS'[SignToLevel4] * [Sum2 of  CFO AMOUNT] )",
+              "\t\t\t , 5, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel5]), 'PROFIT_LOSS'[SignToLevel5] * [Sum2 of  CFO AMOUNT] )",
+              "\t\t\t , 6, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel6]), 'PROFIT_LOSS'[SignToLevel6] * [Sum2 of  CFO AMOUNT] )",
+              "\t\t\t , 7, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel7]), 'PROFIT_LOSS'[SignToLevel7] * [Sum2 of  CFO AMOUNT] )",
               "     )",
               " )"
             ],
@@ -1040,7 +1040,7 @@
             "name": "Sum of CFO_AMOUNT_DataMember",
             "expression": [
               " CALCULATE( SUM('_FCT_CFO'[CFO_AMOUNT])",
-              "                        ,FILTER('PROFIT_LOSS', 'PROFIT_LOSS'[ItemDepth] = [Sum of  MinItemDepth]))",
+              "                        ,FILTER('PROFIT_LOSS', 'PROFIT_LOSS'[ItemDepth] = [Sum2 of  MinItemDepth]))",
               "/*",
               "simulation of DataMember propery that exists in SSAS Multi in Tabular Model (that does NOT have this Proiperty)",
               "see:  https://gbrueckl.wordpress.com/2013/07/26/dax-vs-mdx-datamembers-in-parent-child-hierarchies/",
@@ -1081,11 +1081,11 @@
         ],
         "measures": [
           {
-            "name": "Sum of  CFO AMOUNT",
+            "name": "Sum2 of  CFO AMOUNT",
             "expression": "SUM('_FCT_CFO'[CFO_AMOUNT])"
           },
           {
-            "name": "Sum of CurrentItemDepth",
+            "name": "Sum2 of CurrentItemDepth",
             "expression": [
               "",
               "   ISFILTERED ( 'PROFIT_LOSS'[ItemLev1] )",
@@ -1100,24 +1100,24 @@
             "displayFolder": "HIDDEN"
           },
           {
-            "name": "Sum of MaxItemDepth",
+            "name": "Sum2 of MaxItemDepth",
             "expression": " MAX ( 'PROFIT_LOSS'[ItemDepth] )",
             "isHidden": true,
             "displayFolder": "HIDDEN"
           },
           {
-            "name": "Sum of  MinItemDepth",
+            "name": "Sum2 of  MinItemDepth",
             "expression": " MIN ( 'PROFIT_LOSS'[ItemDepth] )",
             "isHidden": true,
             "displayFolder": "HIDDEN"
           },
           {
-            "name": "Sum of  ItemUnaryOperator",
+            "name": "Sum2 of  ItemUnaryOperator",
             "expression": [
               "",
-              " VAR CurrentLevel = [Sum of CurrentItemDepth]",
+              " VAR CurrentLevel = [Sum2 of CurrentItemDepth]",
               " RETURN",
-              "   IF (CurrentLevel = [Sum of MaxItemDepth]",
+              "   IF (CurrentLevel = [Sum2 of MaxItemDepth]",
               "      ,CALCULATE (",
               "                  IF ( HASONEVALUE ( 'PROFIT_LOSS'[UNARY_OPERATOR] )",
               "\t\t\t\t     , VAR Operator =  VALUES ( 'PROFIT_LOSS'[UNARY_OPERATOR] )",
@@ -1130,27 +1130,27 @@
             "displayFolder": "HIDDEN"
           },
           {
-            "name": "Sum of  CFO AMOUNT SIGNED",
+            "name": "Sum2 of  CFO AMOUNT SIGNED",
             "expression": [
               "",
-              " IF ( [Sum of  MinItemDepth] >= [Sum of CurrentItemDepth]",
-              "    , SWITCH ([Sum of CurrentItemDepth]",
-              "\t         , 1, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel1]), 'PROFIT_LOSS'[SignToLevel1] * [Sum of  CFO AMOUNT] )",
-              "\t\t\t , 2, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel2]), 'PROFIT_LOSS'[SignToLevel2] * [Sum of  CFO AMOUNT] )",
-              "\t\t\t , 3, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel3]), 'PROFIT_LOSS'[SignToLevel3] * [Sum of  CFO AMOUNT] )",
-              "\t\t\t , 4, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel4]), 'PROFIT_LOSS'[SignToLevel4] * [Sum of  CFO AMOUNT] )",
-              "\t\t\t , 5, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel5]), 'PROFIT_LOSS'[SignToLevel5] * [Sum of  CFO AMOUNT] )",
-              "\t\t\t , 6, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel6]), 'PROFIT_LOSS'[SignToLevel6] * [Sum of  CFO AMOUNT] )",
-              "\t\t\t , 7, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel7]), 'PROFIT_LOSS'[SignToLevel7] * [Sum of  CFO AMOUNT] )",
+              " IF ( [Sum2 of  MinItemDepth] >= [Sum2 of CurrentItemDepth]",
+              "    , SWITCH ([Sum2 of CurrentItemDepth]",
+              "\t         , 1, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel1]), 'PROFIT_LOSS'[SignToLevel1] * [Sum2 of  CFO AMOUNT] )",
+              "\t\t\t , 2, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel2]), 'PROFIT_LOSS'[SignToLevel2] * [Sum2 of  CFO AMOUNT] )",
+              "\t\t\t , 3, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel3]), 'PROFIT_LOSS'[SignToLevel3] * [Sum2 of  CFO AMOUNT] )",
+              "\t\t\t , 4, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel4]), 'PROFIT_LOSS'[SignToLevel4] * [Sum2 of  CFO AMOUNT] )",
+              "\t\t\t , 5, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel5]), 'PROFIT_LOSS'[SignToLevel5] * [Sum2 of  CFO AMOUNT] )",
+              "\t\t\t , 6, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel6]), 'PROFIT_LOSS'[SignToLevel6] * [Sum2 of  CFO AMOUNT] )",
+              "\t\t\t , 7, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel7]), 'PROFIT_LOSS'[SignToLevel7] * [Sum2 of  CFO AMOUNT] )",
               "     )",
               " )"
             ]
           },
           {
-            "name": "Sum of  CFO AMOUNT DataMember",
+            "name": "Sum2 of  CFO AMOUNT DataMember",
             "expression": [
               " CALCULATE( SUM('_FCT_CFO'[CFO_AMOUNT])",
-              "                        ,FILTER('PROFIT_LOSS', 'PROFIT_LOSS'[ItemDepth] = [Sum of  MinItemDepth]))",
+              "                        ,FILTER('PROFIT_LOSS', 'PROFIT_LOSS'[ItemDepth] = [Sum2 of  MinItemDepth]))",
               "/*",
               "simulation of DataMember propery that exists in SSAS Multi in Tabular Model (that does NOT have this Proiperty)",
               "see:  https://gbrueckl.wordpress.com/2013/07/26/dax-vs-mdx-datamembers-in-parent-child-hierarchies/",
@@ -1164,7 +1164,7 @@
             "isHidden": true
           },
           {
-            "name": "Sum of  PNL AMOUNT",
+            "name": "Sum2 of  PNL AMOUNT",
             "expression": [
               " CALCULATE(SUM('_FCT_PROFIT_LOSS'[PNL_AMOUNT])",
               "                                                 ,USERELATIONSHIP('_FCT_PROFIT_LOSS'[MONTH_ID], 'MONTH'[MONTH_ID])",
@@ -1190,7 +1190,7 @@
             ]
           },
           {
-            "name": "Sum of  BH",
+            "name": "Sum2 of  BH",
             "expression": [
               "  ",
               "IF(SELECTEDVALUE('PROFIT_LOSS'[ITEM]) =\"BH\"   &&",
@@ -1205,7 +1205,7 @@
               "             --,USERELATIONSHIP('CALENDAR'[YEAR_ID],    'MONTH'[YEAR_ID]) ",
               "  )",
               "  ----------------------- ELSE--------------------------------------------",
-              "  ,[Sum of  PNL AMOUNT])"
+              "  ,[Sum2 of  PNL AMOUNT])"
             ]
           }
         ]
@@ -1416,7 +1416,7 @@
               "RETURN",
               "    IF(SELECTEDVALUE('VERSION'[VERSION] ) =\"FCST\" &&  SELECTEDVALUE('LAYER'[LAYER_NAME]) =\"IS_DATA_LAYER\" ",
               "      ,CALCULATE(ItemValue  ,TREATAS(VALUES('PATH'[PATH_KEY]),    'FLIGHT'[FLT_DESC]) ,TREATAS(VALUES('CALENDAR'[MONTH_ID]),'MONTH'[MONTH_ID])    )",
-              "      ,[Sum of  PNL AMOUNT]",
+              "      ,[Sum2 of  PNL AMOUNT]",
               "    )",
               "",
               "",
@@ -1474,7 +1474,7 @@
               "             --,USERELATIONSHIP('CALENDAR'[YEAR_ID],    'MONTH'[YEAR_ID]) ",
               "  )",
               "  ----------------------- ELSE--------------------------------------------",
-              "  ,[Sum of  PNL AMOUNT])"
+              "  ,[Sum2 of  PNL AMOUNT])"
             ],
             "isHidden": true
           }
@@ -1611,6 +1611,14 @@
           {
             "name": "Sum of SEATS_S",
             "expression": " SUM(_FCT_SCHEDULE_PTP[SEATS_S])"
+          },
+          {
+            "name": "Sum of DISTANCE",
+            "expression": " SUM(_FCT_SCHEDULE_PTP[DISTANCE])"
+          },
+          {
+            "name": "Sum of DEPARTURES",
+            "expression": " SUM(_FCT_SCHEDULE_PTP[DEPARTURES])"
           }
         ]
       },
@@ -1620,122 +1628,154 @@
           {
             "name": "DATE_ID",
             "dataType": "int64",
-            "sourceColumn": "DATE_ID"
+            "isHidden": true,
+            "sourceColumn": "DATE_ID",
+            "displayFolder": "ATTRIBUTES"
           },
           {
             "name": "D_DATE",
             "dataType": "dateTime",
-            "sourceColumn": "D_DATE"
+            "isHidden": true,
+            "sourceColumn": "D_DATE",
+            "displayFolder": "ATTRIBUTES"
           },
           {
             "name": "DATE_DESC",
             "dataType": "string",
-            "sourceColumn": "DATE_DESC"
+            "sourceColumn": "DATE_DESC",
+            "sortByColumn": "DATE_ID",
+            "displayFolder": "ATTRIBUTES"
           },
           {
-            "name": "DOW_ID",
+            "name": "DAY_OF_WEEK",
             "dataType": "int64",
-            "sourceColumn": "DOW_ID"
+            "sourceColumn": "DOW_ID",
+            "displayFolder": "ATTRIBUTES"
           },
           {
-            "name": "DOW_NAME",
+            "name": "DAY_OF_WEEK_NAME_SHORT",
             "dataType": "string",
-            "sourceColumn": "DOW_NAME"
+            "sourceColumn": "DOW_NAME",
+            "displayFolder": "ATTRIBUTES"
           },
           {
-            "name": "DOW_DESC",
+            "name": "DAY_OF_WEEK_NAME_FULL",
             "dataType": "string",
-            "sourceColumn": "DOW_DESC"
+            "sourceColumn": "DOW_DESC",
+            "displayFolder": "ATTRIBUTES"
           },
           {
-            "name": "WEEK_ID",
+            "name": "WEEK_KEY",
             "dataType": "int64",
-            "sourceColumn": "WEEK_ID"
+            "sourceColumn": "WEEK_ID",
+            "displayFolder": "ATTRIBUTES"
           },
           {
             "name": "WEEK_NUM",
             "dataType": "int64",
-            "sourceColumn": "WEEK_NUM"
+            "sourceColumn": "WEEK_NUM",
+            "displayFolder": "ATTRIBUTES"
           },
           {
             "name": "WEEK_NAME",
             "dataType": "string",
-            "sourceColumn": "WEEK_NAME"
+            "sourceColumn": "WEEK_NAME",
+            "displayFolder": "ATTRIBUTES"
           },
           {
             "name": "WEEK_DESC",
             "dataType": "string",
-            "sourceColumn": "WEEK_DESC"
+            "sourceColumn": "WEEK_DESC",
+            "sortByColumn": "WEEK_KEY",
+            "displayFolder": "ATTRIBUTES"
           },
           {
             "name": "MONTH_ID",
             "dataType": "int64",
-            "sourceColumn": "MONTH_ID"
+            "sourceColumn": "MONTH_ID",
+            "displayFolder": "ATTRIBUTES"
           },
           {
             "name": "MONTH_NUM",
             "dataType": "int64",
-            "sourceColumn": "MONTH_NUM"
+            "sourceColumn": "MONTH_NUM",
+            "displayFolder": "ATTRIBUTES"
           },
           {
             "name": "MONTH_NAME_SHORT",
             "dataType": "string",
-            "sourceColumn": "MONTH_NAME_SHORT"
+            "sourceColumn": "MONTH_NAME_SHORT",
+            "sortByColumn": "MONTH_NUM",
+            "displayFolder": "ATTRIBUTES"
           },
           {
             "name": "MONTH_NAME_FULL",
             "dataType": "string",
-            "sourceColumn": "MONTH_NAME_FULL"
+            "sourceColumn": "MONTH_NAME_FULL",
+            "sortByColumn": "MONTH_NUM",
+            "displayFolder": "ATTRIBUTES"
           },
           {
             "name": "MONTH_DESC",
             "dataType": "string",
-            "sourceColumn": "MONTH_DESC"
+            "sourceColumn": "MONTH_DESC",
+            "sortByColumn": "MONTH_ID",
+            "displayFolder": "ATTRIBUTES"
           },
           {
             "name": "QUARTER_ID",
             "dataType": "int64",
-            "sourceColumn": "QUARTER_ID"
+            "sourceColumn": "QUARTER_ID",
+            "displayFolder": "ATTRIBUTES"
           },
           {
             "name": "QUARTER_NUM",
             "dataType": "int64",
-            "sourceColumn": "QUARTER_NUM"
+            "sourceColumn": "QUARTER_NUM",
+            "displayFolder": "ATTRIBUTES"
           },
           {
             "name": "QUARTER_NAME",
             "dataType": "string",
-            "sourceColumn": "QUARTER_NAME"
+            "sourceColumn": "QUARTER_NAME",
+            "displayFolder": "ATTRIBUTES"
           },
           {
             "name": "QUARTER_DESC",
             "dataType": "string",
-            "sourceColumn": "QUARTER_DESC"
+            "sourceColumn": "QUARTER_DESC",
+            "sortByColumn": "QUARTER_ID",
+            "displayFolder": "ATTRIBUTES"
           },
           {
             "name": "YEAR_ID",
             "dataType": "int64",
-            "sourceColumn": "YEAR_ID"
+            "sourceColumn": "YEAR_ID",
+            "displayFolder": "ATTRIBUTES"
           },
           {
-            "name": "MOHTH_DAY_ID",
+            "name": "DAY_OF_MONTH",
             "dataType": "int64",
-            "sourceColumn": "MOHTH_DAY_ID"
+            "sourceColumn": "MOHTH_DAY_ID",
+            "displayFolder": "ATTRIBUTES"
           },
           {
             "name": "MOHTH_DAY_NAME",
             "dataType": "string",
-            "sourceColumn": "MOHTH_DAY_NAME"
+            "sourceColumn": "MOHTH_DAY_NAME",
+            "displayFolder": "ATTRIBUTES"
           },
           {
-            "name": "YEAR_DAY_ID",
+            "name": "DAY_OF_YEAR",
             "dataType": "int64",
-            "sourceColumn": "YEAR_DAY_ID"
+            "sourceColumn": "YEAR_DAY_ID",
+            "displayFolder": "ATTRIBUTES"
           },
           {
             "name": "YEAR_DAY_NAME",
             "dataType": "string",
-            "sourceColumn": "YEAR_DAY_NAME"
+            "sourceColumn": "YEAR_DAY_NAME",
+            "displayFolder": "ATTRIBUTES"
           }
         ],
         "partitions": [
@@ -1753,6 +1793,68 @@
               ]
             }
           }
+        ],
+        "hierarchies": [
+          {
+            "name": "Y-Q-M-D",
+            "levels": [
+              {
+                "name": "YEAR",
+                "ordinal": 0,
+                "column": "YEAR_ID"
+              },
+              {
+                "name": "MONTH",
+                "ordinal": 2,
+                "column": "MONTH_DESC"
+              },
+              {
+                "name": "QUARTER",
+                "ordinal": 1,
+                "column": "QUARTER_DESC"
+              },
+              {
+                "name": "DATE",
+                "ordinal": 3,
+                "column": "DATE_DESC"
+              }
+            ]
+          },
+          {
+            "name": "Y-W-D",
+            "levels": [
+              {
+                "name": "YEAR",
+                "ordinal": 0,
+                "column": "YEAR_ID"
+              },
+              {
+                "name": "WEEK",
+                "ordinal": 1,
+                "column": "WEEK_DESC"
+              },
+              {
+                "name": "DATE",
+                "ordinal": 2,
+                "column": "DATE_DESC"
+              }
+            ]
+          },
+          {
+            "name": "Y-M",
+            "levels": [
+              {
+                "name": "YEAR_ID",
+                "ordinal": 0,
+                "column": "YEAR_ID"
+              },
+              {
+                "name": "MONTH",
+                "ordinal": 1,
+                "column": "MONTH_DESC"
+              }
+            ]
+          }
         ]
       },
       {
@@ -1761,47 +1863,280 @@
           {
             "name": "PATH_KEY",
             "dataType": "string",
-            "sourceColumn": "PATH_KEY"
+            "sourceColumn": "PATH_KEY",
+            "displayFolder": "ATTRIBUTES"
           },
           {
             "name": "FLT_PATH_ORG",
             "dataType": "string",
-            "sourceColumn": "FLT_PATH_ORG"
+            "sourceColumn": "FLT_PATH_ORG",
+            "displayFolder": "ATTRIBUTES"
           },
           {
             "name": "FLT_PATH_DST",
             "dataType": "string",
-            "sourceColumn": "FLT_PATH_DST"
-          },
-          {
-            "name": "ORG_DST",
-            "dataType": "string",
-            "sourceColumn": "ORG_DST"
-          },
-          {
-            "name": "ORG_DST_TYPE",
-            "dataType": "string",
-            "sourceColumn": "ORG_DST_TYPE"
+            "sourceColumn": "FLT_PATH_DST",
+            "displayFolder": "ATTRIBUTES"
           },
           {
             "name": "ORG_AIRPORT",
             "dataType": "string",
-            "sourceColumn": "ORG_AIRPORT"
-          },
-          {
-            "name": "VIA_AIRPORT",
-            "dataType": "string",
-            "sourceColumn": "VIA_AIRPORT"
+            "sourceColumn": "ORG_AIRPORT",
+            "displayFolder": "ATTRIBUTES"
           },
           {
             "name": "DST_AIRPORT",
             "dataType": "string",
-            "sourceColumn": "DST_AIRPORT"
+            "sourceColumn": "DST_AIRPORT",
+            "displayFolder": "ATTRIBUTES"
           },
           {
             "name": "COEF_LOGIC",
             "dataType": "double",
-            "sourceColumn": "COEF_LOGIC"
+            "sourceColumn": "COEF_LOGIC",
+            "displayFolder": "ATTRIBUTES"
+          },
+          {
+            "name": "OND",
+            "dataType": "string",
+            "sourceColumn": "OND",
+            "displayFolder": "ATTRIBUTES"
+          },
+          {
+            "name": "PATH_TYPE",
+            "dataType": "string",
+            "sourceColumn": "PATH_TYPE",
+            "displayFolder": "ATTRIBUTES"
+          },
+          {
+            "name": "PATH_VIA_AIRPORT",
+            "dataType": "string",
+            "sourceColumn": "PATH_VIA_AIRPORT",
+            "displayFolder": "ATTRIBUTES"
+          },
+          {
+            "name": "ORG_COUNTRY_CODE",
+            "dataType": "string",
+            "sourceColumn": "ORG_COUNTRY_CODE",
+            "displayFolder": "ATTRIBUTES"
+          },
+          {
+            "name": "ORG_COUNTRY_NAME",
+            "dataType": "string",
+            "sourceColumn": "ORG_COUNTRY_NAME",
+            "displayFolder": "ATTRIBUTES"
+          },
+          {
+            "name": "ORG_REGION_CODE",
+            "dataType": "string",
+            "sourceColumn": "ORG_REGION_CODE",
+            "displayFolder": "ATTRIBUTES"
+          },
+          {
+            "name": "DST_COUNTRY_CODE",
+            "dataType": "string",
+            "sourceColumn": "DST_COUNTRY_CODE",
+            "displayFolder": "ATTRIBUTES"
+          },
+          {
+            "name": "DST_COUNTRY_NAME",
+            "dataType": "string",
+            "sourceColumn": "DST_COUNTRY_NAME",
+            "displayFolder": "ATTRIBUTES"
+          },
+          {
+            "name": "DST_REGION_CODE",
+            "dataType": "string",
+            "sourceColumn": "DST_REGION_CODE",
+            "displayFolder": "ATTRIBUTES"
+          },
+          {
+            "name": "FLT_NUM",
+            "dataType": "string",
+            "sourceColumn": "FLT_NUM",
+            "displayFolder": "ATTRIBUTES"
+          },
+          {
+            "name": "HAUL",
+            "dataType": "string",
+            "sourceColumn": "HAUL",
+            "displayFolder": "ATTRIBUTES"
+          },
+          {
+            "name": "FLT_TYPE_INT_DOM",
+            "dataType": "string",
+            "sourceColumn": "FLT_TYPE_INT_DOM",
+            "displayFolder": "ATTRIBUTES"
+          },
+          {
+            "name": "FLT_TYPE_SCH_CHR",
+            "dataType": "string",
+            "sourceColumn": "FLT_TYPE_SCH_CHR",
+            "displayFolder": "ATTRIBUTES"
+          },
+          {
+            "name": "FLT_TYPE_PSN_CAR",
+            "dataType": "string",
+            "sourceColumn": "FLT_TYPE_PSN_CAR",
+            "displayFolder": "ATTRIBUTES"
+          },
+          {
+            "name": "FLT_TYPE_OWH_OAL",
+            "dataType": "string",
+            "sourceColumn": "FLT_TYPE_OWH_OAL",
+            "displayFolder": "ATTRIBUTES"
+          },
+          {
+            "name": "COUNTRY_TURNOVER",
+            "dataType": "string",
+            "sourceColumn": "COUNTRY_TURNOVER",
+            "displayFolder": "ATTRIBUTES"
+          },
+          {
+            "name": "DEST_GROUP",
+            "dataType": "string",
+            "sourceColumn": "DEST_GROUP",
+            "displayFolder": "ATTRIBUTES"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Table.NestedJoin(DIM_PATH, {\"ORG_AIRPORT\"}, DIM_AIRPORT_ORG, {\"LATITUDE\"}, \"DIM_AIRPORT_ORG\", JoinKind.LeftOuter),",
+                "    #\"Expanded DIM_AIRPORT_ORG\" = Table.ExpandTableColumn(Source, \"DIM_AIRPORT_ORG\", {\"COUNTRY_CODE\", \"COUNTRY_DESC\", \"REGION_CODE\"}, {\"COUNTRY_CODE\", \"COUNTRY_DESC\", \"REGION_CODE\"}),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Expanded DIM_AIRPORT_ORG\",{{\"COUNTRY_CODE\", \"ORG_COUNTRY_CODE\"}, {\"COUNTRY_DESC\", \"ORG_COUNTRY_NAME\"}, {\"REGION_CODE\", \"ORG_REGION_CODE\"}, {\"ORG_DST\", \"OND\"}, {\"ORG_DST_TYPE\", \"PATH_TYPE\"}, {\"VIA_AIRPORT\", \"PATH_VIA_AIRPORT\"}}),",
+                "    #\"Merged Queries\" = Table.NestedJoin(#\"Renamed Columns\", {\"DST_AIRPORT\"}, DIM_AIRPORT_DST, {\"AIRPORT_CODE\"}, \"DIM_AIRPORT_DST\", JoinKind.LeftOuter),",
+                "    #\"Expanded DIM_AIRPORT_DST\" = Table.ExpandTableColumn(#\"Merged Queries\", \"DIM_AIRPORT_DST\", {\"COUNTRY_CODE\", \"COUNTRY_DESC\", \"REGION_CODE\"}, {\"COUNTRY_CODE\", \"COUNTRY_DESC\", \"REGION_CODE\"}),",
+                "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Expanded DIM_AIRPORT_DST\",{{\"COUNTRY_CODE\", \"DST_COUNTRY_CODE\"}, {\"COUNTRY_DESC\", \"DST_COUNTRY_NAME\"}, {\"REGION_CODE\", \"DST_REGION_CODE\"}}),",
+                "    #\"Merged Queries1\" = Table.NestedJoin(#\"Renamed Columns1\", {\"PATH_KEY\"}, DIM_FLIGHT, {\"FLT_DESC\"}, \"DIM_FLIGHT\", JoinKind.LeftOuter),",
+                "    #\"Expanded DIM_FLIGHT\" = Table.ExpandTableColumn(#\"Merged Queries1\", \"DIM_FLIGHT\", {\"FLT_NUM\", \"HAUL\", \"FLT_TYPE_INT_DOM\", \"FLT_TYPE_SCH_CHR\", \"FLT_TYPE_PSN_CAR\", \"FLT_TYPE_OWH_OAL\", \"COUNTRY_TURNOVER\", \"DEST_GROUP\"}, {\"FLT_NUM\", \"HAUL\", \"FLT_TYPE_INT_DOM\", \"FLT_TYPE_SCH_CHR\", \"FLT_TYPE_PSN_CAR\", \"FLT_TYPE_OWH_OAL\", \"COUNTRY_TURNOVER\", \"DEST_GROUP\"})",
+                "in",
+                "    #\"Expanded DIM_FLIGHT\""
+              ]
+            }
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "TYPE-PATH",
+            "levels": [
+              {
+                "name": "PATH_TYPE",
+                "ordinal": 0,
+                "column": "PATH_TYPE"
+              },
+              {
+                "name": "PATH_KEY",
+                "ordinal": 1,
+                "column": "PATH_KEY"
+              }
+            ]
+          },
+          {
+            "name": "ORG (REGION-COUNTRY-AIRPORT-OND-PATH)",
+            "levels": [
+              {
+                "name": "ORG_REGION_CODE",
+                "ordinal": 0,
+                "column": "ORG_REGION_CODE"
+              },
+              {
+                "name": "ORG_COUNTRY_NAME",
+                "ordinal": 1,
+                "column": "ORG_COUNTRY_NAME"
+              },
+              {
+                "name": "ORG_AIRPORT",
+                "ordinal": 2,
+                "column": "ORG_AIRPORT"
+              },
+              {
+                "name": "ORG_DST",
+                "ordinal": 3,
+                "column": "OND"
+              },
+              {
+                "name": "PATH_KEY",
+                "ordinal": 4,
+                "column": "PATH_KEY"
+              }
+            ]
+          },
+          {
+            "name": "DST ( REGION-COUNTY-AIRPORT-OND-PATH)",
+            "levels": [
+              {
+                "name": "DST_REGION_CODE",
+                "ordinal": 0,
+                "column": "DST_REGION_CODE"
+              },
+              {
+                "name": "DST_COUNTRY_NAME",
+                "ordinal": 1,
+                "column": "DST_COUNTRY_NAME"
+              },
+              {
+                "name": "DST_AIRPORT",
+                "ordinal": 2,
+                "column": "DST_AIRPORT"
+              },
+              {
+                "name": "ORG_DST",
+                "ordinal": 3,
+                "column": "OND"
+              },
+              {
+                "name": "PATH_KEY",
+                "ordinal": 4,
+                "column": "PATH_KEY"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "_FCT_SCHEDULE_TRANSIT",
+        "columns": [
+          {
+            "name": "PATH_KEY",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "PATH_KEY"
+          },
+          {
+            "name": "FLIGHT_DATE",
+            "dataType": "dateTime",
+            "isHidden": true,
+            "sourceColumn": "FLIGHT_DATE"
+          },
+          {
+            "name": "RNG_ID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "RNG_ID"
+          },
+          {
+            "name": "VERSION",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "VERSION"
+          },
+          {
+            "name": "COUNT_CONNECTION",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "COUNT_CONNECTION"
+          },
+          {
+            "name": "LAYER_ID",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "LAYER_ID"
           }
         ],
         "partitions": [
@@ -1813,11 +2148,95 @@
               "expression": [
                 "let",
                 "    Source = #\"SQL/ ;DWH_VC_AVT\",",
-                "    dbo_V_DIM_PATH = Source{[Schema=\"dbo\",Item=\"V_DIM_PATH\"]}[Data]",
+                "    dbo_V_FCT_SCHEDULE_FLIGHT_TRANSIT = Source{[Schema=\"dbo\",Item=\"V_FCT_SCHEDULE_FLIGHT_TRANSIT\"]}[Data],",
+                "    #\"Added Custom\" = Table.AddColumn(dbo_V_FCT_SCHEDULE_FLIGHT_TRANSIT, \"LAYER_ID\", each 0)",
                 "in",
-                "    dbo_V_DIM_PATH"
+                "    #\"Added Custom\""
               ]
             }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Sum of COUNT_CONNECTION",
+            "expression": " SUM(_FCT_SCHEDULE_TRANSIT[COUNT_CONNECTION])"
+          }
+        ]
+      },
+      {
+        "name": "TIME_CONNECTION",
+        "columns": [
+          {
+            "name": "RNG_ID",
+            "dataType": "int64",
+            "sourceColumn": "RNG_ID",
+            "displayFolder": "ATTRIBUTES"
+          },
+          {
+            "name": "PERIOD_HH",
+            "dataType": "int64",
+            "sourceColumn": "PERIOD_HH",
+            "displayFolder": "ATTRIBUTES"
+          },
+          {
+            "name": "TIME_RANGE",
+            "dataType": "string",
+            "sourceColumn": "TIME_RANGE",
+            "displayFolder": "ATTRIBUTES"
+          },
+          {
+            "name": "QUALITY_CONNECTION",
+            "dataType": "string",
+            "sourceColumn": "QUALITY_CONNECTION",
+            "displayFolder": "ATTRIBUTES"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/ ;DWH_VC_AVT\",",
+                "    dbo_V_DIM_TIME_RANGE = Source{[Schema=\"dbo\",Item=\"V_DIM_TIME_RANGE\"]}[Data]",
+                "in",
+                "    dbo_V_DIM_TIME_RANGE"
+              ]
+            }
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "TIME_RANGE (HH-RANGE)",
+            "levels": [
+              {
+                "name": "PERIOD_HH",
+                "ordinal": 0,
+                "column": "PERIOD_HH"
+              },
+              {
+                "name": "TIME_RANGE",
+                "ordinal": 1,
+                "column": "TIME_RANGE"
+              }
+            ]
+          },
+          {
+            "name": "TIME_RANGE (QUALITY-RANGE)",
+            "levels": [
+              {
+                "name": "QUALITY_CONNECTION",
+                "ordinal": 0,
+                "column": "QUALITY_CONNECTION"
+              },
+              {
+                "name": "TIME_RANGE",
+                "ordinal": 1,
+                "column": "TIME_RANGE"
+              }
+            ]
           }
         ]
       }
@@ -1922,15 +2341,50 @@
         "toColumn": "FLT_DESC"
       },
       {
-        "name": "9ab3dcd3-106f-4fdd-968e-7c01c4102a8e",
+        "name": "3a3ae448-f8fe-4dae-9b1e-7c51afd79c8c",
+        "fromTable": "_FCT_SCHEDULE_PTP",
+        "fromColumn": "FLIGHT_DATE",
+        "toTable": "CALENDAR",
+        "toColumn": "D_DATE"
+      },
+      {
+        "name": "79d281de-cb08-4bac-b881-e95f57059aa3",
+        "fromTable": "_FCT_SCHEDULE_TRANSIT",
+        "fromColumn": "PATH_KEY",
+        "toTable": "PATH",
+        "toColumn": "PATH_KEY"
+      },
+      {
+        "name": "512160ce-4c50-45ad-b42d-2183bffeb711",
+        "fromTable": "_FCT_SCHEDULE_TRANSIT",
+        "fromColumn": "LAYER_ID",
+        "toTable": "LAYER",
+        "toColumn": "LAYER_ID"
+      },
+      {
+        "name": "25f89240-6dbd-4882-a0e1-28a1bf9613f0",
+        "fromTable": "_FCT_SCHEDULE_TRANSIT",
+        "fromColumn": "VERSION",
+        "toTable": "VERSION",
+        "toColumn": "VERSION"
+      },
+      {
+        "name": "6f1e1c02-90ea-4963-9757-fcbc5e6511b6",
+        "fromTable": "_FCT_SCHEDULE_TRANSIT",
+        "fromColumn": "RNG_ID",
+        "toTable": "TIME_CONNECTION",
+        "toColumn": "RNG_ID"
+      },
+      {
+        "name": "e6055f17-54c8-4ff6-ba8a-e79db2bc1119",
         "fromTable": "CALENDAR",
         "fromColumn": "MONTH_ID",
         "toTable": "MONTH",
         "toColumn": "MONTH_ID"
       },
       {
-        "name": "3a3ae448-f8fe-4dae-9b1e-7c51afd79c8c",
-        "fromTable": "_FCT_SCHEDULE_PTP",
+        "name": "b901a78e-7e46-4b9f-879e-1b7307b2a001",
+        "fromTable": "_FCT_SCHEDULE_TRANSIT",
         "fromColumn": "FLIGHT_DATE",
         "toTable": "CALENDAR",
         "toColumn": "D_DATE"
@@ -1962,6 +2416,69 @@
       {
         "name": "Users",
         "modelPermission": "read"
+      }
+    ],
+    "expressions": [
+      {
+        "name": "DIM_PATH",
+        "kind": "m",
+        "expression": [
+          "let",
+          "    Source = #\"SQL/ ;DWH_VC_AVT\",",
+          "    dbo_V_DIM_PATH = Source{[Schema=\"dbo\",Item=\"V_DIM_PATH\"]}[Data]",
+          "in",
+          "    dbo_V_DIM_PATH"
+        ]
+      },
+      {
+        "name": "DIM_AIRPORT_ORG",
+        "kind": "m",
+        "expression": [
+          "let",
+          "    Source = #\"SQL/ ;DWH_VC_AVT\",",
+          "    dbo_DIM_AIRPORT = Source{[Schema=\"dbo\",Item=\"DIM_AIRPORT\"]}[Data]",
+          "in",
+          "    dbo_DIM_AIRPORT"
+        ]
+      },
+      {
+        "name": "DIM_FLIGHT",
+        "kind": "m",
+        "expression": [
+          "let",
+          "    Source = #\"SQL/ ;DWH_VC_AVT\",",
+          "    dbo_DIM_FLIGHT = Source{[Schema=\"dbo\",Item=\"DIM_FLIGHT\"]}[Data]",
+          "in",
+          "    dbo_DIM_FLIGHT"
+        ]
+      },
+      {
+        "name": "DIM_AIRPORT_DST",
+        "kind": "m",
+        "expression": [
+          "let",
+          "    Source = #\"SQL/ ;DWH_VC_AVT\",",
+          "    dbo_DIM_AIRPORT = Source{[Schema=\"dbo\",Item=\"DIM_AIRPORT\"]}[Data]",
+          "in",
+          "    dbo_DIM_AIRPORT"
+        ]
+      },
+      {
+        "name": "PATH_JOINED",
+        "kind": "m",
+        "expression": [
+          "let",
+          "    Source = Table.NestedJoin(DIM_PATH, {\"ORG_AIRPORT\"}, DIM_AIRPORT_ORG, {\"LATITUDE\"}, \"DIM_AIRPORT_ORG\", JoinKind.LeftOuter),",
+          "    #\"Expanded DIM_AIRPORT_ORG\" = Table.ExpandTableColumn(Source, \"DIM_AIRPORT_ORG\", {\"COUNTRY_CODE\", \"COUNTRY_DESC\", \"REGION_CODE\"}, {\"COUNTRY_CODE\", \"COUNTRY_DESC\", \"REGION_CODE\"}),",
+          "    #\"Renamed Columns\" = Table.RenameColumns(#\"Expanded DIM_AIRPORT_ORG\",{{\"COUNTRY_CODE\", \"ORG_COUNTRY_CODE\"}, {\"COUNTRY_DESC\", \"ORG_COUNTRY_NAME\"}, {\"REGION_CODE\", \"ORG_REGION_CODE\"}, {\"ORG_DST\", \"OND\"}, {\"ORG_DST_TYPE\", \"PATH_TYPE\"}, {\"VIA_AIRPORT\", \"PATH_VIA_AIRPORT\"}}),",
+          "    #\"Merged Queries\" = Table.NestedJoin(#\"Renamed Columns\", {\"DST_AIRPORT\"}, DIM_AIRPORT_DST, {\"AIRPORT_CODE\"}, \"DIM_AIRPORT_DST\", JoinKind.LeftOuter),",
+          "    #\"Expanded DIM_AIRPORT_DST\" = Table.ExpandTableColumn(#\"Merged Queries\", \"DIM_AIRPORT_DST\", {\"COUNTRY_CODE\", \"COUNTRY_DESC\", \"REGION_CODE\"}, {\"COUNTRY_CODE\", \"COUNTRY_DESC\", \"REGION_CODE\"}),",
+          "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Expanded DIM_AIRPORT_DST\",{{\"COUNTRY_CODE\", \"DST_COUNTRY_CODE\"}, {\"COUNTRY_DESC\", \"DST_COUNTRY_NAME\"}, {\"REGION_CODE\", \"DST_REGION_CODE\"}}),",
+          "    #\"Merged Queries1\" = Table.NestedJoin(#\"Renamed Columns1\", {\"PATH_KEY\"}, DIM_FLIGHT, {\"FLT_DESC\"}, \"DIM_FLIGHT\", JoinKind.LeftOuter),",
+          "    #\"Expanded DIM_FLIGHT\" = Table.ExpandTableColumn(#\"Merged Queries1\", \"DIM_FLIGHT\", {\"FLT_NUM\", \"HAUL\", \"FLT_TYPE_INT_DOM\", \"FLT_TYPE_SCH_CHR\", \"FLT_TYPE_PSN_CAR\", \"FLT_TYPE_OWH_OAL\", \"COUNTRY_TURNOVER\", \"DEST_GROUP\"}, {\"FLT_NUM\", \"HAUL\", \"FLT_TYPE_INT_DOM\", \"FLT_TYPE_SCH_CHR\", \"FLT_TYPE_PSN_CAR\", \"FLT_TYPE_OWH_OAL\", \"COUNTRY_TURNOVER\", \"DEST_GROUP\"})",
+          "in",
+          "    #\"Expanded DIM_FLIGHT\""
+        ]
       }
     ],
     "annotations": [

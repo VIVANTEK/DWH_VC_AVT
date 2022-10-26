@@ -26,7 +26,7 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>czpfI6r1NKVbHCoxo8YKWX0AOnU=2022-10-24 8:56:58 PM2022-10-21 11:33:27 AM</TimeStamp>
+        <TimeStamp>4kMDth6ZztCJlD0kDU0vhVORHnA=2022-10-26 12:54:05 AM2022-10-21 11:33:27 AM</TimeStamp>
         <ID>
           <String>DWH_VC_AVT</String>
         </ID>
@@ -148,5 +148,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2022-10-25T19:38:13.033333Z</LastDeployed>
+  <LastDeployed>2022-10-26T09:25:08.233333Z</LastDeployed>
 </DeploymentSnapshot>
