@@ -664,10 +664,8 @@
               "VAR LevelNumber = 6",
               "VAR PrevSign = 'PROFIT_LOSS'[SignToLevel7]",
               "VAR Depth = 'PROFIT_LOSS'[ItemDepth]",
-              "VAR LevelKey =",
-              "    PATHITEM ( 'PROFIT_LOSS'[ItemPath], LevelNumber, INTEGER )",
-              "VAR LevelSign =",
-              "    LOOKUPVALUE ( 'PROFIT_LOSS'[UNARY_OPERATOR], 'PROFIT_LOSS'[ITEM_ID], LevelKey )",
+              "VAR LevelKey =   PATHITEM ( 'PROFIT_LOSS'[ItemPath], LevelNumber, INTEGER )",
+              "VAR LevelSign =  LOOKUPVALUE ( 'PROFIT_LOSS'[UNARY_OPERATOR], 'PROFIT_LOSS'[ITEM_ID], LevelKey )",
               "RETURN",
               "    IF (LevelNumber = Depth",
               "\t   ,IF ( 'PROFIT_LOSS'[UNARY_OPERATOR] = \"-\", -1, +1 )",
@@ -694,10 +692,8 @@
               "VAR LevelNumber = 5",
               "VAR PrevSign = 'PROFIT_LOSS'[SignToLevel6]",
               "VAR Depth = 'PROFIT_LOSS'[ItemDepth]",
-              "VAR LevelKey =",
-              "    PATHITEM ( 'PROFIT_LOSS'[ItemPath], LevelNumber, INTEGER )",
-              "VAR LevelSign =",
-              "    LOOKUPVALUE ( 'PROFIT_LOSS'[UNARY_OPERATOR], 'PROFIT_LOSS'[ITEM_ID], LevelKey )",
+              "VAR LevelKey =  PATHITEM ( 'PROFIT_LOSS'[ItemPath], LevelNumber, INTEGER )",
+              "VAR LevelSign = LOOKUPVALUE ( 'PROFIT_LOSS'[UNARY_OPERATOR], 'PROFIT_LOSS'[ITEM_ID], LevelKey )",
               "RETURN",
               "    IF (LevelNumber = Depth",
               "\t   ,IF ( 'PROFIT_LOSS'[UNARY_OPERATOR] = \"-\", -1, +1 )",
@@ -724,10 +720,8 @@
               "VAR LevelNumber = 4",
               "VAR PrevSign = 'PROFIT_LOSS'[SignToLevel5]",
               "VAR Depth = 'PROFIT_LOSS'[ItemDepth]",
-              "VAR LevelKey =",
-              "    PATHITEM ( 'PROFIT_LOSS'[ItemPath], LevelNumber, INTEGER )",
-              "VAR LevelSign =",
-              "    LOOKUPVALUE ( 'PROFIT_LOSS'[UNARY_OPERATOR], 'PROFIT_LOSS'[ITEM_ID], LevelKey )",
+              "VAR LevelKey =  PATHITEM ( 'PROFIT_LOSS'[ItemPath], LevelNumber, INTEGER )",
+              "VAR LevelSign =  LOOKUPVALUE ( 'PROFIT_LOSS'[UNARY_OPERATOR], 'PROFIT_LOSS'[ITEM_ID], LevelKey )",
               "RETURN",
               "    IF (LevelNumber = Depth",
               "\t   ,IF ( 'PROFIT_LOSS'[UNARY_OPERATOR] = \"-\", -1, +1 )",
@@ -754,10 +748,8 @@
               "VAR LevelNumber = 3",
               "VAR PrevSign = 'PROFIT_LOSS'[SignToLevel4]",
               "VAR Depth = 'PROFIT_LOSS'[ItemDepth]",
-              "VAR LevelKey =",
-              "    PATHITEM ( 'PROFIT_LOSS'[ItemPath], LevelNumber, INTEGER )",
-              "VAR LevelSign =",
-              "    LOOKUPVALUE ( 'PROFIT_LOSS'[UNARY_OPERATOR], 'PROFIT_LOSS'[ITEM_ID], LevelKey )",
+              "VAR LevelKey =  PATHITEM ( 'PROFIT_LOSS'[ItemPath], LevelNumber, INTEGER )",
+              "VAR LevelSign = LOOKUPVALUE ( 'PROFIT_LOSS'[UNARY_OPERATOR], 'PROFIT_LOSS'[ITEM_ID], LevelKey )",
               "RETURN",
               "    IF (LevelNumber = Depth",
               "\t   ,IF ( 'PROFIT_LOSS'[UNARY_OPERATOR] = \"-\", -1, +1 )",
@@ -784,10 +776,8 @@
               "VAR LevelNumber = 2",
               "VAR PrevSign = 'PROFIT_LOSS'[SignToLevel3]",
               "VAR Depth = 'PROFIT_LOSS'[ItemDepth]",
-              "VAR LevelKey =",
-              "    PATHITEM ( 'PROFIT_LOSS'[ItemPath], LevelNumber, INTEGER )",
-              "VAR LevelSign =",
-              "    LOOKUPVALUE ( 'PROFIT_LOSS'[UNARY_OPERATOR], 'PROFIT_LOSS'[ITEM_ID], LevelKey )",
+              "VAR LevelKey  = PATHITEM ( 'PROFIT_LOSS'[ItemPath], LevelNumber, INTEGER )",
+              "VAR LevelSign = LOOKUPVALUE ( 'PROFIT_LOSS'[UNARY_OPERATOR], 'PROFIT_LOSS'[ITEM_ID], LevelKey )",
               "RETURN",
               "    IF (LevelNumber = Depth",
               "\t   ,IF ( 'PROFIT_LOSS'[UNARY_OPERATOR] = \"-\", -1, +1 )",
@@ -814,10 +804,8 @@
               "VAR LevelNumber = 1",
               "VAR PrevSign = 'PROFIT_LOSS'[SignToLevel2]",
               "VAR Depth = 'PROFIT_LOSS'[ItemDepth]",
-              "VAR LevelKey =",
-              "    PATHITEM ( 'PROFIT_LOSS'[ItemPath], LevelNumber, INTEGER )",
-              "VAR LevelSign =",
-              "    LOOKUPVALUE ( 'PROFIT_LOSS'[UNARY_OPERATOR], 'PROFIT_LOSS'[ITEM_ID], LevelKey )",
+              "VAR LevelKey  = PATHITEM ( 'PROFIT_LOSS'[ItemPath], LevelNumber, INTEGER )",
+              "VAR LevelSign = LOOKUPVALUE ( 'PROFIT_LOSS'[UNARY_OPERATOR], 'PROFIT_LOSS'[ITEM_ID], LevelKey )",
               "RETURN",
               "    IF (LevelNumber = Depth",
               "\t   ,IF ( 'PROFIT_LOSS'[UNARY_OPERATOR] = \"-\", -1, +1 )",
@@ -1024,13 +1012,13 @@
               "",
               " IF ( [Sum2 of  MinItemDepth] >= [Sum2 of CurrentItemDepth]",
               "    , SWITCH ([Sum2 of CurrentItemDepth]",
-              "\t         , 1, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel1]), 'PROFIT_LOSS'[SignToLevel1] * [Sum2 of  CFO AMOUNT] )",
-              "\t\t\t , 2, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel2]), 'PROFIT_LOSS'[SignToLevel2] * [Sum2 of  CFO AMOUNT] )",
-              "\t\t\t , 3, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel3]), 'PROFIT_LOSS'[SignToLevel3] * [Sum2 of  CFO AMOUNT] )",
-              "\t\t\t , 4, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel4]), 'PROFIT_LOSS'[SignToLevel4] * [Sum2 of  CFO AMOUNT] )",
-              "\t\t\t , 5, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel5]), 'PROFIT_LOSS'[SignToLevel5] * [Sum2 of  CFO AMOUNT] )",
-              "\t\t\t , 6, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel6]), 'PROFIT_LOSS'[SignToLevel6] * [Sum2 of  CFO AMOUNT] )",
-              "\t\t\t , 7, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel7]), 'PROFIT_LOSS'[SignToLevel7] * [Sum2 of  CFO AMOUNT] )",
+              "                    , 1, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel1]), 'PROFIT_LOSS'[SignToLevel1] * [Sum2 of  CFO AMOUNT] )",
+              "                    , 2, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel2]), 'PROFIT_LOSS'[SignToLevel2] * [Sum2 of  CFO AMOUNT] )",
+              "                    , 3, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel3]), 'PROFIT_LOSS'[SignToLevel3] * [Sum2 of  CFO AMOUNT] )",
+              "                    , 4, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel4]), 'PROFIT_LOSS'[SignToLevel4] * [Sum2 of  CFO AMOUNT] )",
+              "                    , 5, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel5]), 'PROFIT_LOSS'[SignToLevel5] * [Sum2 of  CFO AMOUNT] )",
+              "                     , 6, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel6]), 'PROFIT_LOSS'[SignToLevel6] * [Sum2 of  CFO AMOUNT] )",
+              "                     , 7, SUMX (VALUES ('PROFIT_LOSS'[SignToLevel7]), 'PROFIT_LOSS'[SignToLevel7] * [Sum2 of  CFO AMOUNT] )",
               "     )",
               " )"
             ],
@@ -1403,38 +1391,76 @@
               "",
               "VAR ItemValue =",
               " SWITCH(SELECTEDVALUE('PROFIT_LOSS'[ITEM])",
-              "          ,\"BH\",         SUM('_FCT_SCHEDULE_PTP'[BH]) ",
+              "          ,\"BH\",              SUM('_FCT_SCHEDULE_PTP'[BH]) ",
               "          ,\"Departures\", SUM('_FCT_SCHEDULE_PTP'[DEPARTURES]) ",
-              "          ,\"Seats\",      SUM('_FCT_SCHEDULE_PTP'[SEATS]) ",
-              "          ,\"Seats C\",    SUM('_FCT_SCHEDULE_PTP'[SEATS_C]) ",
-              "          ,\"Seats Y\",    SUM('_FCT_SCHEDULE_PTP'[SEATS_S]) ",
-              "          ,\"Seats Y+\",   SUM('_FCT_SCHEDULE_PTP'[SEATS_W]) ",
-              "          ,\"KM\",         SUM('_FCT_SCHEDULE_PTP'[DISTANCE]) ",
-              "         -- , SUM('_FCT_PROFIT_LOSS'[PNL_AMOUNT]) ",
+              "          ,\"Seats\",          SUM('_FCT_SCHEDULE_PTP'[SEATS]) ",
+              "          ,\"Seats C\",       SUM('_FCT_SCHEDULE_PTP'[SEATS_C]) ",
+              "          ,\"Seats Y\",       SUM('_FCT_SCHEDULE_PTP'[SEATS_S]) ",
+              "          ,\"Seats Y+\",     SUM('_FCT_SCHEDULE_PTP'[SEATS_W]) ",
+              "          ,\"KM\",               SUM('_FCT_SCHEDULE_PTP'[DISTANCE]) ",
+              "        --, SUM('_FCT_PROFIT_LOSS'[PNL_AMOUNT]) ",
+              "         --============= FORMULAS ============================ ",
+              "          ,\"Pax Load Factor\",   [Pax Load Factor]",
+              "          ,\"Pax per Sector\",     [Pax per Sector]",
+              "          ,\"KM per Sector\",      [KM per Sector]",
+              "          ,\"Seats per Sector\",  [Seats per Sector]",
+              "          ,\"Yield per RPK (c)\",  [Yield per RPK (c)]",
+              "          ,\"ASK (mills)\",            [ASK (mills)]",
+              "          ,\"RPK (mills)\",            [RPK (mills)]",
+              "          ,\"RTK (Pax)\" ,           [RTK (Pax)]",
+              "          ,\"Fuel(t)/BH\",            [Fuel(t)/BH]",
+              "          ,\"C1\" ,                       [C1]",
+              "          ,\"C2\" ,                       [C2]",
+              "          ,\"EBIT\",                     [EBIT]",
+              "         --=====================================================",
               " )",
               "          ",
               "RETURN",
-              "    IF(SELECTEDVALUE('VERSION'[VERSION] ) =\"FCST\" &&  SELECTEDVALUE('LAYER'[LAYER_NAME]) =\"IS_DATA_LAYER\" ",
-              "      ,CALCULATE(ItemValue  ,TREATAS(VALUES('PATH'[PATH_KEY]),    'FLIGHT'[FLT_DESC]) ,TREATAS(VALUES('CALENDAR'[MONTH_ID]),'MONTH'[MONTH_ID])    )",
-              "      ,[Sum2 of  PNL AMOUNT]",
+              "IF(SELECTEDVALUE('VERSION'[VERSION] ) =\"FCST\" &&  SELECTEDVALUE('LAYER'[LAYER_NAME]) =\"IS_DATA_LAYER\" ",
+              "    ,CALCULATE(ItemValue ",
+              "                        ,TREATAS(VALUES('PATH'[PATH_KEY]),'FLIGHT'[FLT_DESC]) ",
+              "                        ,TREATAS(VALUES('CALENDAR'[MONTH_ID]),'MONTH'[MONTH_ID]) ",
+              "                        ,TREATAS(VALUES('CALENDAR'[QUARTER_ID]),'MONTH'[QUARTER_ID]) \t\t   ",
+              "                        ,TREATAS(VALUES('CALENDAR'[YEAR_ID]),'MONTH'[YEAR_ID]) \t\t",
               "    )",
+              "  , SUM('_FCT_PROFIT_LOSS'[PNL_AMOUNT]) ",
+              ")",
               "",
               "",
               "/*========================= OLD ===============================",
-              "Sum of  PNL_AMOUNT:=  ",
-              "IF(SELECTEDVALUE('PROFIT_LOSS'[ITEM]) =\"BH\"   &&",
-              "   SELECTEDVALUE('VERSION'[VERSION] ) =\"FCST\" &&",
-              "   SELECTEDVALUE('LAYER'[LAYER_NAME]) =\"IS_DATA_LAYER\" ",
-              "   --------------------- THEN -------------------------------------------",
-              "  ,CALCULATE (SUM('_FCT_SCHEDULE_PTP'[BH])",
-              "             ,TREATAS(VALUES('PATH'[PATH_KEY]),    'FLIGHT'[FLT_DESC])",
-              "             ,TREATAS(VALUES('CALENDAR'[MONTH_ID]),'MONTH'[MONTH_ID])",
-              "             --,USERELATIONSHIP('CALENDAR'[MONTH_ID],   'MONTH'[MONTH_ID]) ",
-              "             --,USERELATIONSHIP('CALENDAR'[QUARTER_ID], 'MONTH'[QUARTER_ID]) ",
-              "             --,USERELATIONSHIP('CALENDAR'[YEAR_ID],    'MONTH'[YEAR_ID]) ",
-              "  )",
-              "  ----------------------- ELSE--------------------------------------------",
-              "  ,[Sum of  PNL AMOUNT])",
+              "",
+              "Sum of PNL_AMOUNT:=",
+              "VAR ItemValue =",
+              " SWITCH(SELECTEDVALUE('PROFIT_LOSS'[ITEM])",
+              "          ,\"BH\",              SUM('_FCT_SCHEDULE_PTP'[BH]) ",
+              "          ,\"Departures\", SUM('_FCT_SCHEDULE_PTP'[DEPARTURES]) ",
+              "          ,\"Seats\",          SUM('_FCT_SCHEDULE_PTP'[SEATS]) ",
+              "          ,\"Seats C\",       SUM('_FCT_SCHEDULE_PTP'[SEATS_C]) ",
+              "          ,\"Seats Y\",       SUM('_FCT_SCHEDULE_PTP'[SEATS_S]) ",
+              "          ,\"Seats Y+\",     SUM('_FCT_SCHEDULE_PTP'[SEATS_W]) ",
+              "          ,\"KM\",               SUM('_FCT_SCHEDULE_PTP'[DISTANCE]) ",
+              "        --, SUM('_FCT_PROFIT_LOSS'[PNL_AMOUNT]) ",
+              "         --============= FORMULAS ============================ ",
+              "          ,\"Pax Load Factor\",   [Pax Load Factor]",
+              "          ,\"Pax per Sector\",     [Pax per Sector]",
+              "          ,\"KM per Sector\",      [KM per Sector]",
+              "          ,\"Seats per Sector\",  [Seats per Sector]",
+              "          ,\"Yield per RPK (c)\",  [Yield per RPK (c)]",
+              "          ,\"ASK (mills)\",            [ASK (mills)]",
+              "          ,\"RPK (mills)\",            [RPK (mills)]",
+              "          ,\"RTK (Pax)\" ,           [RTK (Pax)]",
+              "          ,\"Fuel(t)/BH\",            [Fuel(t)/BH]",
+              "          ,\"C1\" ,                       [C1]",
+              "          ,\"C2\" ,                       [C2]",
+              "          ,\"EBIT\",                     [EBIT]",
+              "         --=====================================================",
+              " )",
+              "          ",
+              "RETURN",
+              "IF(SELECTEDVALUE('VERSION'[VERSION] ) =\"FCST\" &&  SELECTEDVALUE('LAYER'[LAYER_NAME]) =\"IS_DATA_LAYER\" ",
+              "  ,CALCULATE(ItemValue  ,TREATAS(VALUES('PATH'[PATH_KEY]),    'FLIGHT'[FLT_DESC]) ,TREATAS(VALUES('CALENDAR'[MONTH_ID]),'MONTH'[MONTH_ID])    )",
+              "  ,SUM('_FCT_PROFIT_LOSS'[PNL_AMOUNT]) ",
+              ")",
               "",
               "=============================================================*/"
             ]
@@ -1459,24 +1485,208 @@
             ]
           },
           {
-            "name": "Sum of  PNL_AMOUNT (old)",
+            "name": "RPK (mills)",
+            "expression": [
+              "",
+              "VAR KM  = CALCULATE(SUM('_FCT_PROFIT_LOSS'[PNL_AMOUNT]), 'PROFIT_LOSS'[ITEM] = \"KM\")             -- returns NULL",
+              "VAR PAX = CALCULATE(SUM('_FCT_PROFIT_LOSS'[PNL_AMOUNT]), 'PROFIT_LOSS'[ITEM] = \"PAX\")            -- returns NULL",
+              "VAR DEP = CALCULATE(SUM('_FCT_PROFIT_LOSS'[PNL_AMOUNT]), 'PROFIT_LOSS'[ITEM] = \"Departures\")  -- =  15 vause it's the only row in table \"FCT_PROFIT_LOSS\"",
+              "RETURN  ",
+              "DIVIDE(KM*PAX,DEP)/1000000",
+              "",
+              "-- RPK (mills) = [KM] * [PAX] /[Departures] /1000000",
+              ""
+            ],
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "name": "ASK (mills)",
+            "expression": [
+              "",
+              "VAR KM  = CALCULATE(SUM('_FCT_PROFIT_LOSS'[PNL_AMOUNT]), 'PROFIT_LOSS'[ITEM] = \"KM\") ",
+              "VAR STS = CALCULATE(SUM('_FCT_PROFIT_LOSS'[PNL_AMOUNT]), 'PROFIT_LOSS'[ITEM] = \"Seats\") ",
+              "VAR DEP = CALCULATE(SUM('_FCT_PROFIT_LOSS'[PNL_AMOUNT]), 'PROFIT_LOSS'[ITEM] = \"Departures\") ",
+              "RETURN",
+              "DIVIDE(KM*STS,DEP)/1000000",
+              "",
+              "-- ASK (mills)= [KM] * [Seats] /[Departures] /1000000",
+              "",
+              ""
+            ],
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "name": "RTK (Pax)",
+            "expression": [
+              "\t[RPK (mills)] * 90",
+              "",
+              "-- RTK (Pax) = [RPK (mills)] * 90",
+              ""
+            ],
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "name": "Fuel(t)/BH",
             "expression": [
               "  ",
-              "IF(SELECTEDVALUE('PROFIT_LOSS'[ITEM]) =\"BH\"   &&",
-              "   SELECTEDVALUE('VERSION'[VERSION] ) =\"FCST\" &&",
-              "   SELECTEDVALUE('LAYER'[LAYER_NAME]) =\"IS_DATA_LAYER\" ",
-              "   --------------------- THEN -------------------------------------------",
-              "  ,CALCULATE (SUM('_FCT_SCHEDULE_PTP'[BH])",
-              "             ,TREATAS(VALUES('PATH'[PATH_KEY]),    'FLIGHT'[FLT_DESC])",
-              "             ,TREATAS(VALUES('CALENDAR'[MONTH_ID]),'MONTH'[MONTH_ID])",
-              "             --,USERELATIONSHIP('CALENDAR'[MONTH_ID],   'MONTH'[MONTH_ID]) ",
-              "             --,USERELATIONSHIP('CALENDAR'[QUARTER_ID], 'MONTH'[QUARTER_ID]) ",
-              "             --,USERELATIONSHIP('CALENDAR'[YEAR_ID],    'MONTH'[YEAR_ID]) ",
+              "VAR FL  = CALCULATE(SUM('_FCT_PROFIT_LOSS'[PNL_AMOUNT]), 'PROFIT_LOSS'[ITEM] = \"Fuel(t)\") ",
+              "VAR BH = CALCULATE(SUM('_FCT_PROFIT_LOSS'[PNL_AMOUNT]), 'PROFIT_LOSS'[ITEM] = \"BH\") ",
+              "RETURN DIVIDE(FL,BH)",
+              "",
+              "--Fuel(t)/BH = [Fuel(t)] /[BH] ",
+              "",
+              ""
+            ],
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "name": "Pax Load Factor",
+            "expression": [
+              " DIVIDE([RPK (mills)],[ASK (mills)])",
+              "",
+              "-- Pax Load Factor = [RPK (mills)]/[ASK (mills)]",
+              ""
+            ],
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "name": "Pax per Sector",
+            "expression": [
+              " ",
+              "VAR PAX = CALCULATE(SUM('_FCT_PROFIT_LOSS'[PNL_AMOUNT]), 'PROFIT_LOSS'[ITEM] = \"PAX\") ",
+              "VAR DEP = CALCULATE(SUM('_FCT_PROFIT_LOSS'[PNL_AMOUNT]), 'PROFIT_LOSS'[ITEM] = \"Departures\") ",
+              "RETURN DIVIDE(PAX,DEP)",
+              "",
+              "--  Pax per Sector = [PAX]/[Departures] ",
+              ""
+            ],
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "name": "KM per Sector",
+            "expression": [
+              " ",
+              "VAR KM   = CALCULATE(SUM('_FCT_PROFIT_LOSS'[PNL_AMOUNT]), 'PROFIT_LOSS'[ITEM] = \"KM\") ",
+              "VAR DEP = CALCULATE(SUM('_FCT_PROFIT_LOSS'[PNL_AMOUNT]), 'PROFIT_LOSS'[ITEM] = \"Departures\") ",
+              "RETURN DIVIDE(KM,DEP)",
+              "",
+              "-- KM per Sector = [KM]/[Departures]",
+              ""
+            ],
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "name": "Seats per Sector",
+            "expression": [
+              " ",
+              "VAR KM = CALCULATE(SUM('_FCT_PROFIT_LOSS'[PNL_AMOUNT]), 'PROFIT_LOSS'[ITEM] = \"KM\") ",
+              "RETURN DIVIDE([ASK (mills)],KM)",
+              "",
+              "--Seats per Sector = [ASK (mills)] /[KM]"
+            ],
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "name": "Yield per RPK (c)",
+            "expression": [
+              " ",
+              "VAR REV= CALCULATE(SUM('_FCT_PROFIT_LOSS'[PNL_AMOUNT]), 'PROFIT_LOSS'[ITEM] = \"PASSENGER REVENUE\") ",
+              "RETURN DIVIDE(REV,[RPK (mills)] )",
+              " ",
+              "--Yield per RPK (c)\t= [PASSENGER REVENUE] /[RPK (mills)] /10000"
+            ],
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "name": "C1",
+            "expression": [
+              " ",
+              "VAR REV = CALCULATE(SUM('_FCT_PROFIT_LOSS'[PNL_AMOUNT]), 'PROFIT_LOSS'[ITEM] = \"REVENUE\") ",
+              "VAR TOT = CALCULATE(SUM('_FCT_PROFIT_LOSS'[PNL_AMOUNT]), 'PROFIT_LOSS'[ITEM] = \"TOTAL VARIABLE COSTS\") ",
+              "RETURN  REV - TOT",
+              "",
+              "--C1 = [REVENUE] - [TOTAL VARIABLE COSTS]"
+            ],
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "name": "C2",
+            "expression": [
+              " ",
+              "VAR REV = CALCULATE(SUM('_FCT_PROFIT_LOSS'[PNL_AMOUNT]), 'PROFIT_LOSS'[ITEM] = \"REVENUE\") ",
+              "VAR TOT = CALCULATE(SUM('_FCT_PROFIT_LOSS'[PNL_AMOUNT]), 'PROFIT_LOSS'[ITEM] = \"TOTAL VARIABLE COSTS\")",
+              "VAR FXD = CALCULATE(SUM('_FCT_PROFIT_LOSS'[PNL_AMOUNT]), 'PROFIT_LOSS'[ITEM] = \"TOTAL FIXED COSTS\")",
+              "RETURN  REV - TOT - FXD",
+              "--C2 = [REVENUE] - [TOTAL VARIABLE COSTS] - [TOTAL FIXED COSTS]"
+            ],
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "name": "EBIT",
+            "expression": [
+              " ",
+              "VAR REV = CALCULATE(SUM('_FCT_PROFIT_LOSS'[PNL_AMOUNT]), 'PROFIT_LOSS'[ITEM] = \"REVENUE\") ",
+              "VAR TOT = CALCULATE(SUM('_FCT_PROFIT_LOSS'[PNL_AMOUNT]), 'PROFIT_LOSS'[ITEM] = \"TOTAL VARIABLE COSTS\")",
+              "VAR FXD = CALCULATE(SUM('_FCT_PROFIT_LOSS'[PNL_AMOUNT]), 'PROFIT_LOSS'[ITEM] = \"TOTAL FIXED COSTS\")",
+              "VAR ADM = CALCULATE(SUM('_FCT_PROFIT_LOSS'[PNL_AMOUNT]), 'PROFIT_LOSS'[ITEM] = \"GENERAL AND ADMIN EXPENCES\") ",
+              "RETURN  REV - TOT - FXD - ADM",
+              "",
+              "--EBIT= [REVENUE] - [TOTAL VARIABLE COSTS] - [TOTAL FIXED COSTS] - [GENERAL AND ADMIN EXPENCES]"
+            ],
+            "displayFolder": "HIDDEN"
+          },
+          {
+            "name": "Sum2 of PNL_AMOUNT",
+            "expression": [
+              "",
+              "IF(SELECTEDVALUE('VERSION'[VERSION] ) =\"FCST\" &&  SELECTEDVALUE('LAYER'[LAYER_NAME]) =\"IS_DATA_LAYER\" ,",
+              "   VAR ItemValue =",
+              "   SWITCH(SELECTEDVALUE('PROFIT_LOSS'[ITEM])",
+              "          ,\"BH\",              SUM('_FCT_SCHEDULE_PTP'[BH]) ",
+              "          ,\"Departures\", SUM('_FCT_SCHEDULE_PTP'[DEPARTURES]) ",
+              "          ,\"Seats\",          SUM('_FCT_SCHEDULE_PTP'[SEATS]) ",
+              "          ,\"Seats C\",       SUM('_FCT_SCHEDULE_PTP'[SEATS_C]) ",
+              "          ,\"Seats Y\",       SUM('_FCT_SCHEDULE_PTP'[SEATS_S]) ",
+              "          ,\"Seats Y+\",     SUM('_FCT_SCHEDULE_PTP'[SEATS_W]) ",
+              "          ,\"KM\",               SUM('_FCT_SCHEDULE_PTP'[DISTANCE]) ",
+              "        --, SUM('_FCT_PROFIT_LOSS'[PNL_AMOUNT]) ",
+              "         --============= FORMULAS ============================ ",
+              "          ,\"Pax Load Factor\",   [Pax Load Factor]",
+              "          ,\"Pax per Sector\",     [Pax per Sector]",
+              "          ,\"KM per Sector\",      [KM per Sector]",
+              "          ,\"Seats per Sector\",  [Seats per Sector]",
+              "          ,\"Yield per RPK (c)\",  [Yield per RPK (c)]",
+              "          ,\"ASK (mills)\",            [ASK (mills)]",
+              "          ,\"RPK (mills)\",            [RPK (mills)]",
+              "          ,\"RTK (Pax)\" ,           [RTK (Pax)]",
+              "          ,\"Fuel(t)/BH\",            [Fuel(t)/BH]",
+              "          ,\"C1\" ,                       [C1]",
+              "          ,\"C2\" ,                       [C2]",
+              "          ,\"EBIT\",                     [EBIT]               ",
+              "           , SUM('_FCT_PROFIT_LOSS'[PNL_AMOUNT])          ",
               "  )",
-              "  ----------------------- ELSE--------------------------------------------",
-              "  ,[Sum2 of  PNL AMOUNT])"
+              "",
+              "          ",
+              "RETURN",
+              "CALCULATE(ItemValue ",
+              "         ,TREATAS(VALUES('PATH'[PATH_KEY]),'FLIGHT'[FLT_DESC]) ",
+              "         ,TREATAS(VALUES('CALENDAR'[MONTH_ID]),'MONTH'[MONTH_ID]) ",
+              "         ,TREATAS(VALUES('CALENDAR'[QUARTER_ID]),'MONTH'[QUARTER_ID]) \t\t   ",
+              "         ,TREATAS(VALUES('CALENDAR'[YEAR_ID]),'MONTH'[YEAR_ID]) \t\t",
+              "))"
             ],
             "isHidden": true
+          },
+          {
+            "name": "KM per Sector test",
+            "expression": [
+              " ",
+              "VAR KM   = CALCULATE(SUM('_FCT_PROFIT_LOSS'[PNL_AMOUNT]), 'PROFIT_LOSS'[ITEM] = \"KM\") ",
+              "VAR DEP = CALCULATE(SUM('_FCT_PROFIT_LOSS'[PNL_AMOUNT]), 'PROFIT_LOSS'[ITEM] = \"Departures\") ",
+              "RETURN DIVIDE(KM,DEP)",
+              "",
+              "-- KM per Sector = [KM]/[Departures]"
+            ]
           }
         ]
       },
@@ -2239,6 +2449,132 @@
             ]
           }
         ]
+      },
+      {
+        "name": "_FCT_DRIVER_SHARE",
+        "columns": [
+          {
+            "name": "PNL_ITEM",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "PNL_ITEM"
+          },
+          {
+            "name": "FLIGHT",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "FLIGHT"
+          },
+          {
+            "name": "MONTH_ID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "MONTH_ID"
+          },
+          {
+            "name": "VERSION",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "VERSION"
+          },
+          {
+            "name": "FLAG_USE_FLIGHT",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "FLAG_USE_FLIGHT"
+          },
+          {
+            "name": "AMOUNT_FOR_ALLOCATION",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "AMOUNT_FOR_ALLOCATION"
+          },
+          {
+            "name": "DRIVER_FOR_ALLOCATION",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "DRIVER_FOR_ALLOCATION"
+          },
+          {
+            "name": "DRIVER_USE_FLIGHT",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "DRIVER_USE_FLIGHT"
+          },
+          {
+            "name": "DRIVER_USE_FLIGHT_TOTAL",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "DRIVER_USE_FLIGHT_TOTAL"
+          },
+          {
+            "name": "SHARE_AMOUNT",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "SHARE_AMOUNT"
+          },
+          {
+            "name": "AMOUNT_ALLOCATED",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "AMOUNT_ALLOCATED"
+          },
+          {
+            "name": "ROW_ID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "ROW_ID"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/ ;DWH_VC_AVT\",",
+                "    dbo_FCT_DRIVER_SHARE = Source{[Schema=\"dbo\",Item=\"FCT_DRIVER_SHARE\"]}[Data]",
+                "in",
+                "    dbo_FCT_DRIVER_SHARE"
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Sum of FLAG_USE_FLIGHT",
+            "expression": [
+              "  SUM('_FCT_DRIVER_SHARE'[FLAG_USE_FLIGHT])",
+              ""
+            ]
+          },
+          {
+            "name": "Sum of AMOUNT_FOR_ALLOCATION",
+            "expression": "  SUM('_FCT_DRIVER_SHARE'[AMOUNT_FOR_ALLOCATION])"
+          },
+          {
+            "name": "Avg of SHARE_AMOUNT",
+            "expression": "  AVERAGE('_FCT_DRIVER_SHARE'[SHARE_AMOUNT])"
+          },
+          {
+            "name": "Sum of DRIVER_FOR_ALLOCATION",
+            "expression": " SUM(_FCT_DRIVER_SHARE[DRIVER_FOR_ALLOCATION])"
+          },
+          {
+            "name": "Sum of DRIVER_USE_FLIGHT",
+            "expression": " SUM(_FCT_DRIVER_SHARE[DRIVER_USE_FLIGHT])"
+          },
+          {
+            "name": "Sum of DRIVER_USE_FLIGHT_TOTAL",
+            "expression": " SUM(_FCT_DRIVER_SHARE[DRIVER_USE_FLIGHT_TOTAL])"
+          },
+          {
+            "name": "Sum of AMOUNT_ALLOCATED",
+            "expression": " SUM(_FCT_DRIVER_SHARE[AMOUNT_ALLOCATED])"
+          }
+        ]
       }
     ],
     "relationships": [
@@ -2376,18 +2712,47 @@
         "toColumn": "RNG_ID"
       },
       {
-        "name": "e6055f17-54c8-4ff6-ba8a-e79db2bc1119",
-        "fromTable": "CALENDAR",
-        "fromColumn": "MONTH_ID",
-        "toTable": "MONTH",
-        "toColumn": "MONTH_ID"
-      },
-      {
         "name": "b901a78e-7e46-4b9f-879e-1b7307b2a001",
         "fromTable": "_FCT_SCHEDULE_TRANSIT",
         "fromColumn": "FLIGHT_DATE",
         "toTable": "CALENDAR",
         "toColumn": "D_DATE"
+      },
+      {
+        "name": "fccef59e-230c-481b-a951-d8d56771855b",
+        "fromTable": "_FCT_DRIVER_SHARE",
+        "fromColumn": "VERSION",
+        "toTable": "VERSION",
+        "toColumn": "VERSION"
+      },
+      {
+        "name": "2ff4c32a-fe6b-4192-9aa0-32128c616287",
+        "fromTable": "_FCT_DRIVER_SHARE",
+        "fromColumn": "FLIGHT",
+        "toTable": "FLIGHT",
+        "toColumn": "FLT_DESC"
+      },
+      {
+        "name": "ce7b3592-9283-46ec-a3ff-c9bc5bed4ac8",
+        "fromTable": "_FCT_DRIVER_SHARE",
+        "fromColumn": "MONTH_ID",
+        "toTable": "MONTH",
+        "toColumn": "MONTH_ID"
+      },
+      {
+        "name": "6bebf2f2-4eb8-407e-bda1-38e19215899e",
+        "fromTable": "_FCT_DRIVER_SHARE",
+        "fromColumn": "PNL_ITEM",
+        "toTable": "PROFIT_LOSS",
+        "toColumn": "ITEM"
+      },
+      {
+        "name": "8a8f55de-94f6-4b97-906e-8423985309cb",
+        "fromTable": "CALENDAR",
+        "fromColumn": "MONTH_ID",
+        "toTable": "MONTH",
+        "toColumn": "MONTH_ID",
+        "isActive": false
       }
     ],
     "roles": [
